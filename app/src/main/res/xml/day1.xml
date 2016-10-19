@@ -1,0 +1,1143 @@
+<root>
+    <description>First day, chapter 1</description>
+    <date>Friday, February 26</date>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>8:48 PM</time>
+        <room>Gwen</room>
+        <text>Hey, Luna!</text>
+    </message>
+    <message>
+        <type>choices</type>    
+        <sender>Luna</sender>
+        <time>8:48 PM</time>
+        <room>Gwen</room>
+        <choices>
+            <choice>
+                <text>Hey!</text>
+                <replies>0</replies>
+            </choice>
+            <choice>
+                <text>What?</text>
+                <replies>0</replies>
+            </choice>
+            <choice>
+                <text>Who is this?</text>
+                <replies>0</replies>
+            </choice>
+        </choices>
+        <saveAs/>
+    </message>
+    <message>
+        <type>comment</type>
+        <room>Gwen</room>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>8:48 PM</time>
+        <room>Gwen</room>
+        <text>It&#x27;s me, Gwen!</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>8:48 PM</time>
+        <room>Gwen</room>
+        <text>I&#x27;m gonna invite you to the group</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>8:48 PM</time>
+        <room>Gwen</room>
+        <text>Let&#x27;s join</text>
+    </message>
+    <message>
+        <type>info</type>
+        <cat>invitation</cat>
+        <room>Class 3&#8211;1</room>
+        <members>15</members>
+        <memberList>Gwen,Barbara</memberList>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>8:48 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>No, Ed. It’s ridiculous</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>8:48 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Put aside all the years of conflict and misunderstanding between us, Barbara..</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>8:48 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’m humbly saying that I’m proud of you</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>8:49 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Despite being the most reckless, incompetent, good-for-nothing person I’ve ever known, you’re capable of making your own living</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>8:49 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>A glamorous one, you might take a note</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>8:49 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I sincerely thank you and wish you luck with your human wax experiment whatsoever</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>8:49 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>-_-</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Clara</sender>
+        <time>8:49 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Yea, we know you’re famous now. No need to brag about it, Barb</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>8:50 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>If I were her, I wouldn’t stop showing off</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>8:50 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Being a superstar is one hell of achievement</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>8:50 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Thank you for being so understanding, Lila</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>8:50 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I understand that you’re a vulnerable human being who needs to be complimented to feel secure, shouldn’t you thank me too?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>8:50 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Get lost, Jack.</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:50 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Really? Mocking each other after years of separation?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:50 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Wouldn’t you utter a proper “I miss you” instead?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>8:50 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Ew.</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>8:50 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>No.</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>8:50 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>So cutee</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>8:51 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I ship you two hard</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>8:51 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Too bad it’s impossible to happen, darl</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>8:51 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Barb we should go for a drink and catch up!</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>8:51 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’d love to, honey</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:53 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I saw you on magazines, Barb</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:53 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>You get prettier and prettier each day ?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:53 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>And my lecturer mentioned you once, Jack. He’s interested of your adipose thing</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:53 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>How’s it going, Eddie-bear? I watched your TV show too</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>8:54 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Oh, how sweet of you, Lucy</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>8:54 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>*sending virtual hug*</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>8:54 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Well, that’s Lucy for you</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>8:54 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Calming and full of positivity</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>8:54 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>*sending virtual hug*</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:54 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>SUPERB. I looove my job</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:54 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>The salary&#x27;s nice, too</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:54 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Also, welcome Luna darling!</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>8:54 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>It’s such a struggle to find your contact</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>8:55 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>No surprise though. She’s so in love with solitude</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>8:55 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>How are you, Luna?</text>
+    </message>
+    <message>
+        <type>choices</type>
+        <sender>Luna</sender>
+        <time>8:55 PM</time>
+        <room>Class 3&#8211;1</room>
+        <choices>
+            <choice>
+                <text>I&#x27;m fine, I guess.</text>
+                <replies>34</replies>
+            </choice>
+            <choice>
+                <text>Funtastic. How are you guys doing?</text>
+                <replies>12</replies>
+            </choice>
+            <choice>
+                <text>Not so good.</text>
+                <replies>37</replies>
+            </choice>
+        </choices>
+        <saveAs>Luna&#x27;s condition</saveAs>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:56 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Great. I miss you :(</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Clara</sender>
+        <time>8:56 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>She misses everyone, literally</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>8:56 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Clara misses you too, she just won’t admit it</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:56 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>What do you call it again? Tsundere?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Clara</sender>
+        <time>8:57 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Ugh -_-</text>
+    </message>
+    <message>
+        <type>choices</type>
+        <sender>Luna</sender>
+        <time>8:58 PM</time>
+        <room>Class 3&#8211;1</room>
+        <choices>
+            <choice>
+                <text>I miss you too, guys.</text>
+                <replies>14</replies>
+            </choice>
+            <choice>
+                <text>How are you doing, Lucy?</text>
+                <replies>11</replies>
+            </choice>
+        </choices>
+        <saveAs/>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:59 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Are you still living at Orchid Street?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:59 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>If yes I guess I can stop by next month.</text>
+    </message>
+    <message>
+        <type>choices</type>
+        <sender>Luna</sender>
+        <time>8:59 PM</time>
+        <room>Class 3&#8211;1</room>
+        <choices>
+            <choice>
+                <text>Yes</text>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <text>No</text>
+                <replies>2</replies>
+            </choice>
+        </choices>
+        <saveAs/>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>9:01 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Yippee</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:59 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Too bad :&quot;</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:59 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>But it&#x27;s ok</text>
+    </message>
+    <message>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>9:01 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Hey, I’m throwing a tea party tomorrow. Feel free to come ;)</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>9:01 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Sounds fun</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>9:01 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Sounds perfect</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Clara</sender>
+        <time>9:01 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’d love to.</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>9:01 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Definitely coming</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>9:01 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I&#x27;ll check my schedule</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:01 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Girl&#x27;s reunion -_-</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:59 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’m taking double major, history and psychology</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:59 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>As smart as ever, our Lucy ;)</text>
+    </message>
+    <message>
+        <type>choices</type>
+        <sender>Luna</sender>
+        <time>9:00 PM</time>
+        <room>Class 3&#8211;1</room>
+        <choices>
+            <choice>
+                <text>Cool</text>
+                <replies>0</replies>
+            </choice>
+            <choice>
+                <text>Good luck with that</text>
+                <replies>0</replies>
+            </choice>
+            <choice>
+                <text>It&#x27;s been years since the last time we met</text>
+                <replies>0</replies>
+            </choice>
+        </choices>
+        <saveAs>Respond to Lucy 2</saveAs>
+    </message>
+    <message>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>9:00 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Yeah, we used to be chairmate</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Two studious brainiacs next to each other..</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>It’s a miracle I can get along with you guys</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>You flattered me</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’m nothing compared to Luna</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>You must be catching brain fever or something similar to forget another significant brainiac in our class</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I suppose I catched that fever when being in the same room with that brainiac almost everyday for three years</text>
+    </message>
+    <message>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Hey guys, if you miss me, you should watch my game next Saturday :3</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Mikey’s gonna get his claws into the neighbouring city</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:55 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’m taking double major of psychology and history</text>
+    </message>
+    <message>
+        <type>choices</type>
+        <sender>Luna</sender>
+        <time>8:55 PM</time>
+        <room>Class 3&#8211;1</room>
+        <choices>
+            <choice>
+                <text>Cool</text>
+                <replies>0</replies>
+            </choice>
+            <choice>
+                <text>Wow, so proud of you</text>
+                <replies>0</replies>
+            </choice>
+        </choices>
+        <saveAs/>
+    </message>
+    <message>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>8:55 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Really, Lucy? Then I’d have to discuss so many things with you</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>8:56 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’ve got these Medieval stuff and I’ve no idea of how to interpret it</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:56 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Whoahh, it’s so interesting</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:56 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Romanians?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>8:56 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Yes, from the 9th century I guess</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>8:56 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Splendid</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I won’t call collecting dust interesting.</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Throwing ball to a basket is.</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>So I invite you all to come to my game next Saturday.</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:55 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Why? Are you okay?</text>
+    </message>
+    <message>
+        <type>choices</type>
+        <sender>Luna</sender>
+        <time>8:55 PM</time>
+        <room>Class 3&#8211;1</room>
+        <choices>
+            <choice>
+                <text>I’m not feeling well. But it’s all right</text>
+                <replies>13</replies>
+            </choice>
+            <choice>
+                <text>Just problems at work</text>
+                <replies>21</replies>
+            </choice>
+        </choices>
+        <saveAs>Luna&#x27;s sick</saveAs>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>8:55 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Get enough rest</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>8:55 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>The weather is not friendly lately</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>8:56 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Get well soon, Luna</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:56 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Get well soon</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:56 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Take a good rest. Don’t push yourself too hard, k?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:57 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Don’t forget to eat fruits and vegetables</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>8:57 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Exercise is important, too</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>8:57 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Dude, she’s a grown up</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>8:57 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I wish you well, Luna</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>8:57 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>These guys are starting to sound like my nanny</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Get well soon, Luna and btw guys</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I have a match next Saturday</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Feel free to come</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>8:56 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>What is your line of work?</text>
+    </message>
+    <message>
+        <type>choices</type>
+        <sender>Luna</sender>
+        <time>8:56 PM</time>
+        <room>Class 3&#8211;1</room>
+        <choices>
+            <choice>
+                <text>I’m working as a secretary at an office nearby</text>
+                <replies>0</replies>
+            </choice>
+            <choice>
+                <text>I’m working at U.S Embassy</text>
+                <replies>0</replies>
+            </choice>
+        </choices>
+        <saveAs>Luna&#x27;s line of work</saveAs>
+    </message>
+    <message>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:57 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Well, good luck</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:57 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Don’t stress out, okay?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:58 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I know you’re a hardworker but don’t push yourself too hard</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>8:58 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Listen to her, Luna</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>8:58 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I have this friend of my friend who died of exhaustion</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>8:58 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>He died with the beet hook still in his bleeding hands (yup, he’s a farmer)</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>8:58 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Our friend would likely die with pages of Rumi’s book opened on her hands</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>8:58 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I won’t take that as an insult</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:58 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Everything’s going to be fine, dear</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:58 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>These dudes talking about deaths like it’s nothing -_-</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:58 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Take a good rest, exercise and eat well</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:58 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>You’d feel better and happier</text>
+    </message>
+    <message>
+        <type>choices</type>
+        <sender>Luna</sender>
+        <time>9:00 PM</time>
+        <room>Class 3&#8211;1</room>
+        <choices>
+            <choice>
+                <text>It’s not like I’m gonna exhaust myself from reading</text>
+                <replies>2</replies>
+            </choice>
+            <choice>
+                <text>Okay, I’ll take a good care of myself</text>
+                <replies>2</replies>
+            </choice>
+        </choices>
+        <saveAs/>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Btw, if you all are not so busy next Saturday..</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Will you guys please come to my game? :3</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Btw, if you all are not so busy next Saturday..</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Will you guys please come to my game? :3</text>
+    </message>
+    <message>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </message>
+    <message>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </message>
+    <message>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Clara</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I have no interest in sport</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I would go if it were a national match</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>9:03 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Cruel</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:03 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Challenge accepted!</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:03 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>*insert fighting pose*</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>9:03 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Don’t worry, bro. I’ll support you</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:03 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>For reaal? You’ll leave your room for mee?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:03 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’m so moveddd</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>9:03 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Oh, how lovely this chat room is</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>9:03 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I guess you’re all doing all right?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>9:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Hi, Nathan</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>9:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’ll come, Mike</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>9:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>In fact, I already bet on your team’s victory</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Yuhuu..</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I wouldn’t disappoint you, bruh</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>9:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I guess I can make time if you agree to be my wingman ;)</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Ez, madame</text>
+    </message>
+    <message>
+        <type>choices</type>
+        <sender>Luna</sender>
+        <time>9:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <choices>
+            <choice>
+                <text>Good luck, Mike</text>
+                <replies>0</replies>
+            </choice>
+            <choice>
+                <text>I’ll come, maybe</text>
+                <replies>0</replies>
+            </choice>
+        </choices>
+        <saveAs/>
+    </message>
+    <message>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>9:05 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I expect a thrilling game, Mike</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:05 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Thank you, Luna</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:05 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>OK, Ed.</text>
+    </message>
+</root>

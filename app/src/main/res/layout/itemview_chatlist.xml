@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:baselineAligned="false"
+        android:gravity="right"
+        android:orientation="horizontal"
+        tools:ignore="RtlHardcoded,UselessParent"
+        >
+        
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="9dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="9dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                >
+                
+                <TextView
+                    android:id="@+id/clRoom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="room"
+                    android:textColor="#ff000000"
+                    android:textSize="16sp"
+                    tools:ignore="HardcodedText"
+                    />
+                
+                <TextView
+                    android:id="@+id/clMemberCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="bottom"
+                    android:maxLines="1"
+                    android:text="(members)"
+                    android:textColor="#80000000"
+                    android:textSize="14sp"
+                    tools:ignore="HardcodedText"
+                    />
+            
+            </LinearLayout>
+            
+            <TextView
+                android:id="@+id/clLastMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="last chat"
+                android:textColor="#80000000"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText"
+                />
+        
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="9dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="9dp"
+            android:gravity="center"
+            >
+            
+            <TextView
+                android:id="@+id/clUnreadCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/unread_background"
+                android:gravity="center"
+                android:text="x"
+                android:textColor="#ffffffff"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText"
+                />
+        
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

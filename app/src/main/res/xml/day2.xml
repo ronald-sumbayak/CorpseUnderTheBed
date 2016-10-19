@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <description>Second day, chapter 1</description>
+    <date>Saturday, February 27</date>
+    <message>
+        <type>info</type>
+        <cat>invitation</cat>
+        <room>Girl's Reunion</room>
+        <members>6</members>
+        <memberList>Gwen,Barbara</memberList>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>11:00 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>The party takes place at my home</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>11:00 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Do you guys still remember?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>11:00 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Bougenville Street 143, near police office and public swimming pool</text>
+    </message>
+    <message>
+        <type>choices</type>
+        <sender>Luna</sender>
+        <time>11:00 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <choices>
+            <choice>
+                <text>I guess so</text>
+                <replies>0</replies>
+            </choice>
+            <choice>
+                <text>I&#x27;ve never been to your house</text>
+                <replies>7</replies>
+            </choice>
+        </choices>
+        <saveAs>Luna to Nila&#x27;s</saveAs>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>11:00 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>I can pick you up, Luna</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>11:00 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Our houses aren’t that far</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>11:01 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Just get ready at 2 or so</text>
+    </message>
+    <message>
+        <type>choices</type>
+        <sender>Luna</sender>
+        <time>11:01 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <choices>
+            <choice>
+                <text>Thank you</text>
+                <replies>0</replies>
+            </choice>
+            <choice>
+                <text>Okay</text>
+                <replies>0</replies>
+            </choice>
+        </choices>
+        <saveAs/>
+    </message>
+    <message>
+        <type>comment</type>
+        <room>Girl&#x27;s Reunion</room>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>2:05 PM</time>
+        <room>Lila</room>
+        <text>In front of your house</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>2:05 PM</time>
+        <room>Lila</room>
+        <text>Get out, quick</text>
+    </message>
+    <message>
+        <type>comment</type>
+        <room>Girl&#x27;s Reunion</room>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>11:17 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Of course I remember</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>11:20 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Your house is still as green as the grass, right? If not, I may have a trouble finding it</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>11:20 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Nope, now it’s as red as strawberry</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>11:21 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>I’ll pick you up, Barb</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>11:21 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>If we get lost at least we’re together</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>11:21 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Check your personal message, Babe ;)</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>11:21 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Will go at 2 p.m</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>11:30 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Btw, Lil, is Lily joining us or not?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>11:35 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Nope</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>11:35 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>I think she’s been depressed lately, shutting herself away in her room</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>11:45 AM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Oh okay.. Too bad :(</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>1:45 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>It’s not that difficult finding that address. I’m already here</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>1:50 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Damn.. So fast</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>1:50 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Haven’t even done my hair</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>2:43 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Guys, I guess I’m lost</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>2:43 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Can’t find Bougenville Street. I’m at St. Peterburg Elementary School</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>2:43 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Where should I go?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>2:43 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>You go straight ahead, turn left when you find a post office then straight on til you see pinkish red painted house</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>2:43 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Alright</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>4:37 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Hey, Gwen, Luna, and Lucy, did any of you see Barbara?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>4:37 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>When Nila was busy with another guest and I went to the bathroom she’s gone</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>4:37 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>And still not replying my message</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>4:40 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Didn&#x27;t she tell you she has another agenda?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>4:40 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Maybe she was in hurry</text>
+    </message>
+    <message>
+        <type>choices</type>
+        <sender>Luna</sender>
+        <time>4:40 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <choices>
+            <choice>
+                <text>How rude of her to not tell Nila that she went</text>
+                <replies>2</replies>
+            </choice>
+            <choice>
+                <text>She had to meet someone, she said</text>
+                <replies>0</replies>
+            </choice>
+        </choices>
+        <saveAs/>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>4:41 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Actually she told me she had to go. I wasn’t focused. Sorry</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>4:41 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>She wanted to go home to dress up for another appointment</text>
+    </message>
+    <message>
+        <type>comment</type>
+        <room>Girl&#x27;s Reunion</room>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>4:42 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Oh.. Okay. Just worried cause I thought she’s gonna go home with me</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>4:42 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Anyway, thank you guys for today!</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>4:42 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>It was so damn fun meeting you all!</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>4:42 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>The cookies are delicious, Nil</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>4:42 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Let me know if you’re all home</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>4:59 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Yupp.. Today was lit</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>4:59 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Big thanks Nila for showing me those stuff</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>4:59 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>I love you guys to the moon and back :*</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>4:59 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>My pleasure :)</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>4:59 PM</time>
+        <room>Girl&#x27;s Reunion</room>
+        <text>Let’s do this again next timmee!</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>5:00 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Evening, guys!</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>5:00 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>What are you guys doing?</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>5:00 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’m so bored ._.</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>5:00 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Just had a nice tea party</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>5:00 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>A young man like you usually is excited about weekends</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>5:00 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>You talk like you’re a few decades older than me, Nila</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>5:00 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Can’t help it haha since you’re always acting so childish</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>5:01 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Try to go outside, Ron</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>5:01 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>The world is more than computer screen and imaginary characters</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>5:01 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Duh.. Just go to the club</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>5:01 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Not really my cup of tea</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>5:01 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Plus, I hate crowds</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Clara</sender>
+        <time>5:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>What a boring life</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>5:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>What a boring life</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>5:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>What a boring life</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>5:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>:(</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>5:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>As a health consultant I suggest you to do yoga</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>5:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I mean, all the hours sitting,scrolling, playing video games? Ugh</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>5:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>^Agree, and find yourself a bimbo</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>5:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>He’ll find one next Saturday</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>5:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I insist on being your wingwoman, Ron</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>5:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>The number of people amused by enviromental epidemiology are boosting nowadays</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>5:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>In case you’re intrigued I can recommend some literature on it</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>5:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>...</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>5:05 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Thank you, guys</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>5:05 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’ll just watch netflix and eat burritos</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>5:05 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Well, that fits you</text>
+    </message>
+    <message>
+        <type>note</type>
+        <sender>Barbara</sender>
+        <time>5:05 PM</time>
+        <room>Class 3&#8211;1</room>
+        <author>Barbara Martin</author>
+        <originDate>Saturday, February 27, 2016</originDate>
+        <originTime>5:05 PM</originTime>
+        <postTo>true</postTo>
+        <text>
+            Rules of Special Class A
+            1.	What’s between us stays between us.
+            2.	Keep our solidarity strong!
+        </text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Barbara</sender>
+        <time>5:05 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>No one talks shit about the other and no one leaves this group for God’s sake</text>
+    </message>
+</root>

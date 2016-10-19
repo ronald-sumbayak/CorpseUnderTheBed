@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        />
+    
+    <FrameLayout
+        android:id="@+id/fragment_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        />
+    
+    <View
+        android:id="@+id/fade_interpolator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="@android:color/black"
+        />
+
+</RelativeLayout>

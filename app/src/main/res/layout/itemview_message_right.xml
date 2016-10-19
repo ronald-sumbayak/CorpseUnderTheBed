@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    tools:ignore="RtlHardcoded"
+    >
+    
+    <LinearLayout
+        android:id="@+id/cmBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="end"
+        android:orientation="vertical"
+        tools:ignore="RtlHardcoded"
+        >
+        
+        <TextView
+            android:id="@+id/cmSender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            
+            android:paddingBottom="2dp"
+            android:paddingEnd="5dp"
+            android:paddingRight="6dp"
+            android:text="Ronald"
+            android:textColor="#ffffffff"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,RtlSymmetry"
+            />
+    
+        <TextView
+            android:id="@+id/cmText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="#ffffffff"
+            android:padding="6dp"
+            android:text="tringLoremIpsum"
+            android:textColor="#ff000000"
+            tools:ignore="HardcodedText"
+            />
+
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/cmReadCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cmTime"
+        android:layout_toLeftOf="@+id/cmBody"
+        android:paddingRight="5dp"
+        android:text="Read x"
+        android:textColor="#ffffffff"
+        android:textSize="12sp"
+        tools:ignore="HardcodedText,RtlSymmetry"
+        />
+    
+    <TextView
+        android:id="@+id/cmTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/cmBody"
+        android:layout_alignRight="@+id/cmReadCount"
+        android:layout_gravity="center_horizontal"
+        android:layout_toLeftOf="@id/cmBody"
+        android:paddingRight="5dp"
+        android:text="06:11 PM"
+        android:textColor="#ffffffff"
+        android:textSize="12sp"
+        tools:ignore="HardcodedText,RtlSymmetry"
+        />
+    
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Corpse Under The Bed</string>
+    
+    <string-array name="room_list">
+        <item>Class 3&#8211;1</item>
+        <item>Girl\'s Reunion</item>
+        <item>Mike</item>
+        <item>Eddie</item>
+        <item>Lila</item>
+        <item>Nathan</item>
+        <item>Barbara</item>
+        <item>Ron</item>
+        <item>Nila</item>
+        <item>Lucy</item>
+        <item>Jacob</item>
+        <item>Clara</item>
+        <item>Gwen</item>
+        <item>Natalie</item>
+    </string-array>
+    
+</resources>
