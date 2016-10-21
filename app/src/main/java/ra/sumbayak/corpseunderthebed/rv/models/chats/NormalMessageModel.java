@@ -11,7 +11,7 @@ public class NormalMessageModel extends InfoMessageModel implements Serializable
     
     public NormalMessageModel (NormalMessage msg) {
         this (
-            msg.getText (), msg.getSender (), msg.getTime ()
+            msg.getText (), msg.getSender (), msg.getTime ().getTimeAsString ()
         );
     }
     
