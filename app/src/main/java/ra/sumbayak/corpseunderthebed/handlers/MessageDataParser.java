@@ -115,7 +115,7 @@ public class MessageDataParser {
             parser.next ();
         }
         
-        return new ChoicesMessage (att.get ("room"), att.get ("time"), att.get ("saveAs"), choicesList);
+        return new ChoicesMessage (att.get ("room"), att.get ("saveAs"), choicesList);
     }
     
     private static List<Choices> pullChoices (XmlResourceParser parser) throws IOException, XmlPullParserException {

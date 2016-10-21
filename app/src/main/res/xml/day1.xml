@@ -9,25 +9,44 @@
         <text>Hey, Luna!</text>
     </message>
     <message>
-        <type>choices</type>    
+        <type>choices</type>
+        <room>Gwen</room>
+        <saveAs/>
+        <choices>
+            <choice>
+                <label>Hey!</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>What?</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>Who is this?</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </message>
+    <message>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>8:48 PM</time>
         <room>Gwen</room>
-        <choices>
-            <choice>
-                <text>Hey!</text>
-                <replies>0</replies>
-            </choice>
-            <choice>
-                <text>What?</text>
-                <replies>0</replies>
-            </choice>
-            <choice>
-                <text>Who is this?</text>
-                <replies>0</replies>
-            </choice>
-        </choices>
-        <saveAs/>
+        <Text>Hey!</Text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>8:48 PM</time>
+        <room>Gwen</room>
+        <Text>What</Text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>8:48 PM</time>
+        <room>Gwen</room>
+        <Text>Who is this?</Text>
     </message>
     <message>
         <type>comment</type>
@@ -322,24 +341,29 @@
     </message>
     <message>
         <type>choices</type>
-        <sender>Luna</sender>
-        <time>8:55 PM</time>
         <room>Class 3&#8211;1</room>
+        <saveAs>Luna&#x27;s condition</saveAs>
         <choices>
             <choice>
-                <text>I&#x27;m fine, I guess.</text>
-                <replies>34</replies>
+                <label>I&#x27;m fine, I guess.</label>
+                <replies>42</replies>
             </choice>
             <choice>
-                <text>Funtastic. How are you guys doing?</text>
-                <replies>12</replies>
+                <label>Funtastic. How are you guys doing?</label>
+                <replies>15</replies>
             </choice>
             <choice>
-                <text>Not so good.</text>
-                <replies>37</replies>
+                <label>Not so good.</label>
+                <replies>42</replies>
             </choice>
         </choices>
-        <saveAs>Luna&#x27;s condition</saveAs>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>8:55 PM</time>
+        <room>Gwen</room>
+        <Text>I&#x27;m fine, I guess.</Text>
     </message>
     <message>
         <type>msg</type>
@@ -378,20 +402,25 @@
     </message>
     <message>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs/>
+        <choices>
+            <choice>
+                <label>I miss you too, guys.</label>
+                <replies>17</replies>
+            </choice>
+            <choice>
+                <label>How are you doing, Lucy?</label>
+                <replies>15</replies>
+            </choice>
+        </choices>
+    </message>
+    <message>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>8:58 PM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>I miss you too, guys.</text>
-                <replies>14</replies>
-            </choice>
-            <choice>
-                <text>How are you doing, Lucy?</text>
-                <replies>11</replies>
-            </choice>
-        </choices>
-        <saveAs/>
+        <text>I miss you too, guys.</text>
     </message>
     <message>
         <type>msg</type>
@@ -409,20 +438,25 @@
     </message>
     <message>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs/>
+        <choices>
+            <choice>
+                <label>Yes</label>
+                <replies>2</replies>
+            </choice>
+            <choice>
+                <label>No</label>
+                <replies>3</replies>
+            </choice>
+        </choices>
+    </message>
+    <message>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>8:59 PM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>Yes</text>
-                <replies>1</replies>
-            </choice>
-            <choice>
-                <text>No</text>
-                <replies>2</replies>
-            </choice>
-        </choices>
-        <saveAs/>
+        <text>Yes</text>
     </message>
     <message>
         <type>msg</type>
@@ -430,6 +464,13 @@
         <time>9:01 PM</time>
         <room>Class 3&#8211;1</room>
         <text>Yippee</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>8:59 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>No</text>
     </message>
     <message>
         <type>msg</type>
@@ -500,6 +541,13 @@
     </message>
     <message>
         <type>msg</type>
+        <sender>Luna</sender>
+        <time>8:58 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>How are you doing, Lucy?</text>
+    </message>
+    <message>
+        <type>msg</type>
         <sender>Lucy</sender>
         <time>8:59 PM</time>
         <room>Class 3&#8211;1</room>
@@ -514,24 +562,43 @@
     </message>
     <message>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs>Respond to Lucy 2</saveAs>
+        <choices>
+            <choice>
+                <label>Cool</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>Good luck with that</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>It&#x27;s been years since the last time we met</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </message>
+    <message>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>9:00 PM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>Cool</text>
-                <replies>0</replies>
-            </choice>
-            <choice>
-                <text>Good luck with that</text>
-                <replies>0</replies>
-            </choice>
-            <choice>
-                <text>It&#x27;s been years since the last time we met</text>
-                <replies>0</replies>
-            </choice>
-        </choices>
-        <saveAs>Respond to Lucy 2</saveAs>
+        <text>Cool</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>9:00 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Good luck with that</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>9:00 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>It&#x27;s been years since the last time we met</text>
     </message>
     <message>
         <type>comment</type>
@@ -606,6 +673,13 @@
     </message>
     <message>
         <type>msg</type>
+        <sender>Luna</sender>
+        <time>8:55 PM</time>
+        <room>Class 3&#8211;1</room>
+        <Text>Funtastic. How are you guys doing?</Text>
+    </message>
+    <message>
+        <type>msg</type>
         <sender>Lucy</sender>
         <time>8:55 PM</time>
         <room>Class 3&#8211;1</room>
@@ -613,20 +687,32 @@
     </message>
     <message>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs/>
+        <choices>
+            <choice>
+                <label>Cool</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>Wow, so proud of you</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </message>
+    <message>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>8:55 PM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>Cool</text>
-                <replies>0</replies>
-            </choice>
-            <choice>
-                <text>Wow, so proud of you</text>
-                <replies>0</replies>
-            </choice>
-        </choices>
-        <saveAs/>
+        <text>Cool</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>8:55 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Wow, so proud of you</text>
     </message>
     <message>
         <type>comment</type>
@@ -697,6 +783,13 @@
     </message>
     <message>
         <type>msg</type>
+        <sender>Luna</sender>
+        <time>8:55 PM</time>
+        <room>Class 3&#8211;1</room>
+        <Text>Not so good.</Text>
+    </message>
+    <message>
+        <type>msg</type>
         <sender>Eddie</sender>
         <time>8:55 PM</time>
         <room>Class 3&#8211;1</room>
@@ -704,20 +797,25 @@
     </message>
     <message>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs>Luna&#x27;s sick</saveAs>
+        <choices>
+            <choice>
+                <label>I’m not feeling well. But it’s all right</label>
+                <replies>14</replies>
+            </choice>
+            <choice>
+                <label>Just problems at work</label>
+                <replies>24</replies>
+            </choice>
+        </choices>
+    </message>
+    <message>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>8:55 PM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>I’m not feeling well. But it’s all right</text>
-                <replies>13</replies>
-            </choice>
-            <choice>
-                <text>Just problems at work</text>
-                <replies>21</replies>
-            </choice>
-        </choices>
-        <saveAs>Luna&#x27;s sick</saveAs>
+        <text>I’m not feeling well. But it’s all right</text>
     </message>
     <message>
         <type>msg</type>
@@ -812,6 +910,13 @@
     </message>
     <message>
         <type>msg</type>
+        <sender>Luna</sender>
+        <time>8:55 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Just problems at work</text>
+    </message>
+    <message>
+        <type>msg</type>
         <sender>Jacob</sender>
         <time>8:56 PM</time>
         <room>Class 3&#8211;1</room>
@@ -819,20 +924,32 @@
     </message>
     <message>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs>Luna&#x27;s line of work</saveAs>
+        <choices>
+            <choice>
+                <label>I’m working as a secretary at an office nearby</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>I’m working at U.S Embassy</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </message>
+    <message>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>8:56 PM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>I’m working as a secretary at an office nearby</text>
-                <replies>0</replies>
-            </choice>
-            <choice>
-                <text>I’m working at U.S Embassy</text>
-                <replies>0</replies>
-            </choice>
-        </choices>
-        <saveAs>Luna&#x27;s line of work</saveAs>
+        <text>I’m working as a secretary at an office nearby</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>8:56 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’m working at U.S Embassy</text>
     </message>
     <message>
         <type>comment</type>
@@ -924,52 +1041,50 @@
     </message>
     <message>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs/>
+        <choices>
+            <choice>
+                <label>It’s not like I’m gonna exhaust myself from reading</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>Okay, I’ll take a good care of myself</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </message>
+    <message>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>9:00 PM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>It’s not like I’m gonna exhaust myself from reading</text>
-                <replies>2</replies>
-            </choice>
-            <choice>
-                <text>Okay, I’ll take a good care of myself</text>
-                <replies>2</replies>
-            </choice>
-        </choices>
-        <saveAs/>
+        <text>It’s not like I’m gonna exhaust myself from reading</text>
     </message>
     <message>
         <type>msg</type>
-        <sender>Mike</sender>
-        <time>9:02 PM</time>
+        <sender>Luna</sender>
+        <time>9:00 PM</time>
         <room>Class 3&#8211;1</room>
-        <text>Btw, if you all are not so busy next Saturday..</text>
-    </message>
-    <message>
-        <type>msg</type>
-        <sender>Mike</sender>
-        <time>9:02 PM</time>
-        <room>Class 3&#8211;1</room>
-        <text>Will you guys please come to my game? :3</text>
-    </message>
-    <message>
-        <type>msg</type>
-        <sender>Mike</sender>
-        <time>9:02 PM</time>
-        <room>Class 3&#8211;1</room>
-        <text>Btw, if you all are not so busy next Saturday..</text>
-    </message>
-    <message>
-        <type>msg</type>
-        <sender>Mike</sender>
-        <time>9:02 PM</time>
-        <room>Class 3&#8211;1</room>
-        <text>Will you guys please come to my game? :3</text>
+        <text>Okay, I’ll take a good care of myself</text>
     </message>
     <message>
         <type>comment</type>
         <room>Class 3&#8211;1</room>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Btw, if you all are not so busy next Saturday..</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Will you guys please come to my game? :3</text>
     </message>
     <message>
         <type>comment</type>
@@ -1100,20 +1215,32 @@
     </message>
     <message>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs/>
+        <choices>
+            <choice>
+                <label>Good luck, Mike</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>I’ll come, maybe</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </message>
+    <message>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>9:04 PM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>Good luck, Mike</text>
-                <replies>0</replies>
-            </choice>
-            <choice>
-                <text>I’ll come, maybe</text>
-                <replies>0</replies>
-            </choice>
-        </choices>
-        <saveAs/>
+        <text>Good luck, Mike</text>
+    </message>
+    <message>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>9:04 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I'll come, maybe</text>
     </message>
     <message>
         <type>comment</type>
