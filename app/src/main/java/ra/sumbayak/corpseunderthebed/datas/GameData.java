@@ -1,7 +1,6 @@
 package ra.sumbayak.corpseunderthebed.datas;
 
 import android.content.Context;
-import android.util.Log;
 
 import java.io.Serializable;
 import java.util.*;
@@ -11,29 +10,23 @@ import ra.sumbayak.corpseunderthebed.datas.msg.Message;
 
 public abstract class GameData implements Serializable {
     
+    protected List<Message> mInbox = new ArrayList<> ();
     protected List<String> mChatList = new ArrayList<> ();
     protected List<String> mDeadFriend = new ArrayList<> ();
-    protected List<Message> mChosenMessage = new ArrayList<> ();
-    protected MessageData mMessageData;
     protected Map<String, RoomData> mRoomData = new HashMap<> ();
-    protected Stack<ChosenChoices> mChosenChoices = new Stack<> ();
+    protected Map<String, String> mSavedChoices = new HashMap<> ();
+    protected Stack<ChosenChoices> mActiveChoices = new Stack<> ();
     
-    protected Integer mDay = 1, mIndex = -1;
+    protected MessageData mMessageData;
+    protected int mDay = 1, mIndex = -1;
+    protected String mUser = "User";
     protected transient OnMessageHandled mPostman;
     
     public abstract void handleMessage (Context context);
     public abstract void handleChoices (Context context, Integer selection);
     public abstract void markMessageAsRead (String room);
-    
-    public Boolean isOnChoices () {
-        for (int x = 0; x < mChatList.size (); x++) {
-            Log.d ("cutb_debug", "room: " + mChatList.get (x) + ", " + mRoomData.get (mChatList.get (x)).isOnChoices ());
-            if (mRoomData.get (mChatList.get (x)).isOnChoices ()) {
-                return true;
-            }
-        }
-        return false;
-    }
+    public abstract boolean isOnChoices ();
+    public abstract int getMessageInterval ();
     
     public List<String> getChatList () {
         return mChatList;
@@ -51,12 +44,8 @@ public abstract class GameData implements Serializable {
         return mMessageData;
     }
     
-    public int getIndex () {
-        return mIndex;
-    }
-    
-    public int getInterval () {
-        return 3;
+    public Message getLastMessage () {
+        return mMessageData.getMessageAt (mIndex);
     }
     
     public interface OnMessageHandled {

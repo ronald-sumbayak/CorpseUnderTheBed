@@ -11,7 +11,7 @@ import android.widget.TextView;
 import ra.sumbayak.corpseunderthebed.R;
 import ra.sumbayak.corpseunderthebed.datas.GameData;
 import ra.sumbayak.corpseunderthebed.datas.RoomData;
-import ra.sumbayak.corpseunderthebed.rv.models.ChatMessageModel;
+import ra.sumbayak.corpseunderthebed.rv.models.chats.NormalMessageModel;
 import ra.sumbayak.corpseunderthebed.rv.viewholders.ChatMessageViewHolder;
 
 public class ChatMessageAdapter extends RecyclerView.Adapter<ChatMessageViewHolder> {
@@ -47,18 +47,23 @@ public class ChatMessageAdapter extends RecyclerView.Adapter<ChatMessageViewHold
     
     @Override
     public void onBindViewHolder (ChatMessageViewHolder holder, int position) {
-        ChatMessageModel msg;
+        NormalMessageModel msg;
         msg = mRoomData.getMessageAt (position);
         
-        if (holder.getItemViewType () == VIEW_TYPE_INFO) bindInfo (holder, msg);
+        switch (holder.getItemViewType ()) {
+            case VIEW_TYPE_USER: 
+            case VIEW_TYPE_MEMBER: bindMessage (holder, msg); break;
+            case VIEW_TYPE_INFO: bindInfoMessage (holder, msg); break;
+        }
+        if (holder.getItemViewType () == VIEW_TYPE_INFO) bindInfoMessage (holder, msg);
         else bindMessage (holder, msg);
     }
     
-    private void bindInfo (ChatMessageViewHolder holder, ChatMessageModel msg) {
-        
+    private void bindInfoMessage (ChatMessageViewHolder holder, NormalMessageModel msg) {
+        holder.getText ().setText (msg.getText ());
     }
     
-    private void bindMessage (ChatMessageViewHolder holder, ChatMessageModel msg) {
+    private void bindMessage (ChatMessageViewHolder holder, NormalMessageModel msg) {
         setText (holder.getSender (), msg.getSender ());
         setText (holder.getText (), msg.getText ());
         setText (holder.getTime (), msg.getTime ());
@@ -66,7 +71,7 @@ public class ChatMessageAdapter extends RecyclerView.Adapter<ChatMessageViewHold
         if (msg.isConsecutive () || msg.getSender ().equals (mRoom)) {
             setVisibility (holder.getSender (), View.GONE);
             Drawable background;
-            background = ContextCompat.getDrawable (holder.getSender ().getContext (), R.drawable.itemview_msg_middle);
+            background = ContextCompat.getDrawable (holder.getSender ().getContext (), R.drawable.itemview_msg);
             holder.getText ().setBackground (background);
         }
         else {
@@ -101,7 +106,7 @@ public class ChatMessageAdapter extends RecyclerView.Adapter<ChatMessageViewHold
     
     @Override
     public int getItemViewType (int position) {
-        ChatMessageModel message = mRoomData.getMessageAt (position);
+        NormalMessageModel message = mRoomData.getMessageAt (position);
         if (message.getSender ().equals ("user")) return VIEW_TYPE_USER;
         else return VIEW_TYPE_MEMBER;
     }

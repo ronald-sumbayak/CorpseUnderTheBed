@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    >
+    
+    <TextView
+        android:id="@+id/noteAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Author Name"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText"
+        />
+    
+    <TextView
+        android:id="@+id/noteTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="06.11 AM"
+        android:textSize="12sp"
+        tools:ignore="HardcodedText"
+        />
+        
+    <TextView
+        android:id="@+id/noteDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="October 20, 2016"
+        android:textSize="12sp"
+        tools:ignore="HardcodedText"
+        />
+    
+    <TextView
+        android:id="@+id/noteBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="A Supermodel Barbara Martin Died After Falling Off A Cliff\n\nBeautiful, humble, loved by many Barbara had died this morning due to cerebral hemorrhage. Police said she accidentally drove to the edge of the cliff due to slippery road. They are still investigating the case. This accident is a big loss to us and we send our deep condolences to her family and friends.\n\nFull story: alaba.ma/jdk89"
+        tools:ignore="HardcodedText"
+        />
+
+</LinearLayout>

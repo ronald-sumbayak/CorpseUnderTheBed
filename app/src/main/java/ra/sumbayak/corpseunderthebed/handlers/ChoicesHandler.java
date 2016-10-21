@@ -7,9 +7,9 @@ import java.io.Serializable;
 import java.util.List;
 
 import ra.sumbayak.corpseunderthebed.datas.RoomData;
-import ra.sumbayak.corpseunderthebed.datas.msg.ChoicesMessage;
+import ra.sumbayak.corpseunderthebed.datas.msg.normal.choices.ChoicesMessage;
 import ra.sumbayak.corpseunderthebed.datas.msg.ChosenChoices;
-import ra.sumbayak.corpseunderthebed.rv.models.ChatMessageModel;
+import ra.sumbayak.corpseunderthebed.rv.models.chats.NormalMessageModel;
 
 public abstract class ChoicesHandler extends MessageHandler implements Serializable {
     
@@ -20,13 +20,13 @@ public abstract class ChoicesHandler extends MessageHandler implements Serializa
         
         elevateChatList (msg.getRoom ());
         
-        ChatMessageModel newMessage;
-        newMessage = new ChatMessageModel (
-            msg.getChoicesAt (selection).getText (), msg.getTime (), getReadCount (msg.getRoom ())
+        NormalMessageModel newMessage;
+        newMessage = new NormalMessageModel (
+            msg.getChoicesAt (selection).getLabel (), msg.getSender (), msg.getTime ().getTimeAsString ()
         );
         
         mRoomData.get (msg.getRoom ()).addNewMessage (newMessage);
-        mChosenMessage.add (msg);
+        mInbox.add (msg);
         calculateChoicesIndex (msg, selection);
         
         mRoomData.get (msg.getRoom ()).setOnChoices (false);
@@ -36,14 +36,14 @@ public abstract class ChoicesHandler extends MessageHandler implements Serializa
         Log.d ("cutb_debug", "at ChoicesHandler.#calculateChoicesIndex");
         Integer skipped = 0, begin, end, max = 0;
         
-        for (int i = 0; i < msg.getChoicesSize (); i++) {
+        for (int i = 0; i < msg.choicesSize (); i++) {
             if (i < selection) skipped += msg.getChoicesAt (i).getReplies ();
             max += msg.getChoicesAt (i).getReplies ();
         }
         
         begin = mIndex + skipped;
         end = begin + msg.getChoicesAt (selection).getReplies ();
-        mChosenChoices.push (new ChosenChoices (begin, end, mIndex + max));
+        mActiveChoices.push (new ChosenChoices (begin, end, mIndex + max));
         
         mIndex = begin;
         Log.d ("cutb_debug", "   Index result: " + mIndex);
@@ -61,7 +61,7 @@ public abstract class ChoicesHandler extends MessageHandler implements Serializa
         }
     }
     
-    private Integer getReadCount (String room) {
+    private int getReadCount (String room) {
         if (mRoomData.get (room).getRoomType () == RoomData.TYPE_GROUP) {
             List<String> memberList;
             memberList = mRoomData.get (room).getMemberList ();
@@ -69,9 +69,7 @@ public abstract class ChoicesHandler extends MessageHandler implements Serializa
             return memberList.size ();
         }
         else {
-            if (mDeadFriend.contains (room)) {
-                return 0;
-            }
+            if (mDeadFriend.contains (room)) return 0;
             else return 1;
         }
     }

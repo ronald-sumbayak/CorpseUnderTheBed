@@ -2,6 +2,7 @@ package ra.sumbayak.corpseunderthebed.handlers;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.util.Log;
 
 import java.io.Serializable;
 
@@ -41,5 +42,20 @@ public class DataHandler extends NotificationHandler implements Serializable {
         while (!roomData.getMessageAt (index).isRead ()) {
             roomData.getMessageAt (index).setRead ();
         }
+    }
+    
+    public boolean isOnChoices () {
+        for (int x = 0; x < mChatList.size (); x++) {
+            Log.d ("cutb_debug", "room: " + mChatList.get (x) + ", " + mRoomData.get (mChatList.get (x)).isOnChoices ());
+            if (mRoomData.get (mChatList.get (x)).isOnChoices ()) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    @Override
+    public int getMessageInterval () {
+        return 2;
     }
 }

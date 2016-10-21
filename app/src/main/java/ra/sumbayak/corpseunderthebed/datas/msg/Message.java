@@ -4,24 +4,26 @@ import java.io.Serializable;
 
 public abstract class Message implements Serializable {
     
-    public final static String TYPE_NORMAL = "msg";
-    public final static String TYPE_CHOICES = "choices";
-    public final static String TYPE_NOTE = "note";
-    public final static String TYPE_INFO = "info";
-    public final static String TYPE_COMMENT = "comment";
+    public static final String TYPE_NORMAL = "msg";
+    public static final String TYPE_CHOICES = "choices";
+    public static final String TYPE_NOTE = "note";
+    public static final String TYPE_INFO = "info";
+    public static final String TYPE_COMMENT = "comment";
     
-    private String mRoom;
+    private String mRoom, mSender;
     
-    public Message (String room) {
-        this.mRoom = room;
+    public Message (String room, String sender) {
+        mSender = sender;
+        mRoom = room;
     }
     
     public String getRoom () {
         return mRoom;
     }
     
+    public String getSender () {
+        return mSender;
+    }
+    
     abstract public String getMessageType ();
-    abstract public String getSender ();
-    abstract public String getText ();
-    abstract public String getTime ();
 }

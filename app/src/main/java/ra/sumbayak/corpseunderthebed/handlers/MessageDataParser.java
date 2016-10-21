@@ -15,24 +15,39 @@ import java.util.Map;
 
 import ra.sumbayak.corpseunderthebed.datas.MessageData;
 import ra.sumbayak.corpseunderthebed.datas.msg.*;
+import ra.sumbayak.corpseunderthebed.datas.msg.comment.CommentMessage;
+import ra.sumbayak.corpseunderthebed.datas.msg.info.InfoMessage;
+import ra.sumbayak.corpseunderthebed.datas.msg.info.InvitationMessage;
+import ra.sumbayak.corpseunderthebed.datas.msg.normal.choices.Choices;
+import ra.sumbayak.corpseunderthebed.datas.msg.normal.choices.ChoicesMessage;
+import ra.sumbayak.corpseunderthebed.datas.msg.normal.NormalMessage;
+import ra.sumbayak.corpseunderthebed.datas.msg.normal.note.NoteMessage;
+import ra.sumbayak.corpseunderthebed.datas.msg.normal.note.Post;
 
 public class MessageDataParser {
     
-    public static void parseMessageData (Context context) {
-        Resources resources = context.getResources ();
-        Integer dayCount = countMessageData (context, resources);
-        String packageName = context.getPackageName ();
-        FileIOHandler io = new FileIOHandler (context);
-        
-        for (int day = 1; day <= dayCount; day++) {
-            String fileName = "day" + day;
-            Integer id = resources.getIdentifier (fileName, "xml", packageName);
-            XmlResourceParser parser = resources.getXml (id);
+    private int mDayCount;
+    private Resources mResources;
+    private String mPackageName;
+    private FileIOHandler mIO;
+    
+    private MessageDataParser (Context context) {
+        mResources = context.getResources ();
+        mDayCount = countMessageData ();
+        mPackageName = context.getPackageName ();
+        mIO = new FileIOHandler (context);
+    }
+    
+    public void parseMessageData () {
+        for (int day = 1; day <= mDayCount; day++) {
+            String fileName = "day" + String.valueOf (day);
+            int id = mResources.getIdentifier (fileName, "xml", mPackageName);
+            XmlResourceParser parser = mResources.getXml (id);
             MessageData messageData;
             
             try {
                 messageData = parseXml (parser);
-                io.saveMessageData (messageData, day);
+                mIO.saveMessageData (messageData, day);
                 parser.close ();
             }
             catch (IOException | XmlPullParserException e) {
@@ -41,7 +56,7 @@ public class MessageDataParser {
         }
     }
     
-    private static MessageData parseXml (XmlResourceParser parser) throws IOException, XmlPullParserException {
+    private MessageData parseXml (XmlResourceParser parser) throws IOException, XmlPullParserException {
         while (parser.getEventType () == XmlPullParser.START_DOCUMENT) {
             parser.next ();
         }
@@ -65,7 +80,7 @@ public class MessageDataParser {
                 case Message.TYPE_CHOICES: messages.add (pullChoicesMessage (parser)); break;
                 case Message.TYPE_NOTE: messages.add (pullNoteMessage (parser)); break;
                 case Message.TYPE_INFO: messages.add (pullInfoMessage (parser)); break;
-                case Message.TYPE_COMMENT: messages.add (skipComment (parser)); break;
+                case Message.TYPE_COMMENT: messages.add (pullCommentMessage (parser)); break;
             }
             
             parser.next ();
@@ -74,7 +89,7 @@ public class MessageDataParser {
         return new MessageData (date, messages);
     }
     
-    private static NormalMessage pullNormalMessage (XmlResourceParser parser) throws IOException, XmlPullParserException {
+    private NormalMessage pullNormalMessage (XmlResourceParser parser) throws IOException, XmlPullParserException {
         Map<String, String> att = new HashMap<> ();
         parser.next ();
         
@@ -83,7 +98,9 @@ public class MessageDataParser {
             parser.next ();
         }
         
-        return new NormalMessage (att.get ("room"), att.get ("sender"), att.get ("time"), att.get ("text"));
+        return new NormalMessage (
+            att.get ("room"), att.get ("sender"), att.get ("time"), att.get ("text")
+        );
     }
     
     private static ChoicesMessage pullChoicesMessage (XmlResourceParser parser) throws IOException, XmlPullParserException {
@@ -98,7 +115,7 @@ public class MessageDataParser {
             parser.next ();
         }
         
-        return new ChoicesMessage (att.get ("room"), att.get ("time"), att.get ("save"), choicesList);
+        return new ChoicesMessage (att.get ("room"), att.get ("time"), att.get ("saveAs"), choicesList);
     }
     
     private static List<Choices> pullChoices (XmlResourceParser parser) throws IOException, XmlPullParserException {
@@ -135,7 +152,9 @@ public class MessageDataParser {
             att.get ("author"), att.get ("originDate"), att.get ("originTime"), att.get ("text")
         );
         
-        return new NoteMessage (att.get ("room"), att.get ("sender"), att.get ("time"), post);
+        return new NoteMessage (
+            att.get ("room"), att.get ("sender"), att.get ("time"), post, Boolean.valueOf (att.get ("saveToNotes"))
+        );
     }
     
     private static InfoMessage pullInfoMessage (XmlResourceParser parser) throws IOException, XmlPullParserException {
@@ -161,7 +180,7 @@ public class MessageDataParser {
         );
     }
     
-    private static Message skipComment (XmlResourceParser parser) throws IOException, XmlPullParserException {
+    private static Message pullCommentMessage (XmlResourceParser parser) throws IOException, XmlPullParserException {
         String room = null;
         parser.next ();
         
@@ -173,11 +192,13 @@ public class MessageDataParser {
         return new CommentMessage (room);
     }
     
-    private static Integer countMessageData (Context context, Resources resources) {
-        Integer dayCount = 0, id;
+    private Integer countMessageData () {
+        int dayCount = 0, id;
         
         do {
-            id = resources.getIdentifier ("day" + (++dayCount), "xml", context.getPackageName ());
+            String fileName;
+            fileName = "day" + String.valueOf (++dayCount);
+            id = mResources.getIdentifier (fileName, "xml", mPackageName);
         }
         while (id != 0);
         

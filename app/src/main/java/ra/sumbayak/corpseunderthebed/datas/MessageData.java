@@ -8,23 +8,19 @@ import ra.sumbayak.corpseunderthebed.datas.msg.Message;
 public class MessageData implements Serializable {
     
     private List<Message> mMessages;
-    private MessageDate mDate;
+    private String mDate;
     
     public MessageData (String date, List<Message> messages) {
         mMessages = messages;
-        mDate = new MessageDate (date);
+        mDate = date;
     }
     
-    public MessageDate getDate () {
+    public String getDate () {
         return mDate;
     }
     
-    public Integer getSize () {
+    public int size () {
         return mMessages.size ();
-    }
-    
-    public List<Message> getMessages () {
-        return mMessages;
     }
     
     public Message getMessageAt (Integer index) {

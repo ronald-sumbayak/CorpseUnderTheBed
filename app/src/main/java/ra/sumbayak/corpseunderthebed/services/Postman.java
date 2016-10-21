@@ -118,7 +118,7 @@ public class Postman extends Service implements GameData.OnMessageHandled {
         
         // post-handleMessage
         io.saveGameData (data);
-        if (!data.isOnChoices ()) createNewAlarm (data.getInterval ());
+        if (!data.isOnChoices ()) createNewAlarm (data.getMessageInterval ());
         notifyFrontEnd ();
     }
     
@@ -133,7 +133,7 @@ public class Postman extends Service implements GameData.OnMessageHandled {
         
         // post-handleChoices
         io.saveGameData (data);
-        createNewAlarm (data.getInterval ());
+        createNewAlarm (data.getMessageInterval ());
         notifyFrontEnd ();
     }
     

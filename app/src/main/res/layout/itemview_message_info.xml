@@ -24,7 +24,7 @@
         android:layout_margin="1dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/itemview_msg_middle"
+        android:background="@drawable/itemview_msg"
         android:text="this is gonna be the text for chat"
         android:textColor="#ffffff"
         />

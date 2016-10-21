@@ -14,7 +14,7 @@ import ra.sumbayak.corpseunderthebed.activities.MainActivity;
 import ra.sumbayak.corpseunderthebed.datas.GameData;
 import ra.sumbayak.corpseunderthebed.datas.RoomData;
 import ra.sumbayak.corpseunderthebed.fragments.ChatFragment;
-import ra.sumbayak.corpseunderthebed.rv.models.ChatMessageModel;
+import ra.sumbayak.corpseunderthebed.rv.models.chats.NormalMessageModel;
 import ra.sumbayak.corpseunderthebed.rv.viewholders.ChatListViewHolder;
 
 public class ChatListAdapter extends RecyclerView.Adapter<ChatListViewHolder> {
@@ -50,7 +50,7 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListViewHolder> {
         setText (holder.getRoom (), roomData.getRoom ());
         
         // last message
-        ChatMessageModel msg = roomData.getMessageAt (-1);
+        NormalMessageModel msg = roomData.getMessageAt (-1);
         if (msg == null)
             setText (holder.getLastMessage (), null);
         else

@@ -22,7 +22,6 @@
             android:id="@+id/cmSender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            
             android:paddingBottom="2dp"
             android:paddingEnd="5dp"
             android:paddingRight="6dp"
@@ -38,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:background="#ffffffff"
+            android:background="@drawable/itemview_msg"
             android:padding="6dp"
             android:text="tringLoremIpsum"
             android:textColor="#ff000000"

@@ -1,15 +1,15 @@
-package ra.sumbayak.corpseunderthebed.datas.msg;
+package ra.sumbayak.corpseunderthebed.datas.msg.normal.note;
 
 import java.io.Serializable;
 
 public class Post implements Serializable {
     
-    private String mAuthor, mDate, mTime, mText;
+    private String mAuthor, mDate, mTime, mBody;
     
-    public Post (String author, String date, String time, String text) {
+    public Post (String author, String date, String time, String body) {
         mAuthor = author;
         mDate = date;
-        mText = text;
+        mBody = body;
         mTime = time;
     }
     
@@ -25,7 +25,7 @@ public class Post implements Serializable {
         return mTime;
     }
     
-    public String getText () {
-        return mText;
+    public String getBody () {
+        return mBody;
     }
 }

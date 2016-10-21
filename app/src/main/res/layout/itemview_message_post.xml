@@ -33,16 +33,40 @@
             tools:ignore="HardcodedText,RtlSymmetry"
             />
         
-        <TextView
-            android:id="@+id/cmText"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="6dp"
+            android:orientation="vertical"
             android:background="@drawable/itemview_msg"
-            android:text="string/LoremIpsum"
-            android:textColor="#ff000000"
-            tools:ignore="HardcodedText"
-            />
+            >
+            
+            <TextView
+                android:id="@+id/cmText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:text="string/LoremIpsumvhdvdhvsdvsdvsdvvdsvsdvsdvsdvvsdvsdvsdvsdvsdvsdvvsdvsv"
+                android:textColor="#ff000000"
+                tools:ignore="HardcodedText"
+                />
+        
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black"
+                />
+            
+            <TextView
+                android:id="@+id/cmpAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:text="Author"
+                android:textColor="#A0000000"
+                tools:ignore="HardcodedText"
+                />
+            
+        </LinearLayout>
         
     </LinearLayout>
     
@@ -55,16 +79,6 @@
         android:paddingLeft="5dp"
         tools:ignore="RtlSymmetry"
         >
-        
-        <TextView
-            android:id="@+id/cmReadCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Read x"
-            android:textColor="#ffffffff"
-            android:textSize="12sp"
-            tools:ignore="HardcodedText"
-            />
     
         <TextView
             android:id="@+id/cmTime"
@@ -79,5 +93,3 @@
     </LinearLayout>
     
 </LinearLayout>
-    
-    

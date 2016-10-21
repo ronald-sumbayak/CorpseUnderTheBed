@@ -19,7 +19,7 @@ import android.widget.LinearLayout;
 import ra.sumbayak.corpseunderthebed.R;
 import ra.sumbayak.corpseunderthebed.activities.MainActivity;
 import ra.sumbayak.corpseunderthebed.datas.GameData;
-import ra.sumbayak.corpseunderthebed.datas.msg.ChoicesMessage;
+import ra.sumbayak.corpseunderthebed.datas.msg.normal.choices.ChoicesMessage;
 import ra.sumbayak.corpseunderthebed.handlers.FileIOHandler;
 import ra.sumbayak.corpseunderthebed.rv.adapters.ChatMessageAdapter;
 import ra.sumbayak.corpseunderthebed.rv.decorations.VerticalSpacingItemDecoration;
@@ -146,7 +146,7 @@ public class ChatFragment extends Fragment implements MainActivity.FragmentLink 
             LayoutInflater inflater;
             inflater = (LayoutInflater) getActivity ().getSystemService (LAYOUT_INFLATER_SERVICE);
         
-            for (int i = 0; i < msg.getChoicesSize (); i++) {
+            for (int i = 0; i < msg.choicesSize (); i++) {
                 Button choices;
                 choices = makeChoicesButton (inflater, msg, i);
                 LinearLayout.LayoutParams params;
@@ -163,10 +163,10 @@ public class ChatFragment extends Fragment implements MainActivity.FragmentLink 
     private Button makeChoicesButton (LayoutInflater inflater, ChoicesMessage msg, final int position) {
         Log.d ("cutb_debug", "at ChatFragment.#makeChoicesButton");
         Log.d ("cutb_debug", "   Position: " + position);
-        Log.d ("cutb_debug", "   Text: " + msg.getChoicesAt (position).getText ());
+        Log.d ("cutb_debug", "   Text: " + msg.getChoicesAt (position).getLabel ());
         Button choices;
         choices = (Button) inflater.inflate (R.layout.itemview_choices, null);
-        choices.setText (msg.getChoicesAt (position).getText ());
+        choices.setText (msg.getChoicesAt (position).getLabel ());
         choices.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick (View v) {

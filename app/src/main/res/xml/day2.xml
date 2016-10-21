@@ -577,12 +577,8 @@
         <author>Barbara Martin</author>
         <originDate>Saturday, February 27, 2016</originDate>
         <originTime>5:05 PM</originTime>
-        <postTo>true</postTo>
-        <text>
-            Rules of Special Class A
-            1.	What’s between us stays between us.
-            2.	Keep our solidarity strong!
-        </text>
+        <saveToNotes>true</saveToNotes>
+        <text>Rules of Special Class A\n1.  What’s between us stays between us.\n2.  Keep our solidarity strong!</text>
     </message>
     <message>
         <type>msg</type>
