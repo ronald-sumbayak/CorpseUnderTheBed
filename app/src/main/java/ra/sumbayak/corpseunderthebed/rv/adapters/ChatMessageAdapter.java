@@ -1,123 +1,85 @@
 package ra.sumbayak.corpseunderthebed.rv.adapters;
 
-import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import ra.sumbayak.corpseunderthebed.R;
-import ra.sumbayak.corpseunderthebed.datas.GameData;
 import ra.sumbayak.corpseunderthebed.datas.RoomData;
-import ra.sumbayak.corpseunderthebed.rv.models.chats.NormalMessageModel;
-import ra.sumbayak.corpseunderthebed.rv.viewholders.ChatMessageViewHolder;
+import ra.sumbayak.corpseunderthebed.rv.models.chats.ChatMessageModel;
+import ra.sumbayak.corpseunderthebed.rv.viewholders.chats.*;
 
 public class ChatMessageAdapter extends RecyclerView.Adapter<ChatMessageViewHolder> {
     
-    private static final int VIEW_TYPE_USER = 0;
-    private static final int VIEW_TYPE_MEMBER = 1;
-    private static final int VIEW_TYPE_INFO = 2;
+    private final int[] mResIdList = {
+        R.layout.itemview_message_info,
+        R.layout.itemview_message_normal,
+        R.layout.itemview_message_user,
+        R.layout.itemview_message_note,
+        R.layout.itemview_message_post
+    };
+    
+    private static final int VIEW_TYPE_INFO = 0;
+    private static final int VIEW_TYPE_NORMAL = 1;
+    private static final int VIEW_TYPE_USER = 2;
+    private static final int VIEW_TYPE_NOTE = 3;
+    private static final int VIEW_TYPE_POST = 4;
     
     private RoomData mRoomData;
-    private String mRoom;
     
-    public ChatMessageAdapter (GameData gameData, String room) {
-        mRoomData = gameData.getRoomData (room);
-        mRoom = room;
+    public ChatMessageAdapter (RoomData roomData) {
+        mRoomData = roomData;
     }
     
     @Override
     public ChatMessageViewHolder onCreateViewHolder (ViewGroup parent, int viewType) {
-        int resId;
-        switch (viewType) {
-            case VIEW_TYPE_USER: resId = R.layout.itemview_message_right; break;
-            case VIEW_TYPE_MEMBER: resId = R.layout.itemview_message_left; break;
-            default: resId = 0; break;
-        }
-        
         LayoutInflater inflater;
         inflater = LayoutInflater.from (parent.getContext ());
     
         View itemView;
-        itemView = inflater.inflate (resId, parent, false);
-        return new ChatMessageViewHolder (itemView);
+        itemView = inflater.inflate (mResIdList[viewType], parent, false);
+        return getViewHolderInstance (viewType, itemView);
+    }
+    
+    private ChatMessageViewHolder getViewHolderInstance (int viewType, View itemView) {
+        switch (viewType) {
+            case VIEW_TYPE_INFO: return new InfoMessageViewHolder (itemView);
+            case VIEW_TYPE_NORMAL: return new NormalMessageViewHolder (itemView);
+            case VIEW_TYPE_USER: return new UserMessageViewHolder (itemView);
+            case VIEW_TYPE_NOTE: return new NoteMessageViewHolder (itemView);
+            case VIEW_TYPE_POST: return new PostMessageViewHolder (itemView);
+            default: return null;
+        }
     }
     
     @Override
     public void onBindViewHolder (ChatMessageViewHolder holder, int position) {
-        NormalMessageModel msg;
-        msg = mRoomData.getMessageAt (position);
-        
-        switch (holder.getItemViewType ()) {
-            case VIEW_TYPE_USER: 
-            case VIEW_TYPE_MEMBER: bindMessage (holder, msg); break;
-            case VIEW_TYPE_INFO: bindInfoMessage (holder, msg); break;
-        }
-        if (holder.getItemViewType () == VIEW_TYPE_INFO) bindInfoMessage (holder, msg);
-        else bindMessage (holder, msg);
-    }
-    
-    private void bindInfoMessage (ChatMessageViewHolder holder, NormalMessageModel msg) {
-        holder.getText ().setText (msg.getText ());
-    }
-    
-    private void bindMessage (ChatMessageViewHolder holder, NormalMessageModel msg) {
-        setText (holder.getSender (), msg.getSender ());
-        setText (holder.getText (), msg.getText ());
-        setText (holder.getTime (), msg.getTime ());
-        
-        if (msg.isConsecutive () || msg.getSender ().equals (mRoom)) {
-            setVisibility (holder.getSender (), View.GONE);
-            Drawable background;
-            background = ContextCompat.getDrawable (holder.getSender ().getContext (), R.drawable.itemview_msg);
-            holder.getText ().setBackground (background);
-        }
-        else {
-            setVisibility (holder.getSender (), View.VISIBLE);
-            Drawable background;
-            background = ContextCompat.getDrawable (holder.getSender ().getContext (), R.drawable.itemview_msg_top);
-            holder.getText ().setBackground (background);
-        }
-        
-        if (msg.getReadCount () == 0) {
-            setVisibility (holder.getReadCount (), View.INVISIBLE);
-        }
-        else {
-            if (mRoomData.getRoomType () == RoomData.TYPE_GROUP) {
-                setText (holder.getReadCount (), "Read " + msg.getReadCount ());
-                setVisibility (holder.getReadCount (), View.VISIBLE);
-            }
-            else {
-                setText (holder.getReadCount (), "Read");
-                setVisibility (holder.getReadCount (), View.VISIBLE);
-            }
-        }
-    }
-    
-    private void setText (TextView textView, String text) {
-        textView.setText (text);
-    }
-    
-    private void setVisibility (TextView textView, int visibility) {
-        textView.setVisibility (visibility);
+        holder.bind (mRoomData, position);
     }
     
     @Override
     public int getItemViewType (int position) {
-        NormalMessageModel message = mRoomData.getMessageAt (position);
-        if (message.getSender ().equals ("user")) return VIEW_TYPE_USER;
-        else return VIEW_TYPE_MEMBER;
+        ChatMessageModel msg;
+        msg = mRoomData.getMessageAt (position);
+        return msg.getMessageType ();
     }
     
     @Override
     public int getItemCount () {
-        return mRoomData.getMessageSize ();
+        return mRoomData.messageSize ();
     }
     
-    public void refreshChatMessage (GameData gameData) {
-        mRoomData = gameData.getRoomData (mRoom);
-        notifyDataSetChanged ();
+    public void refreshChatMessage (RoomData roomData) {
+        Log.d ("cutb_debug", "at ChatMessageAdapter.#refreshChatMessage");
+        Log.d ("cutb_debug", "   new size: " + roomData.messageSize ());
+        Log.d ("cutb_debug", "   old size: " + mRoomData.messageSize ());
+        if (roomData.messageSize () > mRoomData.messageSize ()) {
+            int oldSize;
+            oldSize = mRoomData.messageSize ();
+            mRoomData = roomData;
+            notifyItemInserted (oldSize);
+        }
     }
 }

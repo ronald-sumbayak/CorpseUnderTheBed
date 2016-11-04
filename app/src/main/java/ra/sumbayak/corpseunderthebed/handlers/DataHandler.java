@@ -8,11 +8,16 @@ import java.io.Serializable;
 
 import ra.sumbayak.corpseunderthebed.R;
 import ra.sumbayak.corpseunderthebed.datas.RoomData;
+import ra.sumbayak.corpseunderthebed.rv.models.chats.ChatMessageModel;
+import ra.sumbayak.corpseunderthebed.rv.models.chats.NormalMessageModel;
 
 public class DataHandler extends NotificationHandler implements Serializable {
     
     public DataHandler (Context context) {
-        MessageDataParser.parseMessageData (context);
+        MessageDataParser parser;
+        parser = MessageDataParser.getParser (context);
+        parser.parseMessageData ();
+        
         buildRoomData (context);
         loadDay1 (context);
     }
@@ -27,9 +32,11 @@ public class DataHandler extends NotificationHandler implements Serializable {
     }
     
     private void loadDay1 (Context context) {
-        FileIOHandler io;
-        io = new FileIOHandler (context);
+        Log.d ("cutb_debug", "at DataHandler.#loadDay1");
+        IOHandler io;
+        io = new IOHandler (context);
         mMessageData = io.loadMessageData (mDay);
+        Log.d ("cutb_debug", mDay + " " + mMessageData);
     }
     
     @Override
@@ -38,24 +45,22 @@ public class DataHandler extends NotificationHandler implements Serializable {
         roomData = mRoomData.get (room);
         
         int index;
-        index = roomData.getMessageSize () - 1;
-        while (!roomData.getMessageAt (index).isRead ()) {
-            roomData.getMessageAt (index).setRead ();
-        }
-    }
-    
-    public boolean isOnChoices () {
-        for (int x = 0; x < mChatList.size (); x++) {
-            Log.d ("cutb_debug", "room: " + mChatList.get (x) + ", " + mRoomData.get (mChatList.get (x)).isOnChoices ());
-            if (mRoomData.get (mChatList.get (x)).isOnChoices ()) {
-                return true;
+        index = roomData.messageSize ();
+        while (--index >= 0) {
+            if (roomData.getMessageAt (index).getMessageType () != ChatMessageModel.MESSAGE_TYPE_INFO) {
+                NormalMessageModel msg;
+                msg = (NormalMessageModel) roomData.getMessageAt (index);
+                
+                if (!msg.isRead ()) msg.setRead ();
+                else break;
             }
         }
-        return false;
     }
     
     @Override
     public int getMessageInterval () {
         return 2;
     }
+    
+    
 }

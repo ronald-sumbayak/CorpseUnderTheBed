@@ -15,7 +15,7 @@ public class NormalMessageModel extends InfoMessageModel implements Serializable
         );
     }
     
-    public NormalMessageModel (String text, String sender, String time) {
+    NormalMessageModel (String text, String sender, String time) {
         super (text);
         mSender = sender;
         mTime = time;

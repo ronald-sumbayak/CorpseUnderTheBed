@@ -18,6 +18,12 @@ import ra.sumbayak.corpseunderthebed.activities.MainActivity;
 
 public class LaunchFragment extends Fragment implements MainActivity.FragmentLink {
     
+    @Override
+    public void onAttach (Context context) {
+        super.onAttach (context);
+        setFragmentLink ();
+    }
+    
     @Nullable
     @Override
     public View onCreateView (LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -58,7 +64,7 @@ public class LaunchFragment extends Fragment implements MainActivity.FragmentLin
     }
     
     /**
-     * Build a new {@link AnimatorSet} with a listener which add a {@link MenuFragment} and
+     * Build a new {@link AnimatorSet} with a listener which add a {@link ChatListFragment} and
      * remove this {@link LaunchFragment} attached to it.
      * 
      * @return the created {@link AnimatorSet}.
@@ -70,7 +76,7 @@ public class LaunchFragment extends Fragment implements MainActivity.FragmentLin
         animatorSet.addListener (new Animator.AnimatorListener () {
             @Override
             public void onAnimationStart (Animator animation) {
-                addMenuFragment ();
+                setupMenuFragment ();
             }
     
             @Override
@@ -91,14 +97,15 @@ public class LaunchFragment extends Fragment implements MainActivity.FragmentLin
         return animatorSet;
     }
     
-    private void addMenuFragment () {
-        Log.d ("cutb_debug", "at LaunchFragment.#addMenuFragment");
-        MenuFragment menuFragment;
-        menuFragment = new MenuFragment ();
+    private void setupMenuFragment () {
+        Log.d ("cutb_debug", "at LaunchFragment.#setupMenuFragment");
+        ChatListFragment chatListFragment;
+        chatListFragment = new ChatListFragment ();
         
-        MainActivity mainActivity;
-        mainActivity = (MainActivity) getActivity ();
-        mainActivity.addFragment (R.id.fragment_view, menuFragment, "ChatList");
+        FragmentTransaction ft;
+        ft = getActivity ().getSupportFragmentManager ().beginTransaction ();
+        ft.add (R.id.fragment_view, chatListFragment, "ChatList");
+        ft.commit ();
     }
     
     private void removeLaunchFragment () {
@@ -109,13 +116,9 @@ public class LaunchFragment extends Fragment implements MainActivity.FragmentLin
         ft.commit ();
     }
     
-    @Override
-    public void onAttach (Context context) {
-        super.onAttach (context);
-        setFragmentLink ();
-    }
-    
     private void setFragmentLink () {
-        ((MainActivity) getActivity ()).setFragmentLink (this);
+        MainActivity mainActivity;
+        mainActivity = (MainActivity) getActivity ();
+        mainActivity.setFragmentLink (this);
     }
 }

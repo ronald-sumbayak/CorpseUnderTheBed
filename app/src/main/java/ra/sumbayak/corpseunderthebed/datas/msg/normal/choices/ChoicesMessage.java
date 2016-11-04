@@ -16,16 +16,16 @@ public class ChoicesMessage extends Message implements Serializable {
         mSaveAs = saveAs;
     }
     
-    @Override
-    public String getMessageType () {
-        return TYPE_CHOICES;
-    }
-    
     public Choices getChoicesAt (int index) {
         return mChoicesList.get (index);
     }
     
     public int choicesSize () {
         return mChoicesList.size ();
+    }
+    
+    @Override
+    public String getMessageType () {
+        return TYPE_CHOICES;
     }
 }

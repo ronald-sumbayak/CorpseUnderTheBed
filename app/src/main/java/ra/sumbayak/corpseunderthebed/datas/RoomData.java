@@ -1,17 +1,20 @@
 package ra.sumbayak.corpseunderthebed.datas;
 
+import android.util.Log;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import ra.sumbayak.corpseunderthebed.rv.models.NoteModel;
 import ra.sumbayak.corpseunderthebed.rv.models.chats.ChatMessageModel;
+import ra.sumbayak.corpseunderthebed.rv.models.chats.InfoMessageModel;
 import ra.sumbayak.corpseunderthebed.rv.models.chats.NormalMessageModel;
 
 public class RoomData implements Serializable {
     
-    public static int TYPE_PRIVATE = 0;
-    public static int TYPE_GROUP = 1;
+    public static final int TYPE_PRIVATE = 0;
+    public static final int TYPE_GROUP = 1;
     
     private boolean mOnChoices = false;
     private int mMemberCount = 1, mRoomType = TYPE_PRIVATE;
@@ -22,6 +25,7 @@ public class RoomData implements Serializable {
     
     public RoomData (String room) {
         mRoom = room;
+        mMessageList.add (new InfoMessageModel ("new game"));
     }
     
     public int getMemberCount () {
@@ -36,19 +40,33 @@ public class RoomData implements Serializable {
         return mRoomType;
     }
     
-    public void addNewMessage (ChatMessageModel newMessage) {
-        if (newMessage.getMessageType () == ChatMessageModel.MESSAGE_TYPE_NORMAL) {
-            NormalMessageModel prevMessage;
-            prevMessage = (NormalMessageModel) getMessageAt (-1);
+    public NoteModel getNote (int index) {
+        return mNoteList.get (index);
+    }
     
-            if (prevMessage != null) {
-                if (((NormalMessageModel) newMessage).getSender ().equals (prevMessage.getSender ())) {
-                    ((NormalMessageModel) newMessage).setConsecutive (true);
+    public void addNewMessage (ChatMessageModel newMessage) {
+        if (newMessage.getMessageType () == ChatMessageModel.MESSAGE_TYPE_NORMAL)
+        {
+            if (getMessageAt (-1).getMessageType () == ChatMessageModel.MESSAGE_TYPE_NORMAL) {
+                NormalMessageModel prevMessage;
+                prevMessage = (NormalMessageModel) getMessageAt (-1);
+    
+                if (prevMessage != null) {
+                    if (((NormalMessageModel) newMessage).getSender ().equals (prevMessage.getSender ())) {
+                        ((NormalMessageModel) newMessage).setConsecutive (true);
+                    }
                 }
             }
         }
         
         mMessageList.add (newMessage);
+    }
+    
+    public void removeMessage (int index) {
+        if (mMessageList.size () > 0) {
+            if (index == -1) mMessageList.remove (mMessageList.size () - 1);
+            else mMessageList.remove (index);
+        }
     }
     
     public void addNewNote (NoteModel newNote) {
@@ -62,7 +80,7 @@ public class RoomData implements Serializable {
             msg = mMessageList.get (index);
         }
         catch (IndexOutOfBoundsException e) {
-            if (mMessageList.size () > 0) {
+            if (mMessageList.size () > 0 && index == -1) {
                 msg = mMessageList.get (mMessageList.size () - 1);
             }
         }
@@ -70,8 +88,12 @@ public class RoomData implements Serializable {
         return msg;
     }
     
-    public int getMessageSize () {
+    public int messageSize () {
         return mMessageList.size ();
+    }
+    
+    public int noteSize () {
+        return mNoteList.size ();
     }
     
     public int getUnreadCount () {
@@ -82,8 +104,8 @@ public class RoomData implements Serializable {
                 NormalMessageModel msg;
                 msg = (NormalMessageModel) mMessageList.get (i);
                 
-                if (msg.isRead ()) unreadCount++;
-                else break;
+                if (msg.isRead ()) break;
+                unreadCount++;
             }
         }
     
@@ -91,6 +113,8 @@ public class RoomData implements Serializable {
     }
     
     public void setOnChoices (Boolean onChoices) {
+        Log.d ("cutb_debug", "at RoomData.#setOnChoices");
+        Log.d ("cutb_debug", "   onChoices: " + onChoices);
         mOnChoices = onChoices;
     }
     

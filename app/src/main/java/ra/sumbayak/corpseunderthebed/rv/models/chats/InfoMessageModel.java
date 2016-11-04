@@ -4,14 +4,8 @@ import java.io.Serializable;
 
 public class InfoMessageModel extends ChatMessageModel implements Serializable {
     
-    protected String mText;
-    
     public InfoMessageModel (String text) {
-        mText = text;
-    }
-    
-    public String getText () {
-        return mText;
+        super (text);
     }
     
     @Override

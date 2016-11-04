@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_gravity="left"
+    android:layout_marginRight="20dp"
     android:baselineAligned="false"
-    android:layout_marginRight="15dp"
     android:gravity="left|bottom"
     android:orientation="horizontal"
     tools:ignore="RtlHardcoded"
     >
     
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:gravity="left"
         android:orientation="vertical"
         >
         
@@ -22,12 +24,10 @@
             android:id="@+id/msgSender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="2dp"
-            android:paddingTop="6dp"
-            android:paddingLeft="6dp"
-            android:paddingRight="6dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginLeft="10dp"
             android:text="Ronald"
-            android:textColor="#ffffff"
+            android:textColor="@android:color/white"
             android:textSize="12sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText,RtlSymmetry"
@@ -36,20 +36,23 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:background="@drawable/background_msg_normal"
+            android:orientation="vertical"
             >
             
             <TextView
                 android:id="@+id/msgText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="6dp"
-                android:text="string/LoremIpsumvhdvdhvsdvsdvsdvvdsvsdvsdvsdvvsdvsdvsdvsdvsdvsdvvsdvsv"
-                android:textColor="#ff000000"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:paddingBottom="5dp"
+                android:text="@string/LoremIpsum"
+                android:gravity="left"
+                android:textColor="@android:color/black"
                 tools:ignore="HardcodedText"
                 />
-        
+            
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -57,12 +60,15 @@
                 />
             
             <TextView
-                android:id="@+id/cmpAuthor"
+                android:id="@+id/msgAuthor"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="6dp"
                 android:text="Author"
-                android:textColor="#A0000000"
+                android:paddingTop="5dp"
+                android:textColor="#80000000"
+                android:textSize="12sp"
+                android:gravity="left"
                 tools:ignore="HardcodedText"
                 />
             
@@ -73,19 +79,17 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:gravity="bottom"
+        android:layout_marginLeft="5dp"
         android:orientation="vertical"
-        android:paddingLeft="5dp"
-        tools:ignore="RtlSymmetry"
+        android:gravity="left"
         >
-    
+        
         <TextView
             android:id="@+id/msgTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="06:11 PM"
-            android:textColor="#ffffffff"
+            android:textColor="@android:color/white"
             android:textSize="12sp"
             tools:ignore="HardcodedText"
             />

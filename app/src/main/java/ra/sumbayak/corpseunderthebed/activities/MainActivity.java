@@ -6,26 +6,24 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 
-import ra.sumbayak.corpseunderthebed.runnables.FadingAnimation;
 import ra.sumbayak.corpseunderthebed.R;
-import ra.sumbayak.corpseunderthebed.datas.GameData;
-import ra.sumbayak.corpseunderthebed.fragments.ChatFragment;
+import ra.sumbayak.corpseunderthebed.fragments.ChatMessageFragment;
 import ra.sumbayak.corpseunderthebed.fragments.LaunchFragment;
-import ra.sumbayak.corpseunderthebed.handlers.FileIOHandler;
+import ra.sumbayak.corpseunderthebed.fragments.NoteFragment;
+import ra.sumbayak.corpseunderthebed.runnables.FadingAnimation;
 import ra.sumbayak.corpseunderthebed.services.Postman;
 
 public class MainActivity extends AppCompatActivity{
     
     private FragmentLink mFragmentLink;
-    private GameData mGameData;
     private BroadcastReceiver mReceiver = new BroadcastReceiver () {
         @Override
         public void onReceive (Context context, Intent intent) {
@@ -46,18 +44,15 @@ public class MainActivity extends AppCompatActivity{
     protected void onResume () {
         Log.d ("cutb_debug", "at MainActivity.#onResume");
         super.onResume ();
-        FileIOHandler io;
-        io = new FileIOHandler (this);
-        mGameData = io.loadGameData ();
         registerReceiver (mReceiver, mFilter);
     }
     
-    @Override
-    public void onAttachFragment (Fragment fragment) {
-        Log.d ("cutb_debug", "at MainActivity.#onAttachFragment");
-        super.onAttachFragment (fragment);
-        mFragmentLink = (FragmentLink) fragment;
-    }
+//    @Override
+//    public void onAttachFragment (Fragment fragment) {
+//        Log.d ("cutb_debug", "at MainActivity.#onAttachFragment");
+//        super.onAttachFragment (fragment);
+//        mFragmentLink = (FragmentLink) fragment;
+//    }
     
     @Override
     protected void onPause () {
@@ -67,8 +62,7 @@ public class MainActivity extends AppCompatActivity{
     }
     
     private void setupLaunchActivities () {
-        Log.d ("cutb_debug", "at MainActivity.#setupLaunchActivities");
-        addFragment (android.R.id.content, new LaunchFragment (), "WelcomeScreen");
+        setLaunchFragment ();
         contactPostman ();
     }
     
@@ -82,63 +76,42 @@ public class MainActivity extends AppCompatActivity{
         Log.d ("cutb_debug", "at MainActivity.#setToolbar");
         Toolbar toolbar;
         toolbar = (Toolbar) findViewById (R.id.toolbar);
-        toolbar.setTitleTextColor (Color.parseColor ("#ffffff"));
+        toolbar.setTitleTextColor (Color.parseColor ("#dddddd"));
         setSupportActionBar (toolbar);
+    }
+    
+    private void setLaunchFragment () {
+        FragmentTransaction ft;
+        ft = getSupportFragmentManager ().beginTransaction ();
+        ft.add (android.R.id.content, new LaunchFragment (), "WelcomeScreen");
+        ft.commit ();
     }
     
     private void contactPostman () {
         Log.d ("cutb_debug", "at MainActivity.#contactPostman");
         Intent intent;
-        intent = new Intent (MainActivity.this, Postman.class);
+        intent = new Intent (this, Postman.class);
         intent.setAction ("cutb.LAUNCHER");
         startService (intent);
     }
     
-    public void addFragment (@IdRes int containerViewId, Fragment fragment, String tag) {
-        Log.d ("cutb_debug", "at MainActivity.#addFragment");
-        Log.i ("cutb_debug", "   To      : " + findViewById (containerViewId));
-        Log.i ("cutb_debug", "   Fragment: " + fragment.getClass ().getSimpleName ());
-        Log.i ("cutb_debug", "   Tag     : " + tag);
-        FragmentTransaction ft;
-        ft = getSupportFragmentManager ().beginTransaction ();
-        ft.add (containerViewId, fragment, tag);
-        ft.commit ();
-    }
-    
-    public void replaceFragment (@IdRes int containerViewId, Fragment fragment, String tag) {
-        Log.d ("cutb_debug", "at MainActivity.#replaceFragment");
-        Log.i ("cutb_debug", "   To      : " + findViewById (containerViewId));
-        Log.i ("cutb_debug", "   Fragment: " + fragment.getClass ().getSimpleName ());
-        Log.i ("cutb_debug", "   Tag     : " + tag);
-        FragmentTransaction ft;
-        ft = getSupportFragmentManager ().beginTransaction ();
-        ft.addToBackStack (null);
-        ft.replace (containerViewId, fragment, tag);
-        ft.commit ();
-    }
-    
-    public GameData getGameData () {
-        return mGameData;
-    }
-    
     private void onBroadcastReceived () {
         Log.d ("cutb_debug", "at MainActivity.#onBroadcastReceived");
-        FileIOHandler io;
-        io = new FileIOHandler (this);
-        mGameData = io.loadGameData ();
         mFragmentLink.onBroadcastReceived ();
     }
     
     @Override
     public void onBackPressed () {
         Log.d ("cutb_debug", "at MainActivity.#onBackPressed");
-        if (mFragmentLink instanceof ChatFragment) {
+        if (mFragmentLink instanceof ChatMessageFragment || mFragmentLink instanceof NoteFragment) {
             FadingAnimation fadingAnimation;
             fadingAnimation = new FadingAnimation (this);
             fadingAnimation.setFadeInEnd (new FadingAnimation.FadeInAnimationEnd () {
                 @Override
                 public void onFadeAnimationEnd () {
                     MainActivity.super.onBackPressed ();
+                    assert getSupportActionBar () != null;
+                    getSupportActionBar ().setDisplayHomeAsUpEnabled (false);
                 }
             });
             fadingAnimation.run ();
@@ -151,5 +124,13 @@ public class MainActivity extends AppCompatActivity{
     
     public interface FragmentLink {
         void onBroadcastReceived ();
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item) {
+        switch (item.getItemId ()) {
+            case android.R.id.home: onBackPressed (); return true;
+            default: return super.onOptionsItemSelected (item);
+        }
     }
 }

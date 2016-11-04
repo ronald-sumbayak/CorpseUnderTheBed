@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <description>Day Zero, Beginning of the terror :v.</description>
+    <date>Thursday, February 25</date>
+    <message>
+        <type>comment</type>
+        <writer>Ronald</writer>
+        <text>This message data intentionally left blank to introduce algorithms to day1.</text>
+    </message>
+</root>

@@ -8,12 +8,22 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import java.util.Calendar;
+
 import ra.sumbayak.corpseunderthebed.datas.GameData;
 import ra.sumbayak.corpseunderthebed.handlers.DataHandler;
-import ra.sumbayak.corpseunderthebed.handlers.FileIOHandler;
+import ra.sumbayak.corpseunderthebed.handlers.IOHandler;
 import ra.sumbayak.corpseunderthebed.receivers.AlarmReceiver;
 
-public class Postman extends Service implements GameData.OnMessageHandled {
+public class Postman extends Service implements GameData.OnDataHandled {
+    
+    private IOHandler mIO;
+    
+    @Override
+    public void onCreate () {
+        super.onCreate ();
+        mIO = new IOHandler (this);
+    }
     
     @Override
     public int onStartCommand (Intent intent, int flags, int startId) {
@@ -39,49 +49,51 @@ public class Postman extends Service implements GameData.OnMessageHandled {
     }
     
     private void verifyGameData () {
-        Log.d ("cutb_debug", "at Postman.#verifyGameData");
-        FileIOHandler io;
-        io = new FileIOHandler (this);
-        
-        if (!io.isGameDataExist ()) {
+        if (!mIO.isGameDataExist ()) {
             GameData data;
             data = new DataHandler (this);
-            io.saveGameData (data);
+            mIO.saveGameData (data);
         }
     }
     
     private void verifyAlarm () {
-        Log.d ("cutb_debug", "at Postman.#verifyGameData");
         PendingIntent pendingIntent;
-        pendingIntent = makePendingIntent (PendingIntent.FLAG_NO_CREATE);
+        pendingIntent = makePendingIntent (0);
         
-        if (pendingIntent == null) {
-            createNewAlarm (3);
-        }
+        if (pendingIntent == null) createNewAlarm (3);
+        else notifyFrontEnd ();
     }
     
-    private void createNewAlarm (int s) {
+    /**
+     * Create new alarm that will goes off at specified time (in seconds).
+     * @param s    time in seconds in which the alarm will be go off.
+     */
+    @Override
+    public void createNewAlarm (long s) {
         Log.d ("cutb_debug", "at Postman.#createNewAlarm");
         PendingIntent pendingIntent;
-        pendingIntent = makePendingIntent (PendingIntent.FLAG_UPDATE_CURRENT);
+        pendingIntent = makePendingIntent (1);
         long ms;
         ms = getAlarmClock (s);
         triggerAlarm (pendingIntent, ms);
     }
     
-    private PendingIntent makePendingIntent (int flags) {
-        Log.d ("cutb_debug", "at Postman.#makePendingIntent");
+    private PendingIntent makePendingIntent (int mode) {
+        int[] flags = {
+            PendingIntent.FLAG_NO_CREATE,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        };
+        
         Intent intent;
         intent = new Intent (this, AlarmReceiver.class);
         intent.setAction ("cutb.ALARM");
         
         PendingIntent pendingIntent;
-        pendingIntent = PendingIntent.getBroadcast (this, 611, intent, flags);
+        pendingIntent = PendingIntent.getBroadcast (this, 611, intent, flags[mode]);
         return pendingIntent;
     }
     
-    private long getAlarmClock (int s) {
-        Log.d ("cutb_debug", "at Postman.#getAlarmClock");
+    private long getAlarmClock (long s) {
         long ms;
         ms = System.currentTimeMillis () + (s * 1000);
         return ms;
@@ -90,57 +102,52 @@ public class Postman extends Service implements GameData.OnMessageHandled {
     /**
      * trigger alarm manager with the specified pending intent at given time.
      * 
-     * @param pendingIntent    PendingIntent to be used by the System. 
+     * @param pendingIntent    PendingIntent to be used by the System.
      * @param ms               time in which the alarm will be triggered (in milliseconds).
      */
     private void triggerAlarm (PendingIntent pendingIntent, long ms) {
-        Log.d ("cutb_debug", "at Postman.#triggerAlarm");
         AlarmManager alarmManager;
         alarmManager = (AlarmManager) getSystemService (ALARM_SERVICE);
         alarmManager.set (AlarmManager.RTC_WAKEUP, ms, pendingIntent);
     }
     
-    private void notifyFrontEnd () {
+    private void processMessage () {
+        Log.d ("cutb_debug", "at Postman.#processMessage");
+        mIO.mergeGameData ();
+        notifyFrontEnd ();
+        
+        GameData data;
+        data = mIO.loadGameData ();
+        data.handleMessage (this);
+    }
+    
+    private void processChoices (int selection) {
+        Log.d ("cutb_debug", "at Postman.#processChoices");
+        mIO.mergeGameData ();
+        
+        GameData data;
+        data = mIO.loadGameData ();
+        data.handleChoices (this, selection);
+    }
+    
+    @Override
+    public void notifyFrontEnd () {
         Log.d ("cutb_debug", "at Postman.#notifyFrontEnd");
         Intent intent;
         intent = new Intent ("cutb.MESSAGE");
         sendBroadcast (intent);
     }
     
-    private void processMessage () {
-        Log.d ("cutb_debug", "at Postman.#processMessage");
-        FileIOHandler io;
-        io = new FileIOHandler (this);
-        
-        GameData data;
-        data = io.loadGameData ();
-        data.handleMessage (this);
-        
-        // post-handleMessage
-        io.saveGameData (data);
-        if (!data.isOnChoices ()) createNewAlarm (data.getMessageInterval ());
-        notifyFrontEnd ();
-    }
-    
-    private void processChoices (int selection) {
-        Log.d ("cutb_debug", "at Postman.#processChoices");
-        FileIOHandler io;
-        io = new FileIOHandler (this);
-        
-        GameData data;
-        data = io.loadGameData ();
-        data.handleChoices (this, selection);
-        
-        // post-handleChoices
-        io.saveGameData (data);
-        createNewAlarm (data.getMessageInterval ());
-        notifyFrontEnd ();
+    @Override
+    public void pendingGameForNextDay (Calendar calendar) {
+        long s;
+        s = calendar.getTimeInMillis () / 1000;
+        createNewAlarm (s);
     }
     
     @Nullable
     @Override
     public IBinder onBind (Intent intent) {
-        Log.d ("cutb_debug", "at Postman.#onBind");
         return null;
     }
 }

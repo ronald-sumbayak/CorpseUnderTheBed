@@ -13,8 +13,8 @@ public abstract class Message implements Serializable {
     private String mRoom, mSender;
     
     public Message (String room, String sender) {
-        mSender = sender;
         mRoom = room;
+        mSender = sender;
     }
     
     public String getRoom () {

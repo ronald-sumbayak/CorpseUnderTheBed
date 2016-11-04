@@ -144,9 +144,7 @@
         <originDate>February 28, 2016</originDate>
         <originTime>10:30 AM</originTime>
         <saveToNotes>false</saveToNotes>
-        <text>A Supermodel Barbara Martin Died After Falling Off A Cliff Beautiful, humble, loved by many Barbara had died this morning due to cerebral hemorrhage. Police said she accidentally drove to the edge of the cliff due to slippery road. They are still investigating the case. This accident is a big loss to us and we send our deep condolences to her family and friends.
-            
-            Full story: alaba.ma/jdk89</text>
+        <body>A Supermodel Barbara Martin Died After Falling Off A Cliff\n\nBeautiful, humble, loved by many Barbara had died this morning due to cerebral hemorrhage. Police said she accidentally drove to the edge of the cliff due to slippery road. They are still investigating the case. This accident is a big loss to us and we send our deep condolences to her family and friends.\n\nFull story: alaba.ma/jdk89</body>
     </messages>
     <messages>
         <type>msg</type>
@@ -192,20 +190,32 @@
     </messages>
     <messages>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs/>
+        <choices>
+            <choice>
+                <label>I can’t believe it, too</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>It’s official. The police just investigated me</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>11:04 AM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>I can’t believe it, too</text>
-                <replies>0</replies>
-            </choice>
-            <choice>
-                <text>It’s official. The police just investigated me</text>
-                <replies>0</replies>
-            </choice>
-        </choices>
-        <saveAs/>
+        <text>I can’t believe it, too</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>11:04 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>It’s official. The police just investigated me</text>
     </messages>
     <messages>
         <type>comment</type>
@@ -213,20 +223,32 @@
     </messages>
     <messages>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs>Reaction to Barbara&#x27;s death</saveAs>
+        <choices>
+            <choice>
+                <label>God just picked the most beautiful flower from His garden</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>But still, she’ll be cherished and remembered by many</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>11:04</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>God just picked the most beautiful flower from His garden</text>
-                <replies>0</replies>
-            </choice>
-            <choice>
-                <text>But still, she’ll be cherished and remembered by many</text>
-                <replies>0</replies>
-            </choice>
-        </choices>
-        <saveAs>Reaction to Barbara&#x27;s death</saveAs>
+        <text>God just picked the most beautiful flower from His garden</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>11:04</time>
+        <room>Class 3&#8211;1</room>
+        <text>But still, she’ll be cherished and remembered by many</text>
     </messages>
     <messages>
         <type>comment</type>
@@ -283,20 +305,32 @@
     </messages>
     <messages>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs/>
+        <choices>
+            <choice>
+                <label>We can visit her grave later</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>She’s a rising public figure</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>11:35 AM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>We can visit her grave later</text>
-                <replies>0</replies>
-            </choice>
-            <choice>
-                <text>She’s a rising public figure</text>
-                <replies>0</replies>
-            </choice>
-        </choices>
-        <saveAs/>
+        <text>We can visit her grave later</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>11:35 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>She’s a rising public figure</text>
     </messages>
     <messages>
         <type>comment</type>
@@ -745,20 +779,32 @@
     </messages>
     <messages>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs/>
+        <choices>
+            <choice>
+                <label>Too many sad news for one day</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>Everything happens for a reason</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>9:08 PM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>Too many sad news for one day</text>
-                <replies>0</replies>
-            </choice>
-            <choice>
-                <text>Everything happens for a reason</text>
-                <replies>0</replies>
-            </choice>
-        </choices>
-        <saveAs/>
+        <text>Too many sad news for one day</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>9:08 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Everything happens for a reason</text>
     </messages>
     <messages>
         <type>comment</type>
@@ -787,24 +833,36 @@
     </messages>
     <messages>
         <type>choices</type>
-        <sender>Luna</sender>
-        <time>9:08 PM</time>
         <room>Class 3&#8211;1</room>
         <choices>
             <choice>
-                <text>Maybe, we might never know</text>
-                <replies>21</replies>
+                <label>Maybe, we might never know</label>
+                <replies>27</replies>
             </choice>
             <choice>
-                <text>I think so</text>
-                <replies>20</replies>
+                <label>I think so</label>
+                <replies>26</replies>
             </choice>
             <choice>
-                <text>I don’t think so</text>
-                <replies>10</replies>
+                <label>I don’t think so</label>
+                <replies>13</replies>
             </choice>
         </choices>
         <saveAs/>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>9:08 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Maybe, we might never know</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>9:08 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I don’t think so</text>
     </messages>
     <messages>
         <type>msg</type>
@@ -843,20 +901,25 @@
     </messages>
     <messages>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs/>
+        <choices>
+            <choice>
+                <label>Cool</label>
+                <replies>3</replies>
+            </choice>
+            <choice>
+                <label>Nope</label>
+                <replies>8</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>9:10 PM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>Cool</text>
-                <replies>2</replies>
-            </choice>
-            <choice>
-                <text>Nope</text>
-                <replies>4</replies>
-            </choice>
-        </choices>
-        <saveAs/>
+        <text>Cool</text>
     </messages>
     <messages>
         <type>msg</type>
@@ -874,6 +937,13 @@
     </messages>
     <messages>
         <type>msg</type>
+        <sender>Luna</sender>
+        <time>9:10 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Nope</text>
+    </messages>
+    <messages>
+        <type>msg</type>
         <sender>Eddie</sender>
         <time>9:10 PM</time>
         <room>Class 3&#8211;1</room>
@@ -888,24 +958,43 @@
     </messages>
     <messages>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs/>
+        <choices>
+            <choice>
+                <label>I just don’t feel like doing it</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>I’ll be out of town</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>I don’t think it’s a good idea</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>9:10 PM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>I just don’t feel like doing it</text>
-                <replies>0</replies>
-            </choice>
-            <choice>
-                <text>I’ll be out of town</text>
-                <replies>0</replies>
-            </choice>
-            <choice>
-                <text>I don’t think it’s a good idea</text>
-                <replies>0</replies>
-            </choice>
-        </choices>
-        <saveAs/>
+        <text>I just don’t feel like doing it</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>9:10 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’ll be out of town</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>9:10 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I don’t think it’s a good idea</text>
     </messages>
     <messages>
         <type>comment</type>
@@ -976,6 +1065,13 @@
     </messages>
     <messages>
         <type>msg</type>
+        <sender>Luna</sender>
+        <time>9:08 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I think so</text>
+    </messages>
+    <messages>
+        <type>msg</type>
         <sender>Natalie</sender>
         <time>9:08 PM</time>
         <room>Class 3&#8211;1</room>
@@ -1011,20 +1107,25 @@
     </messages>
     <messages>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs/>
+        <choices>
+            <choice>
+                <label>Cool</label>
+                <replies>3</replies>
+            </choice>
+            <choice>
+                <label>Nope</label>
+                <replies>7</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>9:10 PM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>Cool</text>
-                <replies>2</replies>
-            </choice>
-            <choice>
-                <text>Nope</text>
-                <replies>3</replies>
-            </choice>
-        </choices>
-        <saveAs/>
+        <text>Cool</text>
     </messages>
     <messages>
         <type>msg</type>
@@ -1042,6 +1143,13 @@
     </messages>
     <messages>
         <type>msg</type>
+        <sender>Luna</sender>
+        <time>9:10 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Nope</text>
+    </messages>
+    <messages>
+        <type>msg</type>
         <sender>Eddie</sender>
         <time>9:12 PM</time>
         <room>Class 3&#8211;1</room>
@@ -1049,24 +1157,43 @@
     </messages>
     <messages>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs/>
+        <choices>
+            <choice>
+                <label>I just don’t feel like doing it</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>I’ll be out of town</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>I don’t think it’s a good idea</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>9:12 PM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>I just don’t feel like doing it</text>
-                <replies>0</replies>
-            </choice>
-            <choice>
-                <text>I’ll be out of town</text>
-                <replies>0</replies>
-            </choice>
-            <choice>
-                <text>I don’t think it’s a good idea</text>
-                <replies>0</replies>
-            </choice>
-        </choices>
-        <saveAs/>
+        <text>I just don’t feel like doing it</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>9:12 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’ll be out of town</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>9:12 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I don’t think it’s a good idea</text>
     </messages>
     <messages>
         <type>comment</type>
@@ -1131,6 +1258,13 @@
     </messages>
     <messages>
         <type>msg</type>
+        <sender>Luna</sender>
+        <time>9:08 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I don’t think so</text>
+    </messages>
+    <messages>
+        <type>msg</type>
         <sender>Lila</sender>
         <time>9:09 PM</time>
         <room>Class 3&#8211;1</room>
@@ -1138,20 +1272,25 @@
     </messages>
     <messages>
         <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <saveAs/>
+        <choices>
+            <choice>
+                <label>It just doesn’t feel like her</label>
+                <replies>5</replies>
+            </choice>
+            <choice>
+                <label>Why didn’t she arrange a reunion earlier?</label>
+                <replies>4</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
         <sender>Luna</sender>
         <time>9:09 PM</time>
         <room>Class 3&#8211;1</room>
-        <choices>
-            <choice>
-                <text>It just doesn’t feel like her</text>
-                <replies>4</replies>
-            </choice>
-            <choice>
-                <text>Why didn’t she arrange a reunion earlier?</text>
-                <replies>3</replies>
-            </choice>
-        </choices>
-        <saveAs/>
+        <text>It just doesn’t feel like her</text>
     </messages>
     <messages>
         <type>msg</type>
@@ -1180,6 +1319,13 @@
         <time>9:09 PM</time>
         <room>Class 3&#8211;1</room>
         <text>I think Ron&#x27;s right.</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Luna</sender>
+        <time>9:09 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Why didn’t she arrange a reunion earlier?</text>
     </messages>
     <messages>
         <type>msg</type>

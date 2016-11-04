@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="25dp"
+    android:orientation="vertical"
+    android:gravity="right"
+    tools:ignore="RtlHardcoded"
+    >
+    
+    <TextView
+        android:id="@+id/msgSender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginRight="4dp"
+        android:text="Ronald"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,RtlHardcoded"
+        />
+    
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        
+        <TextView
+            android:id="@+id/msgText"
+            android:background="@drawable/background_msg_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textAlignment="gravity"
+            android:gravity="right"
+            android:layout_toRightOf="@id/msgTime"
+            android:layout_marginLeft="5dp"
+            android:text="@string/LoremIpsum"
+            />
+        
+        <TextView
+            android:id="@+id/msgTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="06:11 AM"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_alignBottom="@id/msgText"
+            tools:ignore="HardcodedText,SmallSp"
+            />
+        
+        <TextView
+            android:id="@+id/msgReadCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Read"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_toLeftOf="@id/msgText"
+            android:layout_above="@id/msgTime"
+            tools:ignore="HardcodedText,SmallSp"
+            />
+        
+    </RelativeLayout>
+
+</LinearLayout>

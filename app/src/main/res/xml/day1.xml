@@ -1,4 +1,7 @@
-<root>
+<root
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UnusedResources"
+    >
     <description>First day, chapter 1</description>
     <date>Friday, February 26</date>
     <message>
@@ -32,21 +35,21 @@
         <sender>Luna</sender>
         <time>8:48 PM</time>
         <room>Gwen</room>
-        <Text>Hey!</Text>
+        <text>Hey!</text>
     </message>
     <message>
         <type>msg</type>
         <sender>Luna</sender>
         <time>8:48 PM</time>
         <room>Gwen</room>
-        <Text>What</Text>
+        <text>What</text>
     </message>
     <message>
         <type>msg</type>
         <sender>Luna</sender>
         <time>8:48 PM</time>
         <room>Gwen</room>
-        <Text>Who is this?</Text>
+        <text>Who is this?</text>
     </message>
     <message>
         <type>comment</type>
@@ -73,13 +76,18 @@
         <room>Gwen</room>
         <text>Let&#x27;s join</text>
     </message>
+    
+    <!-- TODO list all member of the room -->
     <message>
         <type>info</type>
         <cat>invitation</cat>
         <room>Class 3&#8211;1</room>
-        <members>15</members>
-        <memberList>Gwen,Barbara</memberList>
+        <memberCount>15</memberCount>
+        <memberList>Gwen,Barbara,Eddie,Jacob,Ron,Clara,Lila,Lucy,Nila,Mike,Nathan</memberList>
     </message>
+    
+    <!-- TODO ’ or ' ? -->
+    <!-- TODO &#8211; or - -->
     <message>
         <type>msg</type>
         <sender>Barbara</sender>
@@ -362,8 +370,8 @@
         <type>msg</type>
         <sender>Luna</sender>
         <time>8:55 PM</time>
-        <room>Gwen</room>
-        <Text>I&#x27;m fine, I guess.</Text>
+        <room>Class 3&#8211;1</room>
+        <text>I&#x27;m fine, I guess.</text>
     </message>
     <message>
         <type>msg</type>
@@ -537,7 +545,7 @@
         <sender>Mike</sender>
         <time>9:01 PM</time>
         <room>Class 3&#8211;1</room>
-        <text>Girl&#x27;s reunion -_-</text>
+        <text>Girls Reunion -_-</text>
     </message>
     <message>
         <type>msg</type>
@@ -676,7 +684,7 @@
         <sender>Luna</sender>
         <time>8:55 PM</time>
         <room>Class 3&#8211;1</room>
-        <Text>Funtastic. How are you guys doing?</Text>
+        <text>Funtastic. How are you guys doing?</text>
     </message>
     <message>
         <type>msg</type>
@@ -786,7 +794,7 @@
         <sender>Luna</sender>
         <time>8:55 PM</time>
         <room>Class 3&#8211;1</room>
-        <Text>Not so good.</Text>
+        <text>Not so good.</text>
     </message>
     <message>
         <type>msg</type>

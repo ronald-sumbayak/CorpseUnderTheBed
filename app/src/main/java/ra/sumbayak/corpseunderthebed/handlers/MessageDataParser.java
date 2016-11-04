@@ -3,6 +3,7 @@ package ra.sumbayak.corpseunderthebed.handlers;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
+import android.util.Log;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -14,32 +15,36 @@ import java.util.List;
 import java.util.Map;
 
 import ra.sumbayak.corpseunderthebed.datas.MessageData;
-import ra.sumbayak.corpseunderthebed.datas.msg.*;
+import ra.sumbayak.corpseunderthebed.datas.msg.Message;
 import ra.sumbayak.corpseunderthebed.datas.msg.comment.CommentMessage;
 import ra.sumbayak.corpseunderthebed.datas.msg.info.InfoMessage;
 import ra.sumbayak.corpseunderthebed.datas.msg.info.InvitationMessage;
+import ra.sumbayak.corpseunderthebed.datas.msg.normal.NormalMessage;
 import ra.sumbayak.corpseunderthebed.datas.msg.normal.choices.Choices;
 import ra.sumbayak.corpseunderthebed.datas.msg.normal.choices.ChoicesMessage;
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.NormalMessage;
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.note.NoteMessage;
 import ra.sumbayak.corpseunderthebed.datas.msg.normal.note.Post;
+import ra.sumbayak.corpseunderthebed.datas.msg.normal.note.PostMessage;
 
 public class MessageDataParser {
     
     private int mDayCount;
     private Resources mResources;
     private String mPackageName;
-    private FileIOHandler mIO;
+    private IOHandler mIO;
     
     private MessageDataParser (Context context) {
         mResources = context.getResources ();
-        mDayCount = countMessageData ();
         mPackageName = context.getPackageName ();
-        mIO = new FileIOHandler (context);
+        mDayCount = countMessageData ();
+        mIO = new IOHandler (context);
+    }
+    
+    public static MessageDataParser getParser (Context context) {
+        return new MessageDataParser (context);
     }
     
     public void parseMessageData () {
-        for (int day = 1; day <= mDayCount; day++) {
+        for (int day = 0; day <= mDayCount; day++) {
             String fileName = "day" + String.valueOf (day);
             int id = mResources.getIdentifier (fileName, "xml", mPackageName);
             XmlResourceParser parser = mResources.getXml (id);
@@ -55,6 +60,12 @@ public class MessageDataParser {
             }
         }
     }
+    
+//    Dear me-in-the-future,
+//    I told you already you won't remember how these codes work from this point.
+//    So don't stress yourself and let the code as it is.
+//    Just trust me. We had been thinking about it for days.
+//    The only thing I can tell you is it does what the it says.
     
     private MessageData parseXml (XmlResourceParser parser) throws IOException, XmlPullParserException {
         while (parser.getEventType () == XmlPullParser.START_DOCUMENT) {
@@ -115,7 +126,9 @@ public class MessageDataParser {
             parser.next ();
         }
         
-        return new ChoicesMessage (att.get ("room"), att.get ("saveAs"), choicesList);
+        return new ChoicesMessage (
+            att.get ("room"), att.get ("saveAs"), choicesList
+        );
     }
     
     private static List<Choices> pullChoices (XmlResourceParser parser) throws IOException, XmlPullParserException {
@@ -131,14 +144,16 @@ public class MessageDataParser {
                 parser.next ();
             }
             
-            choicesList.add (new Choices (Integer.parseInt (att.get ("replies")), att.get ("text")));
+            choicesList.add (new Choices (
+                Integer.parseInt (att.get ("replies")), att.get ("label")
+            ));
             parser.next ();
         }
         
         return choicesList;
     }
     
-    private static NoteMessage pullNoteMessage (XmlResourceParser parser) throws IOException, XmlPullParserException {
+    private static PostMessage pullNoteMessage (XmlResourceParser parser) throws IOException, XmlPullParserException {
         Map<String, String> att = new HashMap<> ();
         parser.next ();
         
@@ -147,13 +162,19 @@ public class MessageDataParser {
             parser.next ();
         }
         
-        Post post;
-        post = new Post (
-            att.get ("author"), att.get ("originDate"), att.get ("originTime"), att.get ("text")
-        );
+        String body;
+        body = att.get ("body").replace ("\\n", System.getProperty ("line.separator"));
+        att.remove ("body");
+        att.put ("body", body);
         
-        return new NoteMessage (
-            att.get ("room"), att.get ("sender"), att.get ("time"), post, Boolean.valueOf (att.get ("saveToNotes"))
+        return new PostMessage (
+            att.get ("room"),
+            att.get ("sender"),
+            att.get ("time"),
+            new Post (
+                att.get ("author"), att.get ("originDate"), att.get ("originTime"), att.get ("body")
+            ),
+            Boolean.parseBoolean (att.get ("saveToNotes"))
         );
     }
     
@@ -174,27 +195,30 @@ public class MessageDataParser {
             att.put (parser.getName (), parser.nextText ());
             parser.next ();
         }
+    
+        Log.d ("cutb_debug", att.get ("memberCount") + " " + att.get ("memberList"));
+        Log.d ("cutb_debug", att.toString ());
         
         return new InvitationMessage (
-            att.get ("room"), Integer.parseInt (att.get ("members")), att.get ("memberList").split (",")
+            att.get ("room"), Integer.parseInt (att.get ("memberCount")), att.get ("memberList").split (",")
         );
     }
     
     private static Message pullCommentMessage (XmlResourceParser parser) throws IOException, XmlPullParserException {
-        String room = null;
+        Map<String, String> att = new HashMap<> ();
         parser.next ();
         
         while (parser.getEventType () != XmlPullParser.END_TAG) {
-            room = parser.nextText ();
+            att.put (parser.getName (), parser.nextText ());
             parser.next ();
         }
         
-        return new CommentMessage (room);
+        return new CommentMessage (att.get ("room"), att.get ("writer"), att.get ("text"));
     }
     
-    private Integer countMessageData () {
+    private int countMessageData () {
         int dayCount = 0, id;
-        
+    
         do {
             String fileName;
             fileName = "day" + String.valueOf (++dayCount);

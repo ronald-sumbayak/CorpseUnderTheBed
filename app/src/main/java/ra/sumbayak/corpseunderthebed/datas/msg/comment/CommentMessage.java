@@ -6,12 +6,19 @@ import ra.sumbayak.corpseunderthebed.datas.msg.Message;
 
 public class CommentMessage extends Message implements Serializable {
     
-    public CommentMessage (String room) {
-        super (room, "writer");
+    private String mText;
+    
+    public CommentMessage (String room, String writer, String text) {
+        super (room, writer);
+        mText = text;
     }
     
     @Override
     public String getMessageType () {
         return TYPE_COMMENT;
+    }
+    
+    public String getText () {
+        return mText;
     }
 }

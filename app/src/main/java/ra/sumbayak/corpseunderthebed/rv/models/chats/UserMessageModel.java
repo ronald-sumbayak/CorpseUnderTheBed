@@ -9,7 +9,7 @@ public class UserMessageModel extends NormalMessageModel implements Serializable
     private int mReadCount;
     
     public UserMessageModel (NormalMessage msg, int readCount) {
-        super (msg.getText (), msg.getSender (), msg.getTime ());
+        super (msg.getText (), msg.getSender (), msg.getTime ().getTimeAsString ());
         mReadCount = readCount;
         setRead ();
     }
