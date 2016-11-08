@@ -1,17 +1,43 @@
 package ra.sumbayak.corpseunderthebed.rv.models.chats;
 
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.note.NoteMessage;
+import java.io.Serializable;
 
-public class NoteMessageModel extends NormalMessageModel {
+import ra.sumbayak.corpseunderthebed.datas.messages.NoteMessage;
+
+public class NoteMessageModel extends NormalMessageModel implements Serializable {
     
-    private String mAuthor;
+    private String mAuthor, mBody;
+    private int mNoteIndex;
     
     public NoteMessageModel (NoteMessage msg) {
-        super (msg.getText (), msg.getSender (), msg.getTime ());
-        mAuthor = msg.getPost ().getAuthor ();
+        super (msg);
+        mAuthor = msg.author ();
+        mBody = msg.body ();
     }
     
-    public String getAuthor () {
+    public String author () {
         return mAuthor;
+    }
+    
+    public String body () {
+        return mBody;
+    }
+    
+    public void setNoteIndex (int index) {
+        mNoteIndex = index;
+    }
+    
+    public int noteIndex () {
+        return mNoteIndex;
+    }
+    
+    @Override
+    public String text () {
+        return sender () + " created a group note.";
+    }
+    
+    @Override
+    public int type () {
+        return TYPE_NOTE;
     }
 }

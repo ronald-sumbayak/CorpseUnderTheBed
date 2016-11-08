@@ -4,18 +4,12 @@ import java.io.Serializable;
 
 public class InfoMessageModel extends ChatMessageModel implements Serializable {
     
-    protected String mText;
-    
     public InfoMessageModel (String text) {
-        mText = text;
-    }
-    
-    public String getText () {
-        return mText;
+        super (text);
     }
     
     @Override
-    public int getMessageType () {
-        return MESSAGE_TYPE_INFO;
+    public int type () {
+        return TYPE_INFO;
     }
 }

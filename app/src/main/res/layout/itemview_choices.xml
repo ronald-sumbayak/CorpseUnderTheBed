@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Button
+<com.rey.material.widget.Button
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="15dp"
     android:layout_margin="5dp"
     android:text="Choices"
     android:textAllCaps="false"
-    android:textColor="#ff000000"
+    android:textColor="#000000"
     tools:ignore="HardcodedText"
     />

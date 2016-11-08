@@ -1,124 +1,97 @@
 package ra.sumbayak.corpseunderthebed.rv.adapters;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import ra.sumbayak.corpseunderthebed.runnables.FadingAnimation;
 import ra.sumbayak.corpseunderthebed.R;
 import ra.sumbayak.corpseunderthebed.activities.MainActivity;
+import ra.sumbayak.corpseunderthebed.animations.Fading;
 import ra.sumbayak.corpseunderthebed.datas.GameData;
-import ra.sumbayak.corpseunderthebed.datas.RoomData;
-import ra.sumbayak.corpseunderthebed.fragments.ChatFragment;
-import ra.sumbayak.corpseunderthebed.rv.models.chats.NormalMessageModel;
+import ra.sumbayak.corpseunderthebed.fragments.ChatMessageFragment;
 import ra.sumbayak.corpseunderthebed.rv.viewholders.ChatListViewHolder;
 
 public class ChatListAdapter extends RecyclerView.Adapter<ChatListViewHolder> {
     
+    private MainActivity mContext;
+    private LayoutInflater mInflater;
     private GameData mGameData;
+    private RecyclerView mChatList;
     
-    public ChatListAdapter (GameData gameData) {
-        Log.d ("cutb_debug", "at ChatListAdapter.#Constructor");
+    public ChatListAdapter (Context context, GameData gameData) {
+        mContext = (MainActivity) context;
+        mInflater = LayoutInflater.from (mContext);
         mGameData = gameData;
+    }
+    
+    public ChatListAdapter (Context context, GameData gameData, RecyclerView chatList) {
+        mContext = (MainActivity) context;
+        mInflater = LayoutInflater.from (mContext);
+        mGameData = gameData;
+        mChatList = chatList;
     }
     
     @Override
     public ChatListViewHolder onCreateViewHolder (ViewGroup parent, int viewType) {
-        LayoutInflater inflater;
-        inflater = LayoutInflater.from (parent.getContext ());
-        
         View itemView;
-        itemView = inflater.inflate (R.layout.itemview_chatlist, parent, false);
+        itemView = mInflater.inflate (R.layout.itemview_chatlist, parent, false);
         return new ChatListViewHolder (itemView);
     }
     
     @Override
     public void onBindViewHolder (ChatListViewHolder holder, int position) {
-        String room = mGameData.getChatList ().get (position);
-        RoomData roomData = mGameData.getRoomData ().get (room);
-        
-        setItemView (holder, roomData);
-        setOnClickListener (holder.itemView, roomData.getRoom ());
+        String room = mGameData.chatList ().get (position);
+        holder.bind (mGameData.roomData (room));
+        holder.itemView.setOnClickListener (makeOnClickListener (room));
     }
     
-    private void setItemView (ChatListViewHolder holder, RoomData roomData) {
-        // sender (room)
-        setText (holder.getRoom (), roomData.getRoom ());
-        
-        // last message
-        NormalMessageModel msg = roomData.getMessageAt (-1);
-        if (msg == null)
-            setText (holder.getLastMessage (), null);
-        else
-            setText (holder.getLastMessage (), msg.getText ());
-        
-        // member count
-        if (roomData.getRoomType () == RoomData.TYPE_GROUP) {
-            setText (holder.getMemberCount (), "(" + roomData.getMemberCount () + ")");
-            setVisibility (holder.getMemberCount (), View.VISIBLE);
-        }
-        else setVisibility (holder.getMemberCount (), View.INVISIBLE);
-        
-        // unread count
-        if (roomData.getUnreadCount () > 0) {
-            setVisibility (holder.getUnreadCount (), View.VISIBLE);
-            setText (holder.getUnreadCount (), String.valueOf (roomData.getUnreadCount ()));
-        }
-        else setVisibility (holder.getUnreadCount (), View.INVISIBLE);
-    }
-    
-    private void setText (TextView textView, String text) {
-        textView.setText (text);
-    }
-    
-    private void setVisibility (View view, int visibility) {
-        view.setVisibility (visibility);
-    }
-    
-    private void setOnClickListener (View itemView, final String room) {
-        itemView.setOnClickListener (new View.OnClickListener () {
+    private View.OnClickListener makeOnClickListener (final String room) {
+        return new View.OnClickListener () {
             @Override
             public void onClick (final View v) {
-                final MainActivity mainActivity;
-                mainActivity = (MainActivity) v.getContext ();
-                
-                FadingAnimation fadingAnimation;
-                fadingAnimation = new FadingAnimation (mainActivity);
-                fadingAnimation.setFadeInEnd (new FadingAnimation.FadeInAnimationEnd () {
+                Fading fading;
+                fading = new Fading (mContext.findViewById (R.id.fade_interpolator)) {
                     @Override
-                    public void onFadeAnimationEnd () {
-                        ChatFragment chatFragment;
-                        chatFragment = buildChatFragment (room);
-                        mainActivity.replaceFragment (R.id.fragment_view, chatFragment, "ChatRoom." + room);
+                    public void onFadeInEnd () {
+                        ChatMessageFragment chatMessageFragment;
+                        chatMessageFragment = buildChatFragment (room);
+                        putChatFragment (chatMessageFragment, room);
                     }
-                });
-                fadingAnimation.run ();
+                };
+                fading.run ();
             }
-        });
+        };
     }
     
-    private ChatFragment buildChatFragment (String room) {
+    private ChatMessageFragment buildChatFragment (String room) {
         Bundle bundle;
         bundle = new Bundle ();
         bundle.putString ("cutb.ROOM", room);
     
-        ChatFragment chatFragment;
-        chatFragment = new ChatFragment ();
-        chatFragment.setArguments (bundle);
-        return chatFragment;
+        ChatMessageFragment chatMessageFragment;
+        chatMessageFragment = new ChatMessageFragment ();
+        chatMessageFragment.setArguments (bundle);
+        return chatMessageFragment;
+    }
+    
+    private void putChatFragment (ChatMessageFragment fragment, String room) {
+        FragmentTransaction ft;
+        ft = mContext.getSupportFragmentManager ().beginTransaction ();
+        ft.addToBackStack (null);
+        ft.replace (R.id.fragment_view, fragment, "ChatRoom." + room);
+        ft.commit ();
     }
     
     @Override
     public int getItemCount () {
-        return mGameData.getChatList ().size ();
+        return mGameData.chatList ().size ();
     }
     
-    public void refreshChatList (GameData gameData) {
-        Log.d ("cutb_debug", "at ChatListAdapter.#refreshChatList");
+    public void refresh (GameData gameData) {
         mGameData = gameData;
         notifyDataSetChanged ();
     }

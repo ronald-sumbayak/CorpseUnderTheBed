@@ -4,126 +4,196 @@ import android.content.Context;
 import android.util.Log;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
 
 import ra.sumbayak.corpseunderthebed.datas.GameData;
+import ra.sumbayak.corpseunderthebed.datas.MessageTime;
 import ra.sumbayak.corpseunderthebed.datas.RoomData;
-import ra.sumbayak.corpseunderthebed.datas.msg.Message;
-import ra.sumbayak.corpseunderthebed.datas.msg.info.InfoMessage;
-import ra.sumbayak.corpseunderthebed.datas.msg.info.InvitationMessage;
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.NormalMessage;
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.choices.ChoicesMessage;
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.note.NoteMessage;
+import ra.sumbayak.corpseunderthebed.datas.messages.*;
+import ra.sumbayak.corpseunderthebed.datas.messages.ShareMessage;
 import ra.sumbayak.corpseunderthebed.rv.models.NoteModel;
-import ra.sumbayak.corpseunderthebed.rv.models.chats.NormalMessageModel;
-import ra.sumbayak.corpseunderthebed.rv.models.chats.NoteMessageModel;
-import ra.sumbayak.corpseunderthebed.rv.models.chats.PostMessageModel;
-import ra.sumbayak.corpseunderthebed.rv.models.chats.UserMessageModel;
+import ra.sumbayak.corpseunderthebed.rv.models.chats.*;
 
-public abstract class MessageHandler extends GameData implements Serializable {
+abstract class MessageHandler extends GameData implements Serializable {
     
     @Override
     public void handleMessage (Context context) {
-        Log.d ("cutb_debug", "at MessageHandler.#handleMessage");
-        Log.d ("cutb_debug", "   index: " + mIndex);
-        
+        startNewSession (context);
+        handleMessage ();
+    }
+    
+    private void handleMessage () {
+        if (mMessageData == null) return;
         if (!isOnChoices ()) {
-            incrementIndex (context);
-            Message msg = getLastMessage ();
-            
-            switch (msg.getMessageType ()) {
-                case Message.TYPE_CHOICES: handleMessage ((ChoicesMessage) msg); break;
-                case Message.TYPE_NORMAL: handleMessage ((NormalMessage) msg); break;
-                case Message.TYPE_NOTE: handleMessage ((NoteMessage) msg); break;
-                case Message.TYPE_INFO: handleMessage ((InfoMessage) msg); break;
-                default: break;
+            incrementIndex ();
+            if (isEndOfDay ()) {
+                if (mDay == 3) return;
+                startNewDay ();
             }
-            
-            // mPostman take action...
-            saveGameProgress (context);
+            else handleMessage (currentMessage ());
         }
     }
     
-    private void handleMessage (NormalMessage msg) {
-        Log.d ("cutb_debug", "at MessageHandler.#handlerMessage (NormalMessage)");
-        elevateChatList (msg.getRoom ());
-        
-        if (msg.getSender ().equals (mUser)) handleUserMessage (msg);
-        else handleNormalMessage (msg);
-        mInbox.add (msg);
-    }
-    
-    private void handleNormalMessage (NormalMessage msg) {
-        NormalMessageModel newNormalMessage;
-        newNormalMessage = new NormalMessageModel (msg);
-        getRoomData (msg.getRoom ()).addNewMessage (newNormalMessage);
-    }
-    
-    private void handleUserMessage (NormalMessage msg) {
-        UserMessageModel newUserMessage;
-        newUserMessage = new UserMessageModel (msg, getReadCount (msg.getRoom ()));
-        getRoomData (msg.getRoom ()).addNewMessage (newUserMessage);
-    }
-    
-    private void handleMessage (ChoicesMessage msg) {
-        Log.d ("cutb_debug", "at MessageHandler.#handleMessage (ChoicesMessage)");
-        elevateChatList (msg.getRoom ());
-        mRoomData.get (msg.getRoom ()).setOnChoices (true);
-    }
-    
-    private void handleMessage (NoteMessage msg) {
-        Log.d ("cutb_debug", "at MessageHandler.#handleMessage (NoteMessage)");
-        elevateChatList (msg.getRoom ());
-        
-        if (msg.isSaveAsNote ()) handleNoteMessage (msg);
-        else handlePostMessage (msg);
-        mInbox.add (msg);
-    }
-    
-    private void handlePostMessage (NoteMessage msg) {
-        PostMessageModel newPostMessage;
-        newPostMessage = new PostMessageModel (msg);
-        getRoomData (msg.getRoom ()).addNewMessage (newPostMessage);
-    }
-    
-    private void handleNoteMessage (NoteMessage msg) {
-        NoteMessageModel newNoteMessage = new NoteMessageModel (msg);
-        NoteModel newNote = new NoteModel (msg.getPost ());
-        getRoomData (msg.getRoom ()).addNewMessage (newNoteMessage);
-        getRoomData (msg.getRoom ()).addNewNote (newNote);
-    }
-    
-    private void handleMessage (InfoMessage msg) {
-        Log.d ("cutb_debug", "at MessageHandler.#handleMessage (InfoMessage)");
-        switch (msg.getInfoCategory ()) {
-            case InfoMessage.CATEGORY_INVITATION: handleInfoMessage ((InvitationMessage) msg); break;
+    protected void handleMessage (Message msg) {
+        Log.d ("cutb_debug", "at MessageHandler.#handleMessage");
+        Log.i ("cutb_debug", "   index: " + mIndex);
+        switch (msg.type ()) {
+            case Message.TYPE_NORMAL: handleMessage ((NormalMessage) msg); break;
+            case Message.TYPE_CHOICES: handleMessage ((ChoicesMessage) msg); break;
+            case Message.TYPE_NOTE: handleMessage ((NoteMessage) msg); break;
+            case Message.TYPE_SHARE: handleMessage ((ShareMessage) msg); break;
+            case Message.TYPE_INFO: handleMessage ((InfoMessage) msg); break;
+            case Message.TYPE_COMMENT: handleMessage (mContext); break;
             default: break;
         }
     }
     
-    private void handleInfoMessage (InvitationMessage msg) {
-        Log.d ("cutb_debug", "at MessageHandler.#handleInfoMessage (InvitationMessage)");
-        Log.d ("cutb_debug", "   Room: " + msg.getRoom ());
-        Log.d ("cutb_debug", "   MemberCount: " + msg.getMemberCount ());
-        Log.d ("cutb_debug", "   MemberList: " + msg.getMemberList ());
-        elevateChatList (msg.getRoom ());
-        mRoomData.get (msg.getRoom ()).setRoomAsGroup (msg.getMemberCount (), msg.getMemberList ());
+    private void handleMessage (NormalMessage msg) {
+        Log.d ("cutb_debug", "at MessageHandler.#handleMessage_NormalMessage");
+        Log.i ("cutb_debug", "   sender: " + msg.sender ());
+        Log.i ("cutb_debug", "   text: " + msg.text ());
+        elevateChatList (msg.room ());
+        if (msg.sender ().equals (mUser)) handleUserMessage (msg);
+        else handleNormalMessage (msg);
     }
     
-    private void incrementIndex (Context context) {
-        while (!mActiveChoices.empty () && (mIndex == mActiveChoices.peek ().end)) {
-            mIndex = mActiveChoices.peek ().max;
+    private void handleNormalMessage (NormalMessage msg) {
+        NormalMessageModel newMessage;
+        newMessage = new NormalMessageModel (msg);
+        roomData (msg.room ()).addMessage (newMessage);
+        
+        // post-handleMessage
+        mInbox.push (msg);
+        saveTempData ();
+        mPostman.createNewAlarm (getMessageInterval ());
+    }
+    
+    private void handleUserMessage (NormalMessage msg) {
+        UserMessageModel newMessage;
+        newMessage = new UserMessageModel (msg, getReadCount (msg.room ()));
+        roomData (msg.room ()).addMessage (newMessage);
+        
+        // post-handleMessage
+        //mInbox.push (msg);
+        saveGameData ();
+        mPostman.notifyFrontEnd ();
+        mPostman.createNewAlarm (getMessageInterval ());
+    }
+    
+    private void handleMessage (ChoicesMessage msg) {
+        elevateChatList (msg.room ());
+        mRoomData.get (msg.room ()).setOnChoices (true);
+        saveTempData ();
+        mPostman.createNewAlarm (getMessageInterval ());
+    }
+    
+    private void handleMessage (NoteMessage msg) {
+        elevateChatList (msg.room ());
+        NoteMessageModel newMessage = new NoteMessageModel (msg);
+        NoteModel newNote = new NoteModel (msg, mMessageData.date ());
+        newMessage.setNoteIndex (roomData (msg.room ()).notes ().size ());
+        roomData (msg.room ()).addMessage (newMessage).addNote (newNote);
+        
+        // post-handleMessage
+        mInbox.push (msg);
+        saveTempData ();
+        mPostman.createNewAlarm (getMessageInterval ());
+    }
+    
+    private void handleMessage (ShareMessage msg) {
+        elevateChatList (msg.room ());
+        ShareMessageModel newMessage;
+        newMessage = new ShareMessageModel (msg);
+        roomData (msg.room ()).addMessage (newMessage);
+        
+        // post-handleMessage
+        mInbox.push (msg);
+        saveTempData ();
+        mPostman.createNewAlarm (getMessageInterval ());
+    }
+    
+    private void handleMessage (InfoMessage msg) {
+        switch (msg.category ()) {
+            case InfoMessage.CATEGORY_INVITATION: handleInfoMessage ((InvitationMessage) msg); break;
+            default: break;
+        }
+        handleMessage ();
+    }
+    
+    private void handleInfoMessage (InvitationMessage msg) {
+        elevateChatList (msg.room ());
+        mRoomData.get (msg.room ()).setAsGroup (msg.members ().size (), msg.members ());
+        saveGameData ();
+    }
+    
+    /* This is magic. Do not touch! */
+    protected void incrementIndex () {
+        Log.d ("cutb_debug", "at MessageHandler.#incrementIndex");
+        Log.i ("cutb_debug", "   initial index: " + mIndex);
+        while (!mActiveChoices.empty () && (mIndex == mActiveChoices.peek ().mEnd)) {
+            mIndex = mActiveChoices.peek ().mMax;
             mActiveChoices.pop ();
         }
         
-        if (mIndex == mMessageData.size () - 1) {
-            FileIOHandler io;
-            io = new FileIOHandler (context);
-            mMessageData = io.loadMessageData (++mDay);
-            mIndex = -1;
-        }
-        
         mIndex++;
+        Log.i ("cutb_debug", "   result index: " + mIndex);
+    }
+    
+    private boolean isEndOfDay () {
+        Log.d ("cutb_debug", "at MessageHandler.#isEndOfDay");
+        Log.d ("cutb_debug", mIndex + " " + mMessageData);
+        return mIndex == mMessageData.size ();
+    }
+    
+    private void startNewDay () {
+        loadNextDay ();
+        removeEmptyDay ();
+        putDateMessage ();
+        //pendingGameForNextDay ();
+        handleMessage ();
+    }
+    
+    private void loadNextDay () {
+        IOHandler io;
+        io = new IOHandler (mContext);
+        
+        mIndex = -1;
+        mDay = mDay + 1;
+        mMessageData = io.loadMessageData (mDay);
+    }
+    
+    private void removeEmptyDay () {
+        for (Map.Entry<String, RoomData> roomDataEntry : mRoomData.entrySet ()) {
+            RoomData roomData = roomDataEntry.getValue ();
+            
+            if (roomData.messageAt (-1).type () == ChatMessageModel.TYPE_INFO) {
+                roomData.removeMessage (-1);
+            }
+        }
+    }
+    
+    private void putDateMessage () {
+        for (Map.Entry<String, RoomData> roomData : mRoomData.entrySet ()) {
+            roomData.getValue ().addMessage (new InfoMessageModel (mMessageData.date ()));
+        }
+    }
+    
+    private void pendingGameForNextDay () {
+        Log.d ("cutb_debug", "at MessageHandler.#pendingGameForNextDay");
+        MessageTime time;
+        Log.d ("cutb_debug", "   mMessageData: " + mMessageData);
+        Log.d ("cutb_debug", "   mDay: " + mDay);
+        time = ((NormalMessage) mMessageData.get (0)).time ();
+        
+        Calendar calendar;
+        calendar = Calendar.getInstance ();
+        calendar.set (Calendar.DATE, calendar.get (Calendar.DATE) + 1);
+        calendar.set (Calendar.HOUR, time.hour ());
+        calendar.set (Calendar.MINUTE, time.minute ());
+        calendar.set (Calendar.AM_PM, time.period ());
+        mPostman.pendingGameForNextDay (calendar);
     }
     
     private void elevateChatList (String room) {
@@ -139,21 +209,28 @@ public abstract class MessageHandler extends GameData implements Serializable {
     }
     
     private int getReadCount (String room) {
-        if (mRoomData.get (room).getRoomType () == RoomData.TYPE_GROUP) {
-            List<String> memberList;
-            memberList = mRoomData.get (room).getMemberList ();
-            memberList.removeAll (mDeadFriend);
-            return memberList.size ();
+        /* you are not expected to understand this */
+        if (mRoomData.get (room).type () == RoomData.TYPE_GROUP) {
+            List<String> members;
+            members = mRoomData.get (room).members ();
+            members.removeAll (mDeadFriends);
+            return members.size ();
         }
         else {
-            if (mDeadFriend.contains (room)) return 0;
+            if (mDeadFriends.contains (room)) return 0;
             else return 1;
         }
     }
     
-    private void saveGameProgress (Context context) {
-        FileIOHandler io;
-        io = new FileIOHandler (context);
-        io.saveGameData (this);
-    }
+//
+//                                    ####  ####  #####  ####
+//                                     ####  ####  ####   #____
+//                                                        [.  .]
+//       __________    __________    __________    ________|  |_____.
+//      |          |  |          |  |          |  |                  \
+//      | []    [] |  | []    [] |  | []    [] |  | []           [*]  \
+//      |__________|==|__________|==|__________|==|____________________)
+//        0      0      0      0      0      0      0                0
+//
+//    let me know if the train moves...
 }

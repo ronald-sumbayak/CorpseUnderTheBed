@@ -6,63 +6,65 @@ import java.util.List;
 
 import ra.sumbayak.corpseunderthebed.rv.models.NoteModel;
 import ra.sumbayak.corpseunderthebed.rv.models.chats.ChatMessageModel;
+import ra.sumbayak.corpseunderthebed.rv.models.chats.InfoMessageModel;
 import ra.sumbayak.corpseunderthebed.rv.models.chats.NormalMessageModel;
 
 public class RoomData implements Serializable {
     
-    public static int TYPE_PRIVATE = 0;
-    public static int TYPE_GROUP = 1;
+    public static final int TYPE_PRIVATE = 0;
+    public static final int TYPE_GROUP = 1;
     
     private boolean mOnChoices = false;
     private int mMemberCount = 1, mRoomType = TYPE_PRIVATE;
     private List<ChatMessageModel> mMessageList = new ArrayList<> ();
-    private List<NoteModel> mNoteList = new ArrayList<> ();
-    private List<String> mMemberList = new ArrayList<> ();
+    private List<NoteModel> mNotes = new ArrayList<> ();
+    private List<String> mMembers = new ArrayList<> ();
     private String mRoom;
     
     public RoomData (String room) {
         mRoom = room;
+        mMessageList.add (new InfoMessageModel ("new game"));
     }
     
-    public int getMemberCount () {
-        return mMemberCount;
-    }
+    public RoomData addMessage (ChatMessageModel newMessage) {
+        if (newMessage.type () == ChatMessageModel.TYPE_NORMAL)
+        {
+            if (messageAt (-1) instanceof NormalMessageModel) {
+                NormalMessageModel prevMessage;
+                prevMessage = (NormalMessageModel) messageAt (-1);
     
-    public String getRoom () {
-        return mRoom;
-    }
-    
-    public int getRoomType () {
-        return mRoomType;
-    }
-    
-    public void addNewMessage (ChatMessageModel newMessage) {
-        if (newMessage.getMessageType () == ChatMessageModel.MESSAGE_TYPE_NORMAL) {
-            NormalMessageModel prevMessage;
-            prevMessage = (NormalMessageModel) getMessageAt (-1);
-    
-            if (prevMessage != null) {
-                if (((NormalMessageModel) newMessage).getSender ().equals (prevMessage.getSender ())) {
-                    ((NormalMessageModel) newMessage).setConsecutive (true);
+                if (prevMessage != null) {
+                    if (((NormalMessageModel) newMessage).sender ().equals (prevMessage.sender ())) {
+                        ((NormalMessageModel) newMessage).setConsecutive (true);
+                    }
                 }
             }
         }
         
         mMessageList.add (newMessage);
+        return this;
     }
     
-    public void addNewNote (NoteModel newNote) {
-        mNoteList.add (newNote);
+    public void removeMessage (int index) {
+        if (mMessageList.size () > 0) {
+            if (index == -1) mMessageList.remove (mMessageList.size () - 1);
+            else mMessageList.remove (index);
+        }
     }
     
-    public ChatMessageModel getMessageAt (int index) {
+    public RoomData addNote (NoteModel newNote) {
+        mNotes.add (newNote);
+        return this;
+    }
+    
+    public ChatMessageModel messageAt (int index) {
         ChatMessageModel msg = null;
         
         try {
             msg = mMessageList.get (index);
         }
         catch (IndexOutOfBoundsException e) {
-            if (mMessageList.size () > 0) {
+            if (mMessageList.size () > 0 && index == -1) {
                 msg = mMessageList.get (mMessageList.size () - 1);
             }
         }
@@ -70,41 +72,57 @@ public class RoomData implements Serializable {
         return msg;
     }
     
-    public int getMessageSize () {
+    public String room () {
+        return mRoom;
+    }
+    
+    public int messageSize () {
         return mMessageList.size ();
     }
     
-    public int getUnreadCount () {
+    public int type () {
+        return mRoomType;
+    }
+    
+    public int memberCount () {
+        return mMemberCount;
+    }
+    
+    public int unreadCount () {
         int unreadCount = 0;
         
         for (int i = mMessageList.size ()-1; i >= 0; i--) {
-            if (mMessageList.get (i).getMessageType () == ChatMessageModel.MESSAGE_TYPE_NORMAL) {
+            if (mMessageList.get (i).type () == ChatMessageModel.TYPE_NORMAL) {
                 NormalMessageModel msg;
                 msg = (NormalMessageModel) mMessageList.get (i);
                 
-                if (msg.isRead ()) unreadCount++;
-                else break;
+                if (msg.isRead ()) break;
+                unreadCount++;
             }
         }
     
         return unreadCount;
     }
     
-    public void setOnChoices (Boolean onChoices) {
-        mOnChoices = onChoices;
-    }
-    
     public boolean isOnChoices () {
         return mOnChoices;
     }
     
-    public void setRoomAsGroup (int memberCount, List<String> memberList) {
-        mRoomType = TYPE_GROUP;
-        mMemberCount = memberCount;
-        mMemberList = memberList;
+    public void setOnChoices (boolean onChoices) {
+        mOnChoices = onChoices;
     }
     
-    public List<String> getMemberList () {
-        return mMemberList;
+    public void setAsGroup (int memberCount, List<String> memberList) {
+        mRoomType = TYPE_GROUP;
+        mMemberCount = memberCount;
+        mMembers = memberList;
+    }
+    
+    public List<NoteModel> notes () {
+        return mNotes;
+    }
+    
+    public List<String> members () {
+        return mMembers;
     }
 }

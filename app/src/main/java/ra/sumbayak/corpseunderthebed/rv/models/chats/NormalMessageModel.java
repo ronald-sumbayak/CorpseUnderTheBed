@@ -2,7 +2,7 @@ package ra.sumbayak.corpseunderthebed.rv.models.chats;
 
 import java.io.Serializable;
 
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.NormalMessage;
+import ra.sumbayak.corpseunderthebed.datas.messages.NormalMessage;
 
 public class NormalMessageModel extends InfoMessageModel implements Serializable {
     
@@ -10,34 +10,28 @@ public class NormalMessageModel extends InfoMessageModel implements Serializable
     private String mSender, mTime;
     
     public NormalMessageModel (NormalMessage msg) {
-        this (
-            msg.getText (), msg.getSender (), msg.getTime ()
-        );
+        super (msg.text ());
+        mSender = msg.sender ();
+        mTime = msg.time ().time ();
     }
     
-    public NormalMessageModel (String text, String sender, String time) {
-        super (text);
-        mSender = sender;
-        mTime = time;
-    }
-    
-    public Boolean isConsecutive () {
-        return mConsecutive;
-    }
-    
-    public Boolean isRead () {
-        return mRead;
-    }
-    
-    public String getSender () {
+    public String sender () {
         return mSender;
     }
     
-    public String getTime () {
+    public String time () {
         return mTime;
     }
     
-    public void setConsecutive (Boolean consecutive) {
+    public boolean isConsecutive () {
+        return mConsecutive;
+    }
+    
+    public boolean isRead () {
+        return mRead;
+    }
+    
+    public void setConsecutive (boolean consecutive) {
         mConsecutive = consecutive;
     }
     
@@ -46,7 +40,7 @@ public class NormalMessageModel extends InfoMessageModel implements Serializable
     }
     
     @Override
-    public int getMessageType () {
-        return MESSAGE_TYPE_NORMAL;
+    public int type () {
+        return TYPE_NORMAL;
     }
 }
