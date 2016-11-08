@@ -9,7 +9,7 @@ public class InfoMessageModel extends ChatMessageModel implements Serializable {
     }
     
     @Override
-    public int getMessageType () {
-        return MESSAGE_TYPE_INFO;
+    public int type () {
+        return TYPE_INFO;
     }
 }

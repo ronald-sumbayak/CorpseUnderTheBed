@@ -6,8 +6,7 @@
         <type>info</type>
         <cat>invitation</cat>
         <room>Girls Reunion</room>
-        <memberCount>6</memberCount>
-        <memberList>Gwen,Barbara,Lila,Lucy,Nila,Luna</memberList>
+        <members>Gwen,Barbara,Lila,Lucy,Nila,Luna</members>
     </message>
     <message>
         <type>msg</type>
@@ -611,10 +610,7 @@
         <time>5:05 PM</time>
         <room>Class 3&#8211;1</room>
         <author>Barbara Martin</author>
-        <originDate>Saturday, February 27, 2016</originDate>
-        <originTime>5:05 PM</originTime>
-        <body>Rules of Special Class A\n1.  What’s between us stays between us.\n2.  Keep our solidarity strong!</body>
-        <saveToNotes>true</saveToNotes>
+        <body>Rules of Special Class A\n1. What’s between us stays between us.\n2. Keep our solidarity strong!</body>
     </message>
     <message>
         <type>msg</type>

@@ -1,7 +1,5 @@
 package ra.sumbayak.corpseunderthebed.datas;
 
-import android.util.Log;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +17,8 @@ public class RoomData implements Serializable {
     private boolean mOnChoices = false;
     private int mMemberCount = 1, mRoomType = TYPE_PRIVATE;
     private List<ChatMessageModel> mMessageList = new ArrayList<> ();
-    private List<NoteModel> mNoteList = new ArrayList<> ();
-    private List<String> mMemberList = new ArrayList<> ();
+    private List<NoteModel> mNotes = new ArrayList<> ();
+    private List<String> mMembers = new ArrayList<> ();
     private String mRoom;
     
     public RoomData (String room) {
@@ -28,31 +26,15 @@ public class RoomData implements Serializable {
         mMessageList.add (new InfoMessageModel ("new game"));
     }
     
-    public int getMemberCount () {
-        return mMemberCount;
-    }
-    
-    public String getRoom () {
-        return mRoom;
-    }
-    
-    public int getRoomType () {
-        return mRoomType;
-    }
-    
-    public NoteModel getNote (int index) {
-        return mNoteList.get (index);
-    }
-    
-    public void addNewMessage (ChatMessageModel newMessage) {
-        if (newMessage.getMessageType () == ChatMessageModel.MESSAGE_TYPE_NORMAL)
+    public RoomData addMessage (ChatMessageModel newMessage) {
+        if (newMessage.type () == ChatMessageModel.TYPE_NORMAL)
         {
-            if (getMessageAt (-1).getMessageType () == ChatMessageModel.MESSAGE_TYPE_NORMAL) {
+            if (messageAt (-1) instanceof NormalMessageModel) {
                 NormalMessageModel prevMessage;
-                prevMessage = (NormalMessageModel) getMessageAt (-1);
+                prevMessage = (NormalMessageModel) messageAt (-1);
     
                 if (prevMessage != null) {
-                    if (((NormalMessageModel) newMessage).getSender ().equals (prevMessage.getSender ())) {
+                    if (((NormalMessageModel) newMessage).sender ().equals (prevMessage.sender ())) {
                         ((NormalMessageModel) newMessage).setConsecutive (true);
                     }
                 }
@@ -60,6 +42,7 @@ public class RoomData implements Serializable {
         }
         
         mMessageList.add (newMessage);
+        return this;
     }
     
     public void removeMessage (int index) {
@@ -69,11 +52,12 @@ public class RoomData implements Serializable {
         }
     }
     
-    public void addNewNote (NoteModel newNote) {
-        mNoteList.add (newNote);
+    public RoomData addNote (NoteModel newNote) {
+        mNotes.add (newNote);
+        return this;
     }
     
-    public ChatMessageModel getMessageAt (int index) {
+    public ChatMessageModel messageAt (int index) {
         ChatMessageModel msg = null;
         
         try {
@@ -88,19 +72,27 @@ public class RoomData implements Serializable {
         return msg;
     }
     
+    public String room () {
+        return mRoom;
+    }
+    
     public int messageSize () {
         return mMessageList.size ();
     }
     
-    public int noteSize () {
-        return mNoteList.size ();
+    public int type () {
+        return mRoomType;
     }
     
-    public int getUnreadCount () {
+    public int memberCount () {
+        return mMemberCount;
+    }
+    
+    public int unreadCount () {
         int unreadCount = 0;
         
         for (int i = mMessageList.size ()-1; i >= 0; i--) {
-            if (mMessageList.get (i).getMessageType () == ChatMessageModel.MESSAGE_TYPE_NORMAL) {
+            if (mMessageList.get (i).type () == ChatMessageModel.TYPE_NORMAL) {
                 NormalMessageModel msg;
                 msg = (NormalMessageModel) mMessageList.get (i);
                 
@@ -112,23 +104,25 @@ public class RoomData implements Serializable {
         return unreadCount;
     }
     
-    public void setOnChoices (Boolean onChoices) {
-        Log.d ("cutb_debug", "at RoomData.#setOnChoices");
-        Log.d ("cutb_debug", "   onChoices: " + onChoices);
-        mOnChoices = onChoices;
-    }
-    
     public boolean isOnChoices () {
         return mOnChoices;
     }
     
-    public void setRoomAsGroup (int memberCount, List<String> memberList) {
-        mRoomType = TYPE_GROUP;
-        mMemberCount = memberCount;
-        mMemberList = memberList;
+    public void setOnChoices (boolean onChoices) {
+        mOnChoices = onChoices;
     }
     
-    public List<String> getMemberList () {
-        return mMemberList;
+    public void setAsGroup (int memberCount, List<String> memberList) {
+        mRoomType = TYPE_GROUP;
+        mMemberCount = memberCount;
+        mMembers = memberList;
+    }
+    
+    public List<NoteModel> notes () {
+        return mNotes;
+    }
+    
+    public List<String> members () {
+        return mMembers;
     }
 }

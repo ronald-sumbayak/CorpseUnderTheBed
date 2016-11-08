@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,20 +22,20 @@ public class ChatListFragment extends Fragment implements MainActivity.FragmentL
     
     private IOHandler mIO;
     private GameData mGameData;
-    private MainActivity mMainActivity;
-    private RecyclerView mChatList;
+    private MainActivity mContext;
+    private ChatListAdapter mAdapter;
     
     @Override
     public void onAttach (Context context) {
         super.onAttach (context);
-        mMainActivity = (MainActivity) context;
-        mIO = IOHandler.getIOInstance (mMainActivity);
+        mContext = (MainActivity) context;
+        mIO = IOHandler.getIOInstance (mContext);
+        loadGameData ();
     }
     
     @Nullable
     @Override
     public View onCreateView (LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.d ("cutb_debug", "at ChatListFragment.#onCreateView");
         View view;
         view = inflater.inflate (R.layout.fragment_menu, container, false);
         return view;
@@ -44,58 +43,51 @@ public class ChatListFragment extends Fragment implements MainActivity.FragmentL
     
     @Override
     public void onResume () {
-        Log.d ("cutb_debug", "at ChatListFragment.#onResume");
         super.onResume ();
-        setToolbarTitle ();
         setFragmentLink ();
-        loadGameData ();
+        setupToolbar ();
         refreshChatList ();
     }
     
     @Override
     public void onViewCreated (View view, @Nullable Bundle savedInstanceState) {
-        Log.d ("cutb_debug", "at ChatListFragment.#onViewCreated");
-        loadGameData ();
+        super.onViewCreated (view, savedInstanceState);
         setupChatList (view);
-        setToolbarTitle ();
     }
     
     @Override
     public void onBroadcastReceived () {
-        Log.d ("cutb_debug", "at ChatListFragment.#onBroadcastReceived");
-        loadGameData ();
         refreshChatList ();
+    }
+    
+    private void setupChatList (View view) {
+        RecyclerView chatList;
+        chatList = (RecyclerView) view.findViewById (R.id.rvChatList);
+        // mChatList.setHasFixedSize (true);
+        chatList.setLayoutManager (new LinearLayoutManager (mContext));
+        chatList.addItemDecoration (new DividerItemDecoration (mContext));
+        mAdapter = new ChatListAdapter (mContext, mGameData, chatList);
+        chatList.setAdapter (mAdapter);
+    }
+    
+    private void setupToolbar () {
+        ActionBar actionBar;
+        actionBar = mContext.getSupportActionBar ();
+        assert actionBar != null;
+        actionBar.setTitle ("Chats");
+        actionBar.setDisplayHomeAsUpEnabled (false);
+    }
+    
+    private void refreshChatList () {
+        loadGameData ();
+        mAdapter.refresh (mGameData);
     }
     
     private void loadGameData () {
         mGameData = mIO.loadGameData ();
     }
     
-    private void setupChatList (View view) {
-        Log.d ("cutb_debug", "at ChatListFragment.#setupChatList");
-        mChatList = (RecyclerView) view.findViewById (R.id.rvChatList);
-        mChatList.setHasFixedSize (true);
-        mChatList.setLayoutManager (new LinearLayoutManager (getActivity ()));
-        mChatList.addItemDecoration (new DividerItemDecoration (getActivity ()));
-        mChatList.setAdapter (new ChatListAdapter (mGameData));
-    }
-    
-    private void setToolbarTitle () {
-        Log.d ("cutb_debug", "at ChatListFragment.#setToolbarTitle");
-        ActionBar actionBar;
-        actionBar = mMainActivity.getSupportActionBar ();
-        assert actionBar != null;
-        actionBar.setTitle ("Chats");
-    }
-    
-    private void refreshChatList () {
-        Log.d ("cutb_debug", "at ChatListFragment.#refreshChatList");
-        ChatListAdapter adapter;
-        adapter = (ChatListAdapter) mChatList.getAdapter ();
-        adapter.refreshChatList (mGameData);
-    }
-    
     private void setFragmentLink () {
-        mMainActivity.setFragmentLink (this);
+        mContext.setFragmentLink (this);
     }
 }

@@ -5,8 +5,8 @@ import android.util.Log;
 
 import java.io.Serializable;
 
-import ra.sumbayak.corpseunderthebed.datas.msg.ChosenChoices;
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.choices.ChoicesMessage;
+import ra.sumbayak.corpseunderthebed.datas.messages.ChosenChoices;
+import ra.sumbayak.corpseunderthebed.datas.messages.ChoicesMessage;
 
 abstract class ChoicesHandler extends MessageHandler implements Serializable {
     
@@ -14,14 +14,14 @@ abstract class ChoicesHandler extends MessageHandler implements Serializable {
     public void handleChoices (Context context, int selection) {
         startNewSession (context);
         ChoicesMessage msg;
-        msg = (ChoicesMessage) getCurrentMessage ();
+        msg = (ChoicesMessage) currentMessage ();
         
         calculateChoicesIndex (msg, selection);
-        mRoomData.get (msg.getRoom ()).setOnChoices (false);
+        mRoomData.get (msg.room ()).setOnChoices (false);
+        incrementIndex ();
         
         saveGameData ();
-        mPostman.notifyFrontEnd ();
-        handleMessage (context);
+        handleMessage (currentMessage ());
     }
     
     private void calculateChoicesIndex (ChoicesMessage msg, Integer selection) {
@@ -32,12 +32,12 @@ abstract class ChoicesHandler extends MessageHandler implements Serializable {
         int skipped = 0, begin, end, max = 0;
         
         for (int i = 0; i < msg.choicesSize (); i++) {
-            if (i < selection) skipped += msg.getChoicesAt (i).getReplies ();
-            max += msg.getChoicesAt (i).getReplies ();
+            if (i < selection) skipped += msg.getChoices (i).replies ();
+            max += msg.getChoices (i).replies ();
         }
         
         begin = mIndex + skipped;
-        end = begin + msg.getChoicesAt (selection).getReplies ();
+        end = begin + msg.getChoices (selection).replies ();
         Log.d ("cutb_debug", "   skipped: " + skipped);
         Log.d ("cutb_debug", "   begin: " + begin);
         Log.d ("cutb_debug", "   end: " + end);

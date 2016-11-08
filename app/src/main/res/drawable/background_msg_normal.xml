@@ -14,10 +14,10 @@
         />
     
     <corners
-        android:topLeftRadius="5dp"
-        android:topRightRadius="5dp"
-        android:bottomLeftRadius="5dp"
-        android:bottomRightRadius="5dp"
+        android:topLeftRadius="@dimen/chat_message_radius"
+        android:topRightRadius="@dimen/chat_message_radius"
+        android:bottomLeftRadius="@dimen/chat_message_radius"
+        android:bottomRightRadius="@dimen/chat_message_radius"
         />
 
 </shape>

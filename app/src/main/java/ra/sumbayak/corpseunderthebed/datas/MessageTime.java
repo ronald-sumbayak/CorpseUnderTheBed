@@ -1,7 +1,5 @@
 package ra.sumbayak.corpseunderthebed.datas;
 
-import android.util.Log;
-
 import java.io.Serializable;
 
 public class MessageTime implements Serializable {
@@ -12,27 +10,19 @@ public class MessageTime implements Serializable {
         mTime = time;
     }
     
-    public String getTimeAsString () {
+    public String time () {
         return mTime;
     }
     
-    public int getTimeAsInteger () {
-        return (getTimeHour () * 60) + getTimeMinute ();
+    public int hour () {
+        return Integer.parseInt (mTime.split (":")[0]) + period ();
     }
     
-    public int getTimeHour () {
-        Log.d ("cutb_debug", "mTime: " + mTime);
-        return Integer.parseInt (mTime.split (":")[0]) + getTimePeriod ();
-    }
-    
-    public int getTimeMinute () {
-        Log.d ("cutb_debug", "bool: " + "ron :ld".split (" :")[1]);
-        Log.d ("cutb_debug", "mTime: " + mTime);
-        Log.d ("cutb_debug", "mTime[0]: " + mTime.split (" |:")[1]);
+    public int minute () {
         return Integer.parseInt (mTime.split (" |:")[1]);
     }
     
-    public int getTimePeriod () {
+    public int period () {
         return mTime.split (" ")[1].equals ("AM") ? 0 : 12;
     }
 }

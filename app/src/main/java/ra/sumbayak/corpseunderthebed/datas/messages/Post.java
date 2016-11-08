@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Post implements Serializable {
     
-    private String mAuthor, mDate, mTime, mBody;
+    private final String mAuthor, mDate, mTime, mBody;
     
     public Post (String author, String date, String time, String body) {
         mAuthor = author;
@@ -13,19 +13,19 @@ public class Post implements Serializable {
         mTime = time;
     }
     
-    public String getAuthor () {
+    public String author () {
         return mAuthor;
     }
     
-    public String getDate () {
+    public String date () {
         return mDate;
     }
     
-    public String getTime () {
+    public String time () {
         return mTime;
     }
     
-    public String getBody () {
+    public String body () {
         return mBody;
     }
 }

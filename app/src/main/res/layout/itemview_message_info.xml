@@ -15,7 +15,8 @@
         android:background="@drawable/background_msg_info"
         android:text="Monday, October 24"
         android:textSize="11sp"
-        android:textColor="#80ffffff"
+        android:textColor="#3fffffff"
+        android:textStyle="bold"
         tools:ignore="HardcodedText,SmallSp"
         />
     

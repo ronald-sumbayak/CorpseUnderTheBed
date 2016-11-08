@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import ra.sumbayak.corpseunderthebed.R;
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.note.Post;
+import ra.sumbayak.corpseunderthebed.datas.messages.Post;
 
 public class PostFragment extends DialogFragment {
     
@@ -36,10 +36,10 @@ public class PostFragment extends DialogFragment {
         Post post = (Post) getArguments ().getSerializable ("POST_CONTENT");
         
         assert post != null;
-        ((TextView) view.findViewById (R.id.postAuthor)).setText (post.getAuthor ());
-        ((TextView) view.findViewById (R.id.postDate)).setText (post.getDate ());
-        ((TextView) view.findViewById (R.id.postTime)).setText (post.getTime ());
-        ((TextView) view.findViewById (R.id.postBody)).setText (post.getBody ());
+        ((TextView) view.findViewById (R.id.postAuthor)).setText (post.author ());
+        ((TextView) view.findViewById (R.id.postDate)).setText (post.date ());
+        ((TextView) view.findViewById (R.id.postTime)).setText (post.time ());
+        ((TextView) view.findViewById (R.id.postBody)).setText (post.body ());
     }
     
     @Override

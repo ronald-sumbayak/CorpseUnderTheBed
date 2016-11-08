@@ -1,33 +1,32 @@
 package ra.sumbayak.corpseunderthebed.fragments;
 
-import android.animation.Animator;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import ra.sumbayak.corpseunderthebed.R;
 import ra.sumbayak.corpseunderthebed.activities.MainActivity;
+import ra.sumbayak.corpseunderthebed.animations.FadeOut;
 
 public class LaunchFragment extends Fragment implements MainActivity.FragmentLink {
+    
+    private MainActivity mContext;
     
     @Override
     public void onAttach (Context context) {
         super.onAttach (context);
+        mContext = (MainActivity) context;
         setFragmentLink ();
     }
     
     @Nullable
     @Override
     public View onCreateView (LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.d ("cutb_debug", "at LaunchFragment.#onCreateView");
         View view;
         view = inflater.inflate (R.layout.launch_screen, container, false);
         return view;
@@ -35,90 +34,40 @@ public class LaunchFragment extends Fragment implements MainActivity.FragmentLin
     
     @Override
     public void onBroadcastReceived () {
-        Log.d ("cutb_debug", "at LaunchFragment.#onBroadcastReceived");
         removeWelcomeScreen ();
     }
     
     private void removeWelcomeScreen () {
-        Log.d ("cutb_debug", "at LaunchFragment.#removeWelcomeScreen");
-        Animator fadeIn;
-        fadeIn = makeFadeInAnimator ();
-        
-        AnimatorSet animatorSet;
-        animatorSet = buildAnimator ();
-        animatorSet.play (fadeIn);
-        animatorSet.start ();
-    }
-    
-    /**
-     * Make a new FadeIn {@link Animator} that fade in from alpha 1.0 to 0.0.
-     * 
-     * @return a FadeIn {@link Animator}.
-     */
-    private Animator makeFadeInAnimator () {
-        Log.d ("cutb_debug", "at LaunchFragment.#makeFadeInAnimator");
-        Animator fadeIn;
-        fadeIn = ObjectAnimator.ofFloat (getView (), View.ALPHA, 1f, 0f);
-        fadeIn.setDuration (1000);
-        return fadeIn;
-    }
-    
-    /**
-     * Build a new {@link AnimatorSet} with a listener which add a {@link ChatListFragment} and
-     * remove this {@link LaunchFragment} attached to it.
-     * 
-     * @return the created {@link AnimatorSet}.
-     */
-    private AnimatorSet buildAnimator () {
-        Log.d ("cutb_debug", "at LaunchFragment.#buildAnimator");
-        AnimatorSet animatorSet;
-        animatorSet = new AnimatorSet ();
-        animatorSet.addListener (new Animator.AnimatorListener () {
+        FadeOut fadeOut;
+        fadeOut = new FadeOut (getView (), 1000) {
             @Override
-            public void onAnimationStart (Animator animation) {
-                setupMenuFragment ();
+            public void onFadeOutStart () {
+                putMenuFragment ();
             }
     
             @Override
-            public void onAnimationEnd (Animator animation) {
+            public void onFadeOutEnd () {
                 removeLaunchFragment ();
             }
-    
-            @Override
-            public void onAnimationCancel (Animator animation) {
-        
-            }
-    
-            @Override
-            public void onAnimationRepeat (Animator animation) {
-        
-            }
-        });
-        return animatorSet;
+        };
+        fadeOut.run ();
     }
     
-    private void setupMenuFragment () {
-        Log.d ("cutb_debug", "at LaunchFragment.#setupMenuFragment");
-        ChatListFragment chatListFragment;
-        chatListFragment = new ChatListFragment ();
-        
+    private void putMenuFragment () {
         FragmentTransaction ft;
-        ft = getActivity ().getSupportFragmentManager ().beginTransaction ();
-        ft.add (R.id.fragment_view, chatListFragment, "ChatList");
+        ft = mContext.getSupportFragmentManager ().beginTransaction ();
+        ft.add (R.id.fragment_view, new ChatListFragment (), "ChatList");
         ft.commit ();
     }
     
     private void removeLaunchFragment () {
-        Log.d ("cutb_debug", "at LaunchFragment.#removeLaunchFragment");
         FragmentTransaction ft;
-        ft = getActivity ().getSupportFragmentManager ().beginTransaction ();
+        ft = mContext.getSupportFragmentManager ().beginTransaction ();
         ft.remove (this);
         ft.commit ();
     }
     
     private void setFragmentLink () {
-        MainActivity mainActivity;
-        mainActivity = (MainActivity) getActivity ();
-        mainActivity.setFragmentLink (this);
+        mContext.setFragmentLink (this);
     }
 }

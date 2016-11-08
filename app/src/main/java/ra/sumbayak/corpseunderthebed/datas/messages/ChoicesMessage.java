@@ -5,25 +5,30 @@ import java.util.List;
 
 public class ChoicesMessage extends Message implements Serializable {
     
-    private List<Choices> mChoicesList;
-    private String mSaveAs;
+    private final List<Choice> mChoices;
+    private final String mSave;
     
-    public ChoicesMessage (String room, String saveAs, List<Choices> choicesList) {
+    public ChoicesMessage (String room, String save, List<Choice> choices) {
         super (room, "system");
-        mChoicesList = choicesList;
-        mSaveAs = saveAs;
+        mChoices = choices;
+        mSave = save;
     }
     
-    public Choices getChoicesAt (int index) {
-        return mChoicesList.get (index);
+    public Choice getChoices (int index) {
+        return mChoices.get (index);
     }
     
     public int choicesSize () {
-        return mChoicesList.size ();
+        return mChoices.size ();
     }
     
     @Override
-    public String getMessageType () {
+    public String notificationMessage () {
+        return "Give a response to " + room ();
+    }
+    
+    @Override
+    public String type () {
         return TYPE_CHOICES;
     }
 }

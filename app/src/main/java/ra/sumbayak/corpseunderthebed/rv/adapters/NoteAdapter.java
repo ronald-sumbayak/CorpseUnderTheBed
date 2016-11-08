@@ -5,16 +5,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 import ra.sumbayak.corpseunderthebed.R;
-import ra.sumbayak.corpseunderthebed.datas.RoomData;
+import ra.sumbayak.corpseunderthebed.rv.models.NoteModel;
 import ra.sumbayak.corpseunderthebed.rv.viewholders.NoteViewHolder;
 
 public class NoteAdapter extends RecyclerView.Adapter<NoteViewHolder> {
     
-    private RoomData mRoomData;
+    private List<NoteModel> mNotes;
     
-    public NoteAdapter (RoomData roomData) {
-        mRoomData = roomData;
+    public NoteAdapter (List<NoteModel> notes) {
+        mNotes = notes;
     }
     
     @Override
@@ -29,18 +31,18 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteViewHolder> {
     
     @Override
     public void onBindViewHolder (NoteViewHolder holder, int position) {
-        holder.bind (mRoomData.getNote (position));
+        holder.bind (mNotes.get (position));
     }
     
     @Override
     public int getItemCount () {
-        return mRoomData.noteSize ();
+        return mNotes.size ();
     }
     
-    public void refreshNote (RoomData roomData) {
-        if (roomData.noteSize () > mRoomData.noteSize ()) {
-            mRoomData = roomData;
-            notifyItemInserted (roomData.noteSize () - 1);
+    public void refresh (List<NoteModel> notes) {
+        if (notes.size () > mNotes.size ()) {
+            mNotes = notes;
+            notifyItemInserted (mNotes.size () - 1);
         }
     }
 }

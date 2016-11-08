@@ -20,15 +20,15 @@ public class UserMessageViewHolder extends NormalMessageViewHolder {
     public void bind (RoomData roomData, int position) {
         super.bind (roomData, position);
         UserMessageModel msg;
-        msg = (UserMessageModel) roomData.getMessageAt (position);
+        msg = (UserMessageModel) roomData.messageAt (position);
         
         String readText
-            = roomData.getRoomType () == RoomData.TYPE_GROUP
-            ? "Read " + String.valueOf (msg.getReadCount ())
+            = roomData.type () == RoomData.TYPE_GROUP
+            ? "Read " + String.valueOf (msg.readCount ())
             : "Read"
         ;
         
         mReadCount.setText (readText);
-        mReadCount.setVisibility (msg.getReadCount () > 0 ? View.VISIBLE : View.INVISIBLE);
+        mReadCount.setVisibility (msg.readCount () > 0 ? View.VISIBLE : View.INVISIBLE);
     }
 }

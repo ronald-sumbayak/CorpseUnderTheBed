@@ -11,12 +11,8 @@ import java.util.Map;
 import ra.sumbayak.corpseunderthebed.datas.GameData;
 import ra.sumbayak.corpseunderthebed.datas.MessageTime;
 import ra.sumbayak.corpseunderthebed.datas.RoomData;
-import ra.sumbayak.corpseunderthebed.datas.msg.Message;
-import ra.sumbayak.corpseunderthebed.datas.msg.info.InfoMessage;
-import ra.sumbayak.corpseunderthebed.datas.msg.info.InvitationMessage;
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.NormalMessage;
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.choices.ChoicesMessage;
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.note.PostMessage;
+import ra.sumbayak.corpseunderthebed.datas.messages.*;
+import ra.sumbayak.corpseunderthebed.datas.messages.ShareMessage;
 import ra.sumbayak.corpseunderthebed.rv.models.NoteModel;
 import ra.sumbayak.corpseunderthebed.rv.models.chats.*;
 
@@ -24,28 +20,30 @@ abstract class MessageHandler extends GameData implements Serializable {
     
     @Override
     public void handleMessage (Context context) {
-        Log.d ("cutb_debug", "at MessageHandler.#handleMessage (Context)");
-        Log.d ("cutb_debug", "   onChoices: " + isOnChoices ());
         startNewSession (context);
         handleMessage ();
     }
     
     private void handleMessage () {
+        if (mMessageData == null) return;
         if (!isOnChoices ()) {
             incrementIndex ();
-    
-            if (isEndOfDay ()) startNewDay ();
-            else handleMessage (getCurrentMessage ());
+            if (isEndOfDay ()) {
+                if (mDay == 3) return;
+                startNewDay ();
+            }
+            else handleMessage (currentMessage ());
         }
     }
     
-    private void handleMessage (Message msg) {
+    protected void handleMessage (Message msg) {
         Log.d ("cutb_debug", "at MessageHandler.#handleMessage");
-        Log.d ("cutb_debug", "   index: " + mIndex);
-        switch (msg.getMessageType ()) {
+        Log.i ("cutb_debug", "   index: " + mIndex);
+        switch (msg.type ()) {
             case Message.TYPE_NORMAL: handleMessage ((NormalMessage) msg); break;
             case Message.TYPE_CHOICES: handleMessage ((ChoicesMessage) msg); break;
-            case Message.TYPE_NOTE: handleMessage ((PostMessage) msg); break;
+            case Message.TYPE_NOTE: handleMessage ((NoteMessage) msg); break;
+            case Message.TYPE_SHARE: handleMessage ((ShareMessage) msg); break;
             case Message.TYPE_INFO: handleMessage ((InfoMessage) msg); break;
             case Message.TYPE_COMMENT: handleMessage (mContext); break;
             default: break;
@@ -53,82 +51,71 @@ abstract class MessageHandler extends GameData implements Serializable {
     }
     
     private void handleMessage (NormalMessage msg) {
-        //Log.d ("cutb_debug", "at MessageHandler.#handleMessage (NormalMessage)");
-        elevateChatList (msg.getRoom ());
-        Log.d ("cutb_debug", "   Text   : " + msg.getText ());
-        Log.d ("cutb_debug", "   Sender : " + msg.getSender ());
-        if (msg.getSender ().equals (mUser)) handleUserMessage (msg);
+        Log.d ("cutb_debug", "at MessageHandler.#handleMessage_NormalMessage");
+        Log.i ("cutb_debug", "   sender: " + msg.sender ());
+        Log.i ("cutb_debug", "   text: " + msg.text ());
+        elevateChatList (msg.room ());
+        if (msg.sender ().equals (mUser)) handleUserMessage (msg);
         else handleNormalMessage (msg);
     }
     
     private void handleNormalMessage (NormalMessage msg) {
-        Log.d ("cutb_debug", "at MessageHandler.#handleNormalMessage");
-        Log.d ("cutb_debug", "   Sender: " + msg.getSender ());
-        NormalMessageModel newNormalMessage;
-        newNormalMessage = new NormalMessageModel (msg);
-        getRoomData (msg.getRoom ()).addNewMessage (newNormalMessage);
+        NormalMessageModel newMessage;
+        newMessage = new NormalMessageModel (msg);
+        roomData (msg.room ()).addMessage (newMessage);
         
         // post-handleMessage
-        mInbox.add (msg);
-        saveTempGameData ();
+        mInbox.push (msg);
+        saveTempData ();
         mPostman.createNewAlarm (getMessageInterval ());
     }
     
     private void handleUserMessage (NormalMessage msg) {
-        Log.d ("cutb_debug", "at MessageHandler.#handleUserMessage");
-        UserMessageModel newUserMessage;
-        newUserMessage = new UserMessageModel (msg, getReadCount (msg.getRoom ()));
-        getRoomData (msg.getRoom ()).addNewMessage (newUserMessage);
+        UserMessageModel newMessage;
+        newMessage = new UserMessageModel (msg, getReadCount (msg.room ()));
+        roomData (msg.room ()).addMessage (newMessage);
         
         // post-handleMessage
+        //mInbox.push (msg);
         saveGameData ();
         mPostman.notifyFrontEnd ();
         mPostman.createNewAlarm (getMessageInterval ());
     }
     
     private void handleMessage (ChoicesMessage msg) {
-        Log.d ("cutb_debug", "at MessageHandler.#handleMessage (ChoicesMessage)");
-        elevateChatList (msg.getRoom ());
-        mRoomData.get (msg.getRoom ()).setOnChoices (true);
-        saveTempGameData ();
-        mPostman.createNewAlarm (3);
-    }
-    
-    private void handleMessage (PostMessage msg) {
-        Log.d ("cutb_debug", "at MessageHandler.#handleMessage (PostMessage)");
-        elevateChatList (msg.getRoom ());
-        
-        if (msg.isSaveAsNote ()) handleNoteMessage (msg);
-        else handlePostMessage (msg);
-    }
-    
-    private void handlePostMessage (PostMessage msg) {
-        PostMessageModel newPostMessage;
-        newPostMessage = new PostMessageModel (msg);
-        getRoomData (msg.getRoom ()).addNewMessage (newPostMessage);
-        
-        // post-handleMessage
-        mInbox.add (msg);
-        saveTempGameData ();
+        elevateChatList (msg.room ());
+        mRoomData.get (msg.room ()).setOnChoices (true);
+        saveTempData ();
         mPostman.createNewAlarm (getMessageInterval ());
     }
     
-    private void handleNoteMessage (PostMessage msg) {
-        NoteMessageModel newNoteMessage = new NoteMessageModel (msg);
-        NoteModel newNote = new NoteModel (msg.getPost ());
-        getRoomData (msg.getRoom ()).addNewMessage (newNoteMessage);
-        getRoomData (msg.getRoom ()).addNewNote (newNote);
-        newNoteMessage.setNoteIndex (getRoomData (msg.getRoom ()).noteSize ()-1);
+    private void handleMessage (NoteMessage msg) {
+        elevateChatList (msg.room ());
+        NoteMessageModel newMessage = new NoteMessageModel (msg);
+        NoteModel newNote = new NoteModel (msg, mMessageData.date ());
+        newMessage.setNoteIndex (roomData (msg.room ()).notes ().size ());
+        roomData (msg.room ()).addMessage (newMessage).addNote (newNote);
         
         // post-handleMessage
-        mInbox.add (msg);
-        saveTempGameData ();
+        mInbox.push (msg);
+        saveTempData ();
+        mPostman.createNewAlarm (getMessageInterval ());
+    }
+    
+    private void handleMessage (ShareMessage msg) {
+        elevateChatList (msg.room ());
+        ShareMessageModel newMessage;
+        newMessage = new ShareMessageModel (msg);
+        roomData (msg.room ()).addMessage (newMessage);
+        
+        // post-handleMessage
+        mInbox.push (msg);
+        saveTempData ();
         mPostman.createNewAlarm (getMessageInterval ());
     }
     
     private void handleMessage (InfoMessage msg) {
-        Log.d ("cutb_debug", "at MessageHandler.#handleMessage (InfoMessage)");
-        switch (msg.getInfoCategory ()) {
+        switch (msg.category ()) {
             case InfoMessage.CATEGORY_INVITATION: handleInfoMessage ((InvitationMessage) msg); break;
             default: break;
         }
@@ -136,23 +123,22 @@ abstract class MessageHandler extends GameData implements Serializable {
     }
     
     private void handleInfoMessage (InvitationMessage msg) {
-        Log.d ("cutb_debug", "at MessageHandler.#handleInfoMessage (InvitationMessage)");
-        elevateChatList (msg.getRoom ());
-        mRoomData.get (msg.getRoom ()).setRoomAsGroup (msg.getMemberCount (), msg.getMemberList ());
+        elevateChatList (msg.room ());
+        mRoomData.get (msg.room ()).setAsGroup (msg.members ().size (), msg.members ());
         saveGameData ();
     }
     
     /* This is magic. Do not touch! */
-    private void incrementIndex () {
+    protected void incrementIndex () {
         Log.d ("cutb_debug", "at MessageHandler.#incrementIndex");
-        Log.d ("cutb_debug", "   Initial index: " + mIndex);
+        Log.i ("cutb_debug", "   initial index: " + mIndex);
         while (!mActiveChoices.empty () && (mIndex == mActiveChoices.peek ().mEnd)) {
             mIndex = mActiveChoices.peek ().mMax;
             mActiveChoices.pop ();
         }
         
         mIndex++;
-        Log.d ("cutb_debug", "   Result index: " + mIndex);
+        Log.i ("cutb_debug", "   result index: " + mIndex);
     }
     
     private boolean isEndOfDay () {
@@ -162,14 +148,14 @@ abstract class MessageHandler extends GameData implements Serializable {
     }
     
     private void startNewDay () {
-        loadMessageData ();
+        loadNextDay ();
         removeEmptyDay ();
         putDateMessage ();
         //pendingGameForNextDay ();
-        handleMessage (mContext);
+        handleMessage ();
     }
     
-    private void loadMessageData () {
+    private void loadNextDay () {
         IOHandler io;
         io = new IOHandler (mContext);
         
@@ -178,19 +164,19 @@ abstract class MessageHandler extends GameData implements Serializable {
         mMessageData = io.loadMessageData (mDay);
     }
     
-    private void putDateMessage () {
-        for (Map.Entry<String, RoomData> roomData : mRoomData.entrySet ()) {
-            roomData.getValue ().addNewMessage (new InfoMessageModel (mMessageData.getDate ()));
-        }
-    }
-    
     private void removeEmptyDay () {
         for (Map.Entry<String, RoomData> roomDataEntry : mRoomData.entrySet ()) {
             RoomData roomData = roomDataEntry.getValue ();
             
-            if (roomData.getMessageAt (-1).getMessageType () == ChatMessageModel.MESSAGE_TYPE_INFO) {
+            if (roomData.messageAt (-1).type () == ChatMessageModel.TYPE_INFO) {
                 roomData.removeMessage (-1);
             }
+        }
+    }
+    
+    private void putDateMessage () {
+        for (Map.Entry<String, RoomData> roomData : mRoomData.entrySet ()) {
+            roomData.getValue ().addMessage (new InfoMessageModel (mMessageData.date ()));
         }
     }
     
@@ -199,14 +185,14 @@ abstract class MessageHandler extends GameData implements Serializable {
         MessageTime time;
         Log.d ("cutb_debug", "   mMessageData: " + mMessageData);
         Log.d ("cutb_debug", "   mDay: " + mDay);
-        time = ((NormalMessage) mMessageData.getMessageAt (0)).getTime ();
+        time = ((NormalMessage) mMessageData.get (0)).time ();
         
         Calendar calendar;
         calendar = Calendar.getInstance ();
         calendar.set (Calendar.DATE, calendar.get (Calendar.DATE) + 1);
-        calendar.set (Calendar.HOUR, time.getTimeHour ());
-        calendar.set (Calendar.MINUTE, time.getTimeMinute ());
-        calendar.set (Calendar.AM_PM, time.getTimePeriod ());
+        calendar.set (Calendar.HOUR, time.hour ());
+        calendar.set (Calendar.MINUTE, time.minute ());
+        calendar.set (Calendar.AM_PM, time.period ());
         mPostman.pendingGameForNextDay (calendar);
     }
     
@@ -224,14 +210,14 @@ abstract class MessageHandler extends GameData implements Serializable {
     
     private int getReadCount (String room) {
         /* you are not expected to understand this */
-        if (mRoomData.get (room).getRoomType () == RoomData.TYPE_GROUP) {
-            List<String> memberList;
-            memberList = mRoomData.get (room).getMemberList ();
-            memberList.removeAll (mDeadFriend);
-            return memberList.size ();
+        if (mRoomData.get (room).type () == RoomData.TYPE_GROUP) {
+            List<String> members;
+            members = mRoomData.get (room).members ();
+            members.removeAll (mDeadFriends);
+            return members.size ();
         }
         else {
-            if (mDeadFriend.contains (room)) return 0;
+            if (mDeadFriends.contains (room)) return 0;
             else return 1;
         }
     }

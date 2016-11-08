@@ -10,7 +10,7 @@ import ra.sumbayak.corpseunderthebed.rv.models.chats.NormalMessageModel;
 public class NormalMessageViewHolder extends ChatMessageViewHolder {
     
     private TextView mSender, mTime;
-    protected TextView mText;
+    TextView mText;
     
     public NormalMessageViewHolder (View itemView) {
         super (itemView);
@@ -22,10 +22,10 @@ public class NormalMessageViewHolder extends ChatMessageViewHolder {
     @Override
     public void bind (RoomData roomData, int position) {
         NormalMessageModel msg;
-        msg = (NormalMessageModel) roomData.getMessageAt (position);
-        mSender.setText (msg.getSender ());
+        msg = (NormalMessageModel) roomData.messageAt (position);
+        mSender.setText (msg.sender ());
         mSender.setVisibility (msg.isConsecutive () ? View.GONE : View.VISIBLE);
-        mText.setText (msg.getText ());
-        mTime.setText (msg.getTime ());
+        mTime.setText (msg.time ());
+        mText.setText (msg.text ());
     }
 }

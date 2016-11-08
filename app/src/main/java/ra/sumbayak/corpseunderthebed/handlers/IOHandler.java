@@ -36,7 +36,7 @@ public class IOHandler {
     }
     
     public boolean saveTempGameData (GameData gameData) {
-        Log.d ("cutb_debug", "at IOHandler.#saveTempGameData");
+        Log.d ("cutb_debug", "at IOHandler.#saveTempData");
         try {
             OutputStream os = mContext.openFileOutput ("temp.cutb", Context.MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream (os);

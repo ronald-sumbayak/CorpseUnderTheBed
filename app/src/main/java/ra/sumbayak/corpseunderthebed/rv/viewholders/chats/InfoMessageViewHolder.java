@@ -17,7 +17,7 @@ public class InfoMessageViewHolder extends ChatMessageViewHolder {
     
     @Override
     public void bind (RoomData roomData, int position) {
-        mText.setText (roomData.getMessageAt (position).getText ());
-        if (roomData.getMessageAt (position+1) == null) mText.setVisibility (View.GONE);
+        mText.setText (roomData.messageAt (position).text ());
+        if (roomData.messageAt (position + 1) == null) mText.setVisibility (View.GONE);
     }
 }

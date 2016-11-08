@@ -7,6 +7,7 @@
     android:layout_marginLeft="25dp"
     android:orientation="vertical"
     android:gravity="right"
+    android:layout_gravity="right"
     tools:ignore="RtlHardcoded"
     >
     
@@ -23,10 +24,45 @@
         tools:ignore="HardcodedText,RtlHardcoded"
         />
     
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="right"
+        android:gravity="bottom"
         >
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="right|bottom"
+            android:layout_marginBottom="3dp"
+            >
+            
+            <TextView
+                android:id="@+id/msgReadCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Read"
+                android:textColor="@android:color/white"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,SmallSp"
+                />
+        
+            <TextView
+                android:id="@+id/msgTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="06:11 AM"
+                android:textColor="@android:color/white"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,SmallSp"
+                />
+            
+        </LinearLayout>
         
         <TextView
             android:id="@+id/msgText"
@@ -41,31 +77,6 @@
             android:text="@string/LoremIpsum"
             />
         
-        <TextView
-            android:id="@+id/msgTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="06:11 AM"
-            android:textColor="@android:color/white"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            android:layout_alignBottom="@id/msgText"
-            tools:ignore="HardcodedText,SmallSp"
-            />
-        
-        <TextView
-            android:id="@+id/msgReadCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Read"
-            android:textColor="@android:color/white"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            android:layout_toLeftOf="@id/msgText"
-            android:layout_above="@id/msgTime"
-            tools:ignore="HardcodedText,SmallSp"
-            />
-        
-    </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>

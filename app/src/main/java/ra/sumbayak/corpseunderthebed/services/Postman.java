@@ -1,8 +1,6 @@
 package ra.sumbayak.corpseunderthebed.services;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.app.Service;
+import android.app.*;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
@@ -10,6 +8,7 @@ import android.util.Log;
 
 import java.util.Calendar;
 
+import ra.sumbayak.corpseunderthebed.activities.MainActivity;
 import ra.sumbayak.corpseunderthebed.datas.GameData;
 import ra.sumbayak.corpseunderthebed.handlers.DataHandler;
 import ra.sumbayak.corpseunderthebed.handlers.IOHandler;
@@ -18,9 +17,11 @@ import ra.sumbayak.corpseunderthebed.receivers.AlarmReceiver;
 public class Postman extends Service implements GameData.OnDataHandled {
     
     private IOHandler mIO;
+    private boolean mInGame = false;
     
     @Override
     public void onCreate () {
+        Log.d ("cutb_debug", "                          postman created");
         super.onCreate ();
         mIO = new IOHandler (this);
     }
@@ -61,7 +62,11 @@ public class Postman extends Service implements GameData.OnDataHandled {
         pendingIntent = makePendingIntent (0);
         
         if (pendingIntent == null) createNewAlarm (3);
-        else notifyFrontEnd ();
+        else {
+            Intent intent;
+            intent = new Intent ("cutb.MESSAGE");
+            sendBroadcast (intent);
+        }
     }
     
     /**
@@ -89,7 +94,7 @@ public class Postman extends Service implements GameData.OnDataHandled {
         intent.setAction ("cutb.ALARM");
         
         PendingIntent pendingIntent;
-        pendingIntent = PendingIntent.getBroadcast (this, 611, intent, flags[mode]);
+        pendingIntent = PendingIntent.getBroadcast (this, 61197, intent, flags[mode]);
         return pendingIntent;
     }
     
@@ -133,10 +138,41 @@ public class Postman extends Service implements GameData.OnDataHandled {
     @Override
     public void notifyFrontEnd () {
         Log.d ("cutb_debug", "at Postman.#notifyFrontEnd");
-        Intent intent;
-        intent = new Intent ("cutb.MESSAGE");
-        sendBroadcast (intent);
+        if (mInGame) {
+            Log.d ("cutb_debug", "notify game");
+            Intent intent;
+            intent = new Intent ("cutb.MESSAGE");
+            sendBroadcast (intent);
+        }
+        else {
+            Log.d ("cutb_debug", "push notification");
+            pushNotification ();
+        }
     }
+    
+    private void pushNotification () {
+        Intent intent;
+        intent = new Intent (this, MainActivity.class);
+        intent.setAction ("cutb.STATUS_BAR");
+        
+        mStackBuilder
+            .addParentStack (MainActivity.class)
+            .addNextIntent (intent)
+        ;
+    
+        PendingIntent pendingIntent;
+        pendingIntent = mStackBuilder.getPendingIntent (777, PendingIntent.FLAG_UPDATE_CURRENT);
+        
+        Notification.Builder builder;
+        builder = mIO.loadGameData ().getStatusBarNotification (this);
+        builder.setContentIntent (pendingIntent);
+
+        NotificationManager manager;
+        manager = (NotificationManager) getSystemService (NOTIFICATION_SERVICE);
+        manager.notify (777, builder.build ());
+    }
+    
+    private TaskStackBuilder mStackBuilder = TaskStackBuilder.create (this);
     
     @Override
     public void pendingGameForNextDay (Calendar calendar) {
@@ -148,6 +184,29 @@ public class Postman extends Service implements GameData.OnDataHandled {
     @Nullable
     @Override
     public IBinder onBind (Intent intent) {
-        return null;
+        Log.d ("cutb_debug", "serice biiiiiiiiiiiiiiiiiiinded");
+        mInGame = true;
+        return new Binder ();
+    }
+    
+    @Override
+    public void onRebind (Intent intent) {
+        Log.d ("cutb_debug", "                         rebind");
+        mInGame = true;
+        super.onRebind (intent);
+    }
+    
+    @Override
+    public boolean onUnbind (Intent intent) {
+        Log.d ("cutb_debug", "service unbindeddddddddddddddddddddddddddddddddddd");
+        mInGame = false;
+        return true;
+    }
+    
+    public class Binder extends android.os.Binder {
+        
+        public Postman getPostman () {
+            return Postman.this;
+        }
     }
 }

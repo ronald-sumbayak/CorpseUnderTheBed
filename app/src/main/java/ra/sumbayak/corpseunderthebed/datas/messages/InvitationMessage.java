@@ -7,25 +7,24 @@ import java.util.List;
 
 public class InvitationMessage extends InfoMessage implements Serializable {
     
-    private int mMemberCount;
-    private List<String> mMemberList = new ArrayList<> ();
+    private final List<String> mMembers = new ArrayList<> ();
     
-    public InvitationMessage (String room, int memberCount, String[] memberList) {
+    public InvitationMessage (String room, String[] members) {
         super (room);
-        mMemberCount = memberCount;
-        Collections.addAll (mMemberList, memberList);
+        Collections.addAll (mMembers, members);
+    }
+    
+    public List<String> members () {
+        return mMembers;
     }
     
     @Override
-    public String getInfoCategory () {
+    public String category () {
         return CATEGORY_INVITATION;
     }
     
-    public int getMemberCount () {
-        return mMemberCount;
-    }
-    
-    public List<String> getMemberList () {
-        return mMemberList;
+    @Override
+    public String notificationMessage () {
+        return "You invited to group " + room ();
     }
 }

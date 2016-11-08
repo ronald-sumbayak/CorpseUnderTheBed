@@ -5,23 +5,27 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomSheetDialog;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.transitionseverywhere.TransitionManager;
 
 import ra.sumbayak.corpseunderthebed.R;
 import ra.sumbayak.corpseunderthebed.activities.MainActivity;
+import ra.sumbayak.corpseunderthebed.animations.BoomerangSlide;
+import ra.sumbayak.corpseunderthebed.animations.Fading;
 import ra.sumbayak.corpseunderthebed.datas.GameData;
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.choices.ChoicesMessage;
+import ra.sumbayak.corpseunderthebed.datas.messages.ChoicesMessage;
 import ra.sumbayak.corpseunderthebed.handlers.IOHandler;
 import ra.sumbayak.corpseunderthebed.rv.adapters.ChatMessageAdapter;
 import ra.sumbayak.corpseunderthebed.rv.decorations.VerticalSpacingItemDecoration;
@@ -30,26 +34,28 @@ import ra.sumbayak.corpseunderthebed.services.Postman;
 
 public class ChatMessageFragment extends Fragment implements MainActivity.FragmentLink {
     
-    private MainActivity mMainActivity;
+    private MainActivity mContext;
     private IOHandler mIO;
     private GameData mGameData;
-    private LinearLayout mChoicesPanel;
-    private RecyclerView mChatMessage;
     private String mRoom;
+    private LinearLayout mChoicesPanel, mNotificationPanel;
+    private RecyclerView mChatMessage;
+    private ChatMessageAdapter mAdapter;
+    private BottomSheetDialog mPanel;
+    private BoomerangSlide mNotification;
     
     @Override
     public void onAttach (Context context) {
         super.onAttach (context);
-        mMainActivity = (MainActivity) context;
-        mIO = IOHandler.getIOInstance (mMainActivity);
+        mContext = (MainActivity) context;
+        mIO = IOHandler.getIOInstance (mContext);
         mRoom = getArguments ().getString ("cutb.ROOM");
-        mGameData = mIO.loadGameData ();
+        loadGameData ();
     }
     
     @Nullable
     @Override
     public View onCreateView (LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.d ("cutb_debug", "at ChatMessageFragment.#onCreateView");
         View view;
         view = inflater.inflate (R.layout.fragment_chat, container, false);
         return view;
@@ -57,18 +63,15 @@ public class ChatMessageFragment extends Fragment implements MainActivity.Fragme
     
     @Override
     public void onResume () {
-        Log.d ("cutb_debug", "at ChatMessageFragment.#onResume");
         super.onResume ();
-        setToolbarTitle ();
         setFragmentLink ();
-        loadGameData ();
+        setupToolbar ();
         refreshChatMessage ();
-        mChatMessage.scrollToPosition (mGameData.getRoomData (mRoom).messageSize ()-1);
+        mChatMessage.scrollToPosition (mGameData.roomData (mRoom).messageSize ()-1);
     }
     
     @Override
     public void onViewCreated (View view, @Nullable Bundle savedInstanceState) {
-        Log.d ("cutb_debug", "at ChatMessageFragment.#onViewCreated");
         setupView (view);
         setupChatMessage ();
     }
@@ -78,63 +81,71 @@ public class ChatMessageFragment extends Fragment implements MainActivity.Fragme
     }
     
     private void setupView (View view) {
-        Log.d ("cutb_debug", "at ChatMessageFragment.#setupView");
         mChatMessage = (RecyclerView) view.findViewById (R.id.rvChatMessage);
-        mChoicesPanel = (LinearLayout) view.findViewById (R.id.choicesPanel);
+        mChoicesPanel = (LinearLayout) view.findViewById (R.id.openChoicesButton);
+        mNotificationPanel = (LinearLayout) view.findViewById (R.id.panelNotification);
+        mNotification = new BoomerangSlide (mNotificationPanel, 750, 2500);
     }
     
     private void setupChatMessage () {
-        Log.d ("cutb_debug", "at ChatMessageFragment.#setupChatMessage");
-        mChatMessage.setHasFixedSize (false);
-        mChatMessage.setLayoutManager (new SmoothScrollLayoutManager (mMainActivity));
+        mChatMessage.setLayoutManager (new SmoothScrollLayoutManager (mContext));
         mChatMessage.addItemDecoration (new VerticalSpacingItemDecoration (8));
-        mChatMessage.setAdapter (new ChatMessageAdapter (mGameData.getRoomData (mRoom)));
-        mChatMessage.scrollToPosition (mGameData.getRoomData (mRoom).messageSize ()-1);
+        mAdapter = new ChatMessageAdapter (mContext, mGameData.roomData (mRoom));
+        mChatMessage.setAdapter (mAdapter);
+        mChatMessage.scrollToPosition (mGameData.roomData (mRoom).messageSize () - 1);
         refreshChatMessage ();
     }
     
-    private void setToolbarTitle () {
-        Log.d ("cutb_debug", "at ChatMessageFragment.#setToolbarTitle");
+    private void setupToolbar () {
         ActionBar actionBar;
         actionBar = ((AppCompatActivity) getActivity ()).getSupportActionBar ();
         
         assert actionBar != null;
+        actionBar.setTitle (mRoom);
         actionBar.setDisplayHomeAsUpEnabled (true);
         actionBar.setHomeAsUpIndicator (R.drawable.button_back);
-        actionBar.setTitle (mRoom);
     }
     
     @Override
     public void onBroadcastReceived () {
-        Log.d ("cutb_debug", "at ChatMessageFragment.#onBroadcastReceived");
+        if (mGameData.inbox ().peek ().room ().equals (mRoom))
+            refreshChatMessage ();
+        else if (!mNotification.isRunning ())
+            showNotification ();
+    }
+    
+    private void showNotification () {
         loadGameData ();
-        refreshChatMessage ();
+        setNotificationMessage ();
+        mNotification.run ();
+    }
+    
+    private void setNotificationMessage () {
+        TextView message;
+        message = (TextView) mNotificationPanel.findViewById (R.id.text);
+        message.setText (mGameData.getInGameNotification ());
     }
     
     private void refreshChatMessage () {
-        Log.d ("cutb_debug", "at ChatMessageFragment.#refreshChatMessage");
-        buildChoicesPanel ();
-        setOnLayoutChangeListener (mGameData.getRoomData (mRoom).messageSize (), mGameData);
-        
-        ChatMessageAdapter adapter;
-        adapter = (ChatMessageAdapter) mChatMessage.getAdapter ();
-        adapter.refreshChatMessage (mGameData.getRoomData (mRoom));
-        Log.d ("cutb_debug", "ChatMessage refreshed");
+        loadGameData ();
+        if (mGameData.roomData (mRoom).notes ().size () > 0) setHasOptionsMenu (true);
+        setupChoicesPanel ();
+        setOnLayoutChangeListener ();
+        mAdapter.refresh (mGameData.roomData (mRoom));
         markMessageAsRead ();
     }
     
     private void markMessageAsRead () {
-        
+        // TODO: tell me what to do here arrrrg
     }
     
-    private void setOnLayoutChangeListener (final int messageSize, final GameData gameData) {
+    private void setOnLayoutChangeListener () {
         mChatMessage.addOnLayoutChangeListener (new View.OnLayoutChangeListener () {
             @Override
             public void onLayoutChange (View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                Log.d ("cutb_debug", "at ChatMessageFragment.#refreshChatMessage.OnLayoutChangeListener.#onLayoutChange");
                 mChatMessage.removeOnLayoutChangeListener (this);
-                if (lastVisibleIndex () > mGameData.getRoomData (mRoom).messageSize ()-3) {
-                    mChatMessage.smoothScrollToPosition (gameData.getRoomData (mRoom).messageSize () - 1);
+                if (lastVisibleIndex () > mGameData.roomData (mRoom).messageSize ()-4) {
+                    mChatMessage.smoothScrollToPosition (mGameData.roomData (mRoom).messageSize () - 1);
                 }
             }
         });
@@ -146,70 +157,109 @@ public class ChatMessageFragment extends Fragment implements MainActivity.Fragme
         return layoutManager.findLastCompletelyVisibleItemPosition ();
     }
     
-    private void buildChoicesPanel () {
-        Log.d ("cutb_debug", "at ChatMessageFragment.#buildChoicesPanel");
-        Log.i ("cutb_debug", "   GameData.onChoices: " + mGameData.isOnChoices ());
-        mChoicesPanel.removeAllViews ();
-        if (mGameData.getRoomData (mRoom).isOnChoices ()) {
-            ChoicesMessage msg = (ChoicesMessage) mGameData.getCurrentMessage ();
-            LayoutInflater inflater = getLayoutInflater (null);
-        
-            for (int i = 0; i < msg.choicesSize (); i++) {
-                Button choices;
-                choices = makeChoicesButton (inflater, msg, i);
-                LinearLayout.LayoutParams params;
-                params = new LinearLayout.LayoutParams (ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                mChoicesPanel.addView (choices, params);
-            }
-            
-            mChatMessage.scrollToPosition (mGameData.getRoomData (mRoom).messageSize ()-1);
+    private void setupChoicesPanel () {
+        if (mGameData.roomData (mRoom).isOnChoices ()) {
+            mChoicesPanel.setOnClickListener (new View.OnClickListener () {
+                @Override
+                public void onClick (View v) {
+                    mPanel = new BottomSheetDialog (mContext);
+                    mPanel.setContentView (buildChoicesPanel ((ChoicesMessage) mGameData.currentMessage ()));
+                    mPanel.show ();
+                }
+            });
+            TransitionManager.beginDelayedTransition (mChoicesPanel);
+            mChoicesPanel.setVisibility (View.VISIBLE);
         }
-    
-        assert getView () != null;
-        ((View) getView ().getParent ()).invalidate ();
     }
     
     @SuppressLint ("InflateParams")
-    private Button makeChoicesButton (LayoutInflater inflater, ChoicesMessage msg, final int position) {
+    private View buildChoicesPanel (ChoicesMessage msg) {
+        LayoutInflater inflater;
+        inflater = getLayoutInflater (null);
+        
+        LinearLayout panel;
+        panel = (LinearLayout) inflater.inflate (R.layout.view_choices_panel, null);
+        int length=0;
+        
+        for (int i = 0; i < msg.choicesSize (); i++) {
+            LinearLayout.LayoutParams params;
+            params = new LinearLayout.LayoutParams (-2, -2);
+            Button choice;
+            choice = makeChoicesButton (inflater, msg.getChoices (i).label (), i);
+            panel.addView (choice, params);
+            length += choice.getText ().length ();
+        }
+        
+        if (length > 35) panel.setOrientation (LinearLayout.VERTICAL);
+        return panel;
+    }
+    
+    @SuppressLint ("InflateParams")
+    private Button makeChoicesButton (LayoutInflater inflater, String label, final int position) {
         Button choices;
         choices = (Button) inflater.inflate (R.layout.itemview_choices, null);
-        choices.setText (msg.getChoicesAt (position).getLabel ());
+        choices.setText (label);
         choices.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick (View v) {
-                Log.d ("cutb_debug", "at ChatMessageFragment.#buildChoicesPanel.OnClickListener.#onClick");
+                mChoicesPanel.setVisibility (View.GONE);
+                mPanel.dismiss ();
                 sendChoicesSelection (position);
-                mChoicesPanel.removeAllViews ();
-                Log.d ("cutb_debug", "choices clicked " + position);
             }
         });
         return choices;
     }
     
     private void sendChoicesSelection (int position) {
-        Log.d ("cutb_debug", "at ChatMessageFragment.#sendChoicesSelection");
         Intent intent;
-        intent = new Intent (mMainActivity, Postman.class);
+        intent = new Intent (mContext, Postman.class);
         intent.setAction ("cutb.CHOICES");
         intent.putExtra ("selection", position);
-        mMainActivity.startService (intent);
+        mContext.startService (intent);
     }
     
     private void setFragmentLink () {
-        mMainActivity.setFragmentLink (this);
+        mContext.setFragmentLink (this);
+    }
+    
+    @Override
+    public void onCreateOptionsMenu (Menu menu, MenuInflater inflater) {
+        inflater.inflate (R.menu.menu_chat, menu);
     }
     
     @Override
     public boolean onOptionsItemSelected (MenuItem item) {
-        Log.d ("cutb_debug", "at onOptionsItemSelected, id: " + item.getItemId ());
+        Log.d ("cutb_debug", "item.id: " + item.getItemId ());
         switch (item.getItemId ()) {
-            case android.R.id.home: {
-                assert getActivity ().getActionBar () != null;
-                getActivity ().getActionBar ().setDisplayHomeAsUpEnabled (false);
-                getActivity ().onBackPressed ();
-                return true;
-            }
-            default: return super.onOptionsItemSelected (item);
+            case android.R.id.home:
+                Log.d ("cutb_debug", "back pressed");
+                mContext.onBackPressed ();
+                return false;
+            case R.id.button_open_notes:
+                Fading fading;
+                fading = new Fading (mContext.findViewById (R.id.fade_interpolator)) {
+                    @Override
+                    public void onFadeInEnd () {
+                        Bundle bundle;
+                        bundle = new Bundle ();
+                        bundle.putString ("cutb.ROOM", mRoom);
+                        bundle.putInt ("cutb.NOTE_INDEX", 0);
+            
+                        NoteFragment fragment;
+                        fragment = new NoteFragment ();
+                        fragment.setArguments (bundle);
+            
+                        FragmentTransaction ft;
+                        ft = mContext.getSupportFragmentManager ().beginTransaction ();
+                        ft.addToBackStack (null);
+                        ft.replace (R.id.fragment_view, fragment, "NoteList." + mRoom);
+                        ft.commit ();
+                    }
+                };
+                fading.run ();
+                return false;
+            default:
+                return super.onOptionsItemSelected (item);
         }
     }
 }

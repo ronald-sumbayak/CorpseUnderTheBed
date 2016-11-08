@@ -1,28 +1,25 @@
 package ra.sumbayak.corpseunderthebed.datas.messages;
 
-import java.io.Serializable;
-
-public class ShareMessage extends NormalMessage implements Serializable {
+public class ShareMessage extends NormalMessage implements java.io.Serializable {
     
-    private boolean mSaveAsNote;
-    private Post mPost;
+    private final Post mPost;
     
-    public ShareMessage (String room, String sender, String time, Post post, boolean saveAsNote) {
-        super (room, sender, time, post.getBody ());
+    public ShareMessage (String room, String sender, String time, Post post) {
+        super (room, sender, time, null);
         mPost = post;
-        mSaveAsNote = saveAsNote;
     }
     
-    public Post getPost () {
+    public Post post () {
         return mPost;
     }
     
-    public boolean isSaveAsNote () {
-        return mSaveAsNote;
+    @Override
+    public String notificationMessage () {
+        return sender () + " shared " + mPost.author () + "'s post.";
     }
     
     @Override
-    public String getMessageType () {
-        return TYPE_NOTE;
+    public String type () {
+        return TYPE_SHARE;
     }
 }

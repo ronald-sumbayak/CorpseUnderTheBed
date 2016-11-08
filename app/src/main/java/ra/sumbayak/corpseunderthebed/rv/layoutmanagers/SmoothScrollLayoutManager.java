@@ -9,7 +9,7 @@ import android.util.DisplayMetrics;
 
 public class SmoothScrollLayoutManager extends LinearLayoutManager {
     
-    private Float speed = 4.0f;
+    private Float speed = 1.0f;
     
     public SmoothScrollLayoutManager (Context context) {
         super (context);

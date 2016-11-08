@@ -2,24 +2,24 @@ package ra.sumbayak.corpseunderthebed.rv.models.chats;
 
 import java.io.Serializable;
 
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.NormalMessage;
+import ra.sumbayak.corpseunderthebed.datas.messages.NormalMessage;
 
 public class UserMessageModel extends NormalMessageModel implements Serializable {
     
     private int mReadCount;
     
     public UserMessageModel (NormalMessage msg, int readCount) {
-        super (msg.getText (), msg.getSender (), msg.getTime ().getTimeAsString ());
+        super (msg);
         mReadCount = readCount;
         setRead ();
     }
     
-    public int getReadCount () {
+    public int readCount () {
         return mReadCount;
     }
     
     @Override
-    public int getMessageType () {
-        return MESSAGE_TYPE_USER;
+    public int type () {
+        return TYPE_USER;
     }
 }

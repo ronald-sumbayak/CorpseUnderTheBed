@@ -3,12 +3,11 @@ package ra.sumbayak.corpseunderthebed.datas.messages;
 import java.io.Serializable;
 
 import ra.sumbayak.corpseunderthebed.datas.MessageTime;
-import ra.sumbayak.corpseunderthebed.datas.messages.Message;
 
 public class NormalMessage extends Message implements Serializable {
     
-    private String mText;
-    private MessageTime mTime;
+    private final MessageTime mTime;
+    private final String mText;
     
     public NormalMessage (String room, String sender, String time, String text) {
         super (room, sender);
@@ -16,16 +15,21 @@ public class NormalMessage extends Message implements Serializable {
         mText = text;
     }
     
-    public MessageTime getTime () {
+    public MessageTime time () {
         return mTime;
     }
     
-    public String getText () {
+    public String text () {
         return mText;
     }
     
     @Override
-    public String getMessageType () {
+    public String notificationMessage () {
+        return sender () + ": " + text ();
+    }
+    
+    @Override
+    public String type () {
         return TYPE_NORMAL;
     }
 }

@@ -3,7 +3,7 @@ package ra.sumbayak.corpseunderthebed.datas;
 import java.io.Serializable;
 import java.util.List;
 
-import ra.sumbayak.corpseunderthebed.datas.msg.Message;
+import ra.sumbayak.corpseunderthebed.datas.messages.Message;
 
 public class MessageData implements Serializable {
     
@@ -15,7 +15,7 @@ public class MessageData implements Serializable {
         mDate = date;
     }
     
-    public String getDate () {
+    public String date () {
         return mDate;
     }
     
@@ -23,7 +23,7 @@ public class MessageData implements Serializable {
         return mMessages.size ();
     }
     
-    public Message getMessageAt (Integer index) {
+    public Message get (int index) {
         return mMessages.get (index);
     }
 }

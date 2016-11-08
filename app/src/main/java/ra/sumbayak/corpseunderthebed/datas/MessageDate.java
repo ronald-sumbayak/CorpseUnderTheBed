@@ -16,7 +16,7 @@ class MessageDate implements Serializable {
         "July", "August", "September", "October", "November", "December"
     ));
     
-    private Integer mDay, mDate, mMonth;
+    private int mDay, mDate, mMonth;
     
     MessageDate (String date) {
         mDay = DAY_NAME.indexOf (date.split (", ")[0]);

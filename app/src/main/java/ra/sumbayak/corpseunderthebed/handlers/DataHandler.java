@@ -47,9 +47,9 @@ public class DataHandler extends NotificationHandler implements Serializable {
         int index;
         index = roomData.messageSize ();
         while (--index >= 0) {
-            if (roomData.getMessageAt (index).getMessageType () != ChatMessageModel.MESSAGE_TYPE_INFO) {
+            if (roomData.messageAt (index).type () != ChatMessageModel.TYPE_INFO) {
                 NormalMessageModel msg;
-                msg = (NormalMessageModel) roomData.getMessageAt (index);
+                msg = (NormalMessageModel) roomData.messageAt (index);
                 
                 if (!msg.isRead ()) msg.setRead ();
                 else break;
