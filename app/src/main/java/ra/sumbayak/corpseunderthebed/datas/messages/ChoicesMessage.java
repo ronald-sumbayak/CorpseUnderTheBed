@@ -1,9 +1,7 @@
-package ra.sumbayak.corpseunderthebed.datas.msg.normal.choices;
+package ra.sumbayak.corpseunderthebed.datas.messages;
 
 import java.io.Serializable;
 import java.util.List;
-
-import ra.sumbayak.corpseunderthebed.datas.msg.Message;
 
 public class ChoicesMessage extends Message implements Serializable {
     

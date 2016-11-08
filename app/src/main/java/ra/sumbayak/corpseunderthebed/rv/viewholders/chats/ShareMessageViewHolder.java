@@ -5,14 +5,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 
 import ra.sumbayak.corpseunderthebed.activities.MainActivity;
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.note.Post;
+import ra.sumbayak.corpseunderthebed.datas.messages.Post;
 import ra.sumbayak.corpseunderthebed.fragments.PostFragment;
 
-public class PostMessageViewHolder extends NoteMessageViewHolder {
+public class ShareMessageViewHolder extends NoteMessageViewHolder {
     
     private Post mPost;
     
-    public PostMessageViewHolder (final View itemView) {
+    public ShareMessageViewHolder (final View itemView) {
         super (itemView);
         mText.setOnClickListener (new View.OnClickListener () {
             @Override

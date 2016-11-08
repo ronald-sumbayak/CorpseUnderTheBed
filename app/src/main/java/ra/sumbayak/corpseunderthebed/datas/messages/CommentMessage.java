@@ -1,8 +1,8 @@
-package ra.sumbayak.corpseunderthebed.datas.msg.comment;
+package ra.sumbayak.corpseunderthebed.datas.messages;
 
 import java.io.Serializable;
 
-import ra.sumbayak.corpseunderthebed.datas.msg.Message;
+import ra.sumbayak.corpseunderthebed.datas.messages.Message;
 
 public class CommentMessage extends Message implements Serializable {
     

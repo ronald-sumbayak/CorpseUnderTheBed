@@ -38,6 +38,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/background_msg_normal"
+            android:foreground="?android:attr/selectableItemBackground"
             >
             
             <TextView

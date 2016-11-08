@@ -1,9 +1,9 @@
-package ra.sumbayak.corpseunderthebed.datas.msg.normal;
+package ra.sumbayak.corpseunderthebed.datas.messages;
 
 import java.io.Serializable;
 
 import ra.sumbayak.corpseunderthebed.datas.MessageTime;
-import ra.sumbayak.corpseunderthebed.datas.msg.Message;
+import ra.sumbayak.corpseunderthebed.datas.messages.Message;
 
 public class NormalMessage extends Message implements Serializable {
     

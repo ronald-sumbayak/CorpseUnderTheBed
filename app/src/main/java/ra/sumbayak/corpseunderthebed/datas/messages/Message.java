@@ -1,4 +1,4 @@
-package ra.sumbayak.corpseunderthebed.datas.msg;
+package ra.sumbayak.corpseunderthebed.datas.messages;
 
 import java.io.Serializable;
 
@@ -7,6 +7,7 @@ public abstract class Message implements Serializable {
     public static final String TYPE_NORMAL = "msg";
     public static final String TYPE_CHOICES = "choices";
     public static final String TYPE_NOTE = "note";
+    public static final String TYPE_SHARE = "share";
     public static final String TYPE_INFO = "info";
     public static final String TYPE_COMMENT = "comment";
     

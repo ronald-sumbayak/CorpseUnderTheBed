@@ -1,17 +1,14 @@
-package ra.sumbayak.corpseunderthebed.datas.msg.normal.note;
+package ra.sumbayak.corpseunderthebed.datas.messages;
 
 import java.io.Serializable;
 
-import ra.sumbayak.corpseunderthebed.datas.msg.normal.NormalMessage;
-
-public class PostMessage extends NormalMessage implements Serializable {
+public class ShareMessage extends NormalMessage implements Serializable {
     
     private boolean mSaveAsNote;
     private Post mPost;
     
-    public PostMessage (String room, String sender, String time, Post post, boolean saveAsNote) {
+    public ShareMessage (String room, String sender, String time, Post post, boolean saveAsNote) {
         super (room, sender, time, post.getBody ());
-        
         mPost = post;
         mSaveAsNote = saveAsNote;
     }

@@ -1,4 +1,4 @@
-package ra.sumbayak.corpseunderthebed.datas.msg;
+package ra.sumbayak.corpseunderthebed.datas.messages;
 
 import java.io.Serializable;
 

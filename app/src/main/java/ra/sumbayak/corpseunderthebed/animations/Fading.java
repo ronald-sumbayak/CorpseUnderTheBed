@@ -1,21 +1,16 @@
-package ra.sumbayak.corpseunderthebed.runnables;
+package ra.sumbayak.corpseunderthebed.animations;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.support.annotation.Nullable;
 import android.view.View;
 
-import ra.sumbayak.corpseunderthebed.R;
-import ra.sumbayak.corpseunderthebed.activities.MainActivity;
-
-public class FadingAnimation implements Runnable {
+public abstract class Fading implements Runnable {
     
-    private FadeInAnimationEnd mFadeInEnd;
-    private View mFadeInterpolator;
+    private View mTarget;
     
-    public FadingAnimation (MainActivity mainActivity) {
-        mFadeInterpolator = mainActivity.findViewById (R.id.fade_interpolator);
+    protected Fading (View target) {
+        mTarget = target;
     }
     
     @Override
@@ -27,7 +22,7 @@ public class FadingAnimation implements Runnable {
     
     private Animator makeFadeInAnimator () {
         Animator fadeIn;
-        fadeIn = ObjectAnimator.ofFloat (mFadeInterpolator, View.ALPHA, 0f, 1f);
+        fadeIn = ObjectAnimator.ofFloat (mTarget, View.ALPHA, 0f, 1f);
         fadeIn.setDuration (750);
         fadeIn.addListener (new Animator.AnimatorListener () {
             @Override
@@ -37,9 +32,7 @@ public class FadingAnimation implements Runnable {
         
             @Override
             public void onAnimationEnd (Animator animation) {
-                if (mFadeInEnd != null) {
-                    mFadeInEnd.onFadeAnimationEnd ();
-                }
+                onFadeInEnd ();
             }
         
             @Override
@@ -57,7 +50,7 @@ public class FadingAnimation implements Runnable {
     
     private Animator makeFadeOutAnimator () {
         Animator fadeOut;
-        fadeOut = ObjectAnimator.ofFloat (mFadeInterpolator, View.ALPHA, 1f, 0f);
+        fadeOut = ObjectAnimator.ofFloat (mTarget, View.ALPHA, 1f, 0f);
         fadeOut.setDuration (750);
         return fadeOut;
     }
@@ -69,11 +62,5 @@ public class FadingAnimation implements Runnable {
         return fadeAnimator;
     }
     
-    public void setFadeInEnd (@Nullable FadeInAnimationEnd fadeInEnd) {
-        mFadeInEnd = fadeInEnd;
-    }
-    
-    public interface FadeInAnimationEnd {
-        void onFadeAnimationEnd ();
-    }
+    abstract public void onFadeInEnd (); 
 }
