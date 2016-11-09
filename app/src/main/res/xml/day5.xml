@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <description>Fifth day, chapter 2</description>
+    <date>Tuesday, March 1</date>
+    <messages>
+        <type>share</type>
+        <room>Class 3&#8211;1</room>
+        <sender>Clara</sender>
+        <time>8:03 AM</time>
+        <post>
+            <author>Wazzup</author>
+            <time>7:31 AM</time>
+            <date>March 1, 2016</date>
+            <body>Barbara Martin, Achievement and Controversy\n\nOne of American’s beauty symbol, Barbara Martin, had tragically died yesterday morning.  As one of the most popular pulchritude in this country, the life of this rising model was full of accomplishment. Nevertheless, as a normal adult she was also followed by a significant amount of controversy. The fact that she was an alcoholic is believed to lead her to her death off the cliff.\n\nFull story: wazzup.com/barbara</body>
+        </post>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:07 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>How cruel</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:07 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>We knew she wasn’t drunk that night</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>8:07 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Yes, Lucy</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>8:07 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>We knew it</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:07 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>There’s even worse article about her</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:07 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>It said that she used people to gain her fame</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>8:07 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>That she was suicidal and many things</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>8:08 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Dude I even read an article about the possibility of her faking death</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>8:08 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Why can’t she just rest in peace?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:10 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I feel bad for her</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>8:10 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Hhh -_-</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>8:10 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>How dare they speak disloyally of her</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:10 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>And her parents</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>8:10 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Imagine how they feel</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:15 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Even I am angry with all those gossip badmouthing her</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:15 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>But I’m glad her current friends said nice things</text>
+    </messages>
+    <messages>
+        <type>share</type>
+        <sender>Mike</sender>
+        <time>9:15 AM</time>
+        <room>Class 3&#8211;1</room>
+        <post>
+            <author>Hollywood News</author>
+            <time>7:02 PM</time>
+            <date>February 31, 2016</date>
+            <body>Jennifer Tyler , “She Was the Humblest Person I Know”\n\nOften being seen hanging out with the late Barbara Martin, Jennifer Tyler shows her mourning and heartache to the reporter of Channel 11. “She was the humblest person I know.” , Jennifer said. “And the most honest one, too. She changed your life without you knowing it. A part of me died along with her. I would never find someone like Barbara.</body>
+        </post>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>9:17 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Thank God she’s so nice</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>9:17 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I hope more people are like Jennifer</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>9:17 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Talking trash about the deceased is so unrespectful</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>9:17 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Yea, too bad there are more than a dozen crappy articles like the one Clara shared</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>Media nowadays -_-</label>
+                <replies>4</replies>
+            </choice>
+            <choice>
+                <label>Are you sure Barbara wasn’t drunk?</label>
+                <replies>5</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3&#8211;1</room>
+        <sender>Luna</sender>
+        <time>9:19 AM</time>
+        <text>Media nowadays -_-</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>9:19 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I know, right?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>9:19 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>The bigger the problem is, the more people become interested, more popular they get</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>9:21 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>No matter how untrue the news is</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3&#8211;1</room>
+        <sender>Luna</sender>
+        <time>9:19 AM</time>
+        <text>Are you sure Barbara wasn’t drunk?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>9:20 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Of course</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>9:20 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>She would never drink and drive</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:21 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Yea, she’s not stupid, you know?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:21 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>She was too full of herself to risk her life recklessly</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Clara</sender>
+        <time>9:23 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>No surprise if there are shitty gossip like that</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Clara</sender>
+        <time>9:23 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>She just won four awards a few weeks ago</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Clara</sender>
+        <time>9:23 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Some people must have hated her</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>I hope the false rumors about her do not spread anymore</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>All these badmouthing rumors will fade over time</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3&#8211;1</room>
+        <sender>Luna</sender>
+        <time>9:25 AM</time>
+        <text>I hope the false rumors about her do not spread anymore</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3&#8211;1</room>
+        <sender>Luna</sender>
+        <time>9:25 AM</time>
+        <text>All these badmouthing rumors will fade over time</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>9:26 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Huft -_- Life as an idol is hard</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>9:26 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’m a bit glad that I do not coherence with many people</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>9:27 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Even those people talking nice things just want to look good on public</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>9:27 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>They don’t really mean what they say</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>9:30 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Wow, Eddie</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>9:30 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Since when have you become so skeptical and negative?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>9:30 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Since a few years ago, maybe</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>9:31 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Since I&#x27;ve discovered the world&#x27;s not as beautiful as I thought</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>9:31 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’m astonished, Ed</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>9:31 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>As a decent person you were able to live optimistic for more than a decade</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>9:32 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I already lost my faith in humanity before I reached age of 8</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:35 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>-__-</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Louis</sender>
+        <time>11:23 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Those bad news don’t really matter</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Louis</sender>
+        <time>11:23 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>They don’t make Barbara less loved</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>11:43 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Louis</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>11:43 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>What’s up?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>11:43 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I miss you</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>11:43 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Long time no hearing from you, Lou</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>11:43 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I hope you&#x27;re doing fine</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Louis</sender>
+        <time>5:20 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’m fine</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Louis</sender>
+        <time>5:20 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I don’t know how to respond to the words “I miss you”</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>5:22 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Haha</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>5:22 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>You haven’t changed</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>5:22 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Still the awkward little boy</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Louis</sender>
+        <time>5:24 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I guess so</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Louis</sender>
+        <time>5:24 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>You too, Nila</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Louis</sender>
+        <time>5:24 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>What did I use to call you?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Louis</sender>
+        <time>5:26 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Ah, a friendly nerd</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>5:26 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Funny</text>
+    </messages>
+</root>

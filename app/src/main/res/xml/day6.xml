@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <description>Sixth day, chapter 2</description>
+    <date>Wednesday, March 2</date>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>3:10 PM</time>
+        <room>Class 3-1</room>
+        <text>By the way guys</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>3:10 PM</time>
+        <room>Class 3-1</room>
+        <text>Have you heard about Robert?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>3:10 PM</time>
+        <room>Class 3-1</room>
+        <text>He’s gonna compete in The World Fighting Championship next month</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>4:30 PM</time>
+        <room>Class 3-1</room>
+        <text>Such an achievement</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>4:30 PM</time>
+        <room>Class 3-1</room>
+        <text>I wish you luck, friend</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>4:35 PM</time>
+        <room>Class 3-1</room>
+        <text>Really?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>4:35 PM</time>
+        <room>Class 3-1</room>
+        <text>You’re so gonna slay, Robert!</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>4:35 PM</time>
+        <room>Class 3-1</room>
+        <text>Look, our muscular man</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>4:35 PM</time>
+        <room>Class 3-1</room>
+        <text>Good luck, Rob</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Class 3-1</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>Good luck, Rob!</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>He&#x27;s going to win this</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3-1</room>
+        <sender>Luna</sender>
+        <time>4:35 PM</time>
+        <text>Good luck, Rob!</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3-1</room>
+        <sender>Luna</sender>
+        <time>4:35 PM</time>
+        <text>He&#x27;s going to win this</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Class 3-1</room>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Clara</sender>
+        <time>5:13 PM</time>
+        <room>Class 3-1</room>
+        <text>Impressive</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>6:07 PM</time>
+        <room>Class 3-1</room>
+        <text>Whoah one of our friend’s gonna become the world champion</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>6:07 PM</time>
+        <room>Class 3-1</room>
+        <text>Fighting!</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>6:07 PM</time>
+        <room>Class 3-1</room>
+        <text>Literally</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>6:10 PM</time>
+        <room>Class 3-1</room>
+        <text>Haha so funny lmao</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>6:10 PM</time>
+        <room>Class 3-1</room>
+        <text>No need to be sarcastic, Ron</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>6:10 PM</time>
+        <room>Class 3-1</room>
+        <text>No, Mike</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>6:10 PM</time>
+        <room>Class 3-1</room>
+        <text>Your sense of humor improved a bit</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>6:12 PM</time>
+        <room>Class 3-1</room>
+        <text>I hate you</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>6:12 PM</time>
+        <room>Class 3-1</room>
+        <text>You, too :*</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Robert</sender>
+        <time>10:22 PM</time>
+        <room>Class 3-1</room>
+        <text>Thank you, guys</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Robert</sender>
+        <time>10:22 PM</time>
+        <room>Class 3-1</room>
+        <text>I’m sorry I can’t engage to your conversations</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Robert</sender>
+        <time>10:22 PM</time>
+        <room>Class 3-1</room>
+        <text>Now you know the reason</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Class 3-1</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>Where’s the Championship gonna be held?</label>
+                <replies>3</replies>
+            </choice>
+            <choice>
+                <label>We will always support you, Robert</label>
+                <replies>5</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3-1</room>
+        <sender>Luna</sender>
+        <time>10:25 PM</time>
+        <text>Where’s the Championship gonna be held?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Robert</sender>
+        <time>10:25 PM</time>
+        <room>Class 3-1</room>
+        <text>In Moscow</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Robert</sender>
+        <time>10:25 PM</time>
+        <room>Class 3-1</room>
+        <text>I’m going there in two weeks</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3-1</room>
+        <sender>Luna</sender>
+        <time>10:25 PM</time>
+        <text>We will always support you, Robert</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Robert</sender>
+        <time>10:25 PM</time>
+        <room>Class 3-1</room>
+        <text>Thank you, Luna</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Robert</sender>
+        <time>10:25 PM</time>
+        <room>Class 3-1</room>
+        <text>That means a lot</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Robert</sender>
+        <time>10:25 PM</time>
+        <room>Class 3-1</room>
+        <text>I&#x27;m so excited</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Robert</sender>
+        <time>10:25 PM</time>
+        <room>Class 3-1</room>
+        <text>I&#x27;m going to Moscow in two weeks</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Class 3-1</room>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Class 3-1</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>Good luck</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>Safe trip</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3-1</room>
+        <sender>Luna</sender>
+        <time>10:25 PM</time>
+        <text>Good luck</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3-1</room>
+        <sender>Luna</sender>
+        <time>10:25 PM</time>
+        <text>Safe trip</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Class 3-1</room>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>10:30 PM</time>
+        <room>Class 3-1</room>
+        <text>Whoah it must be so cold there</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>10:30 PM</time>
+        <room>Class 3-1</room>
+        <text>Don&#x27;t forget to bring a lot of jackets and blankets</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Robert</sender>
+        <time>10:30 PM</time>
+        <room>Class 3-1</room>
+        <text>Yes it is cold there</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Robert</sender>
+        <time>10:30 PM</time>
+        <room>Class 3-1</room>
+        <text>Thank you for being considerate</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>11:15 PM</time>
+        <room>Class 3-1</room>
+        <text>We understand, Robert</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>11:15 PM</time>
+        <room>Class 3-1</room>
+        <text>Didn’t you always skip class to train and tournament and such?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>11:15 PM</time>
+        <room>Class 3-1</room>
+        <text>I’m so proud of you</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>11:15 PM</time>
+        <room>Class 3-1</room>
+        <text>Look at how far you’ve come</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>11:19 PM</time>
+        <room>Class 3-1</room>
+        <text>Yea at least there is a happy event in times like this</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>11:19 PM</time>
+        <room>Class 3-1</room>
+        <text>Oh, Ron</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>11:20 PM</time>
+        <room>Class 3-1</room>
+        <text>Everything will be okay</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>11:21 PM</time>
+        <room>Class 3-1</room>
+        <text>I’ve become a bit melancholy, haven’t I?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>11:21 PM</time>
+        <room>Class 3-1</room>
+        <text>What’s wrong with that?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>11:21 PM</time>
+        <room>Class 3-1</room>
+        <text>I feel like the angels of death are everywhere</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>11:21 PM</time>
+        <room>Class 3-1</room>
+        <text>Ready to take the souls of my loved ones</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>11:21 PM</time>
+        <room>Class 3-1</room>
+        <text>And Lily being sick stress me out even more</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>11:21 PM</time>
+        <room>Class 3-1</room>
+        <text>You just aren&#x27;t used to death</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>11:21 PM</time>
+        <room>Class 3-1</room>
+        <text>None of us is</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>11:21 PM</time>
+        <room>Class 3-1</room>
+        <text>And Barbara was a close friend to all of us</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>11:21 PM</time>
+        <room>Class 3-1</room>
+        <text>That&#x27;s why we are beside ourselves with grief</text>
+    </messages>
+</root>

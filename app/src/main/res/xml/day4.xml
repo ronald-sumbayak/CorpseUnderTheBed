@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <description>Fourth day, chapter 2</description>
+    <date>Monday, February 29</date>
+    <messages>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>4:44 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Yup. Sunday at 3. How?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>4:45 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>We don’t have that many time</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>4:45 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Also I heard his son already sold his house</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>4:45 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>And Mr. James was buried in his hometown</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Robert</sender>
+        <time>5:01 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Hmm? I thought there were 16 students in our class</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Robert</sender>
+        <time>5:01 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Okay. Sunday at 3 then</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>9:23 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Good (y)</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>9:23 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Yes, there were 16, with Anna</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>9:23 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>It’s a deal then</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>9:45 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Should we gather in meeting point or go directly to her cemetery?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>9:45 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Abbot Chapel Cemetery</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Clara</sender>
+        <time>9:45 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Go directly</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:45 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Just go to the cemetery</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:45 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Meeting point’s a waste of time</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>9:45 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Don’t forget to show us the way to her tomb, Ed</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>9:45 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Easy, hun</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>9:53 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’m having nightmare about her</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>9:53 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>It’s ok. We’ll get through this</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>9:53 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’m going to her house today</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>9:53 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>What flower should I buy, Nat?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>9:57 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Depends on how you feel toward her</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>9:57 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Most people bring white lilies to the funeral</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>9:57 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>In some Europe and Asian countries, chrysanthemums are symbolic of death and grief, meanwhile here they give positive vibes</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>9:57 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I suggest a bouquet included a single dark crimson rose</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>9:57 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>It denotes grief and sorrow</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>9:57 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Thank you. You’re the best</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>7:17 PM</time>
+        <room>Lila</room>
+        <text>Hey, Luna</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Lila</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>Hmm?</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>What?</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:25 PM</time>
+        <text>Hmm?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:25 PM</time>
+        <text>What?</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Lila</room>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>7:26 PM</time>
+        <room>Lila</room>
+        <text>I don’t know why I’m telling you this, but you seem reliable and I think I trust you more than anyone</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Lila</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>Go on</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>What&#x27;s wrong?</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:26 PM</time>
+        <text>Go on</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:26 PM</time>
+        <text>What&#x27;s wrong?</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Lila</room>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>7:26 PM</time>
+        <room>Lila</room>
+        <text>Today I went to her house</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>7:26 PM</time>
+        <room>Lila</room>
+        <text>Do you remember back then when we went to her house?</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Lila</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>Then?</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>Yes, I remember</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messsages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:26 PM</time>
+        <text>Then?</text>
+    </messsages>
+    <messsages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:26 PM</time>
+        <text>Yes, I remember?</text>
+    </messsages>
+    <messages>
+        <type>comment</type>
+        <room>Lila</room>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>7:26 PM</time>
+        <room>Lila</room>
+        <text>And she had a habbit of writing a diary, remember?</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Lila</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>Yes, I do</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>Hmm</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:26 PM</time>
+        <text>Yes, I do</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:26 PM</time>
+        <text>Hmm</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Lila</room>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>7:27 PM</time>
+        <room>Lila</room>
+        <text>Well, her room was so clean and organized, but her diary was nowhere in there</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Lila</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>Your point is?</label>
+                <replies>6</replies>
+            </choice>
+            <choice>
+                <label>Maybe her parents cleaned it for her?</label>
+                <replies>7</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:27 PM</time>
+        <text>Your point is?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>7:27 PM</time>
+        <room>Lila</room>
+        <text>I think either she hid something or someone hid something for her</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Lila</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>Eh? I think you jumped to conclusion so early</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>I don’t think it’s relevant. She’s grown up. She knew how to make her bed</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:27 PM</time>
+        <text>Eh? I think you jumped to conclusion so early</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:27 PM</time>
+        <text>I don’t think it’s relevant. She’s grown up. She knew how to make her bed</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Lila</room>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:27 PM</time>
+        <text>Maybe her parents cleaned it for her?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>7:27 PM</time>
+        <room>Lila</room>
+        <text>I don’t think they have time for that</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>7:27 PM</time>
+        <room>Lila</room>
+        <text>She was public figure. Her parents are still busy grieving and receiving condolences</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Lila</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>Why not? They just need to call a house assistant to do that</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>I guess you’re overthinking. Diary is a private possession. Of course she wanted to hide it</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:27 PM</time>
+        <text>Why not? They just need to call a house assistant to do that</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:27 PM</time>
+        <text>I guess you’re overthinking. Diary is a private possession. Of course she wanted to hide it</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Lila</room>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Lila</room>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>7:28 PM</time>
+        <room>Lila</room>
+        <text>Maybe you’re right</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>7:28 PM</time>
+        <room>Lila</room>
+        <text>I apologize for being too emotional, I am uneasy</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Lila</sender>
+        <time>7:28 PM</time>
+        <text>You feel me?</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Lila</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>I do</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>Nehemiah 8:10 And do not be grieved, for the joy of the Lord is your strength</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:28 PM</time>
+        <text>I do</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Lila</room>
+        <sender>Luna</sender>
+        <time>7:28 PM</time>
+        <text>Nehemiah 8:10 And do not be grieved, for the joy of the Lord is your strength</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Lila</room>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>7:29 PM</time>
+        <room>Lila</room>
+        <text>Thank you, Luna</text>
+    </messages>
+</root>
