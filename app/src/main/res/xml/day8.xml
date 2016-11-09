@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <description>Eighth day, chapter 3</description>
+    <date>Friday, March 4</date>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>2:32 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Hey, buds. Tomorrow's big day for me.</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>2:32 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Wish me luck</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>2:34 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Vestavia Hills indoor basketball court</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>2:34 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Don't forget :3</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>5:03 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Don't worry, bro</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>5:03 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I'll be there to support you :*</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>5:08 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>You better win that or treat me a margarita</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>5:09 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Anything, mate</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>5:09 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Oh my God, I'm so nervous</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Clara</sender>
+        <time>5:09 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Good luck</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Clara</sender>
+        <time>5:09 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Chill</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>5:18 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>If I don't come to your game tomorrow, assume I have client</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>5:20 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>You can do it, Mikey</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>5:20 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Show them your power!</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>5:23 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Thanks, Lucy.</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>5:25 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Relax</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>5:25 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Everything's gonna be OK</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>5:27 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Be tough, bruh</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>5:45 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>It's not like you lack the skill</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>5:45 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>May the odds be ever in your favor</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>5:46 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Aww, you hear that bro</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>5:47 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>She gave you a compliment</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>5:47 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Do you have a problem with that?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>5:47 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>No, Madame. Not at all</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>5:47 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Assure me you're going to win tomorrow, Mike</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>5:47 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>It&#x27;s unusual for an alumni of Class 3-1 to bring disappointment</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>6:00 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>In the name of Jesus, you guys are making me more nervous</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>6:02 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Too bad I am not able to watch you passing the balls around the court but I wish to hear about the game the next day when we meet</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>6:05 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Do you mean you're going to come to the reunion?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>6:05 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>After a deep and long thought, apparently yes</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>6:05 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Nice</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>6:30 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Of course, Jack. I won't disappoint you</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>6:30 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>But I can't promise victory. It's a province level match</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>6:30 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I'm so hyped right now</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>Good luck, Mike</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>May the odds be ever in your favor</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3&#8211;1</room>
+        <sender>Luna</sender>
+        <time>6:31 PM</time>
+        <text>Good luck, Mike</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3&#8211;1</room>
+        <sender>Luna</sender>
+        <time>6:31 PM</time>
+        <text>May the odds be ever in your favor</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>6:35 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Our deal's still on, Mike</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>6:35 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I come to your game, you be my wingman</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>6:36 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Luna, will you be there to support Mike?</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <sender>Luna</sender>
+        <time>6:36 PM</time>
+        <room>Class 3&#8211;1</room>
+        <choices>
+            <text>Yes</text>
+            <replies>3</replies>
+        </choices>
+        <choices>
+            <text>No</text>
+            <replies>5</replies>
+        </choices>
+        <saveAs>Mike&#x27;s game</saveAs>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>7:11 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Good</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>7:11 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I'll have a company while Lila's seducing sweaty men</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>7:11 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I&#x27;m not that kind of woman -_-</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>6:37 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Why?</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <save>Not coming</save>
+        <choices>
+            <choice>
+                <label>I have something to do</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>I&#x27;m still sick</label>
+                <replies>2</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3&#8211;1</room>
+        <sender>Luna</sender>
+        <time>6:37 PM</time>
+        <text>I have something to do</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3&#8211;1</room>
+        <sender>Luna</sender>
+        <time>6:37 PM</time>
+        <text>I&#x27;m still sick</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>6:37 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Get well soon, Luna</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <room>Class 3&#8211;1</room>
+        <text>:(</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>7:40 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>No problem, Lil</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>7:40 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Thank you guys :* I'm glad I have you all</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>7:41 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>The game's starting at 8 pm</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>7:41 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Vestavia Hills court. Do not get lost</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>8:41 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Good night :3</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>8:45 PM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Night</text>
+    </messages>
+</root>

@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <description>Seventh day, chapter 2</description>
+    <date>Thursday, March 3</date>
+    <messages>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>4:44 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Late night conversation</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>4:44 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Should I continue the topic?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>6:23 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>You embarrass me</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>7:21 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>So deep</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Eddie</sender>
+        <time>7:21 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Adele’s gonna roll in it</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>7:22 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Man up, Ron</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>7:22 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Don&#x27;t face the problem like a baby</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>7:22 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Pouring a bit of feeling doesn’t hurt his masculinity, Mike</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>7:22 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Please get rid of that patriarchal closed-minded thoughts of yours</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>7:24 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Yes, Sir</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Mike</sender>
+        <time>7:24 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Didn’t mean to make a big deal out of it</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Gwen</sender>
+        <time>7:27 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>You’re all dense mofo</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>7:27 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>100% agree</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>8:30 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Being an adult makes our soul darker</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>8:32 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Are you sure you’re an adult?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Natalie</sender>
+        <time>8:32 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Haha just kidding</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>8:32 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>No</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>8:32 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I’m your personal six feet babydoll -_-</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>9:00 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>A lovely morning</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nila</sender>
+        <time>9:00 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Have a nice day, you all!</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>Good morning!</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>Have a nice day too, Nila!</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3&#8211;1</room>
+        <sender>Luna</sender>
+        <time>9:00 AM</time>
+        <text>Good morning!</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3&#8211;1</room>
+        <sender>Luna</sender>
+        <time>9:00 AM</time>
+        <text>Have a nive day too, Nila!</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>The weather forecast predicts a snowy afternoon</label>
+                <replies>8</replies>
+            </choice>
+            <choice>
+                <label>What are you guys planning to do today?</label>
+                <replies>11</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3&#8211;1</room>
+        <sender>Luna</sender>
+        <time>9:00 AM</time>
+        <text>The weather forecast predicts a snowy afternoon</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lila</sender>
+        <time>9:01 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>A perfect day for snowball war</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>9:03 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>And a fluffy snowman</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>9:03 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>That means a slippery road and a suffering on the way to office</text>
+    </messages>
+    <messages>
+        <type>choices</type>
+        <room>Class 3&#8211;1</room>
+        <save/>
+        <choices>
+            <choice>
+                <label>It’s not that bad</label>
+                <replies>1</replies>
+            </choice>
+            <choice>
+                <label>Don’t complain, Nath. Be a bit more grateful</label>
+                <replies>1</replies>
+            </choice>
+        </choices>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3&#8211;1</room>
+        <sender>Luna</sender>
+        <time>9:04 AM</time>
+        <text>It’s not that bad</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3&#8211;1</room>
+        <sender>Luna</sender>
+        <time>9:04 AM</time>
+        <text>Don’t complain, Nath. Be a bit more grateful</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <room>Class 3&#8211;1</room>
+        <sender>Luna</sender>
+        <time>9:00 AM</time>
+        <text>What are you guys planning to do today?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>9:01 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Work</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Nathan</sender>
+        <time>9:01 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>What else?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>9:02 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Laying under a blanket</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Ron</sender>
+        <time>9:03 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Today is colder than yesterday</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>9:04 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Do you guys even know how to enjoy life?</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Lucy</sender>
+        <time>9:04 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>It’s time for skiing!</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>9:04 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>I&#x27;d love to play around but too bad I also have a responsibility to advance human&#x27;s knowledge about the Universe</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Clara</sender>
+        <time>9:04 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>Just say you&#x27;re going to be in laboratorium all day long</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Jacob</sender>
+        <time>9:04 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>You make my job to contribute in Science sounds less noteworthy</text>
+    </messages>
+    <messages>
+        <type>msg</type>
+        <sender>Clara</sender>
+        <time>9:04 AM</time>
+        <room>Class 3&#8211;1</room>
+        <text>You&#x27;re welcome</text>
+    </messages>
+    <messages>
+        <type>comment</type>
+        <room>Class 3&#8211;1</room>
+    </messages>
+</root>
