@@ -27,7 +27,7 @@ public class RoomData implements Serializable {
     }
     
     public RoomData addMessage (ChatMessageModel newMessage) {
-        if (newMessage.type () == ChatMessageModel.TYPE_NORMAL)
+        if (newMessage instanceof NormalMessageModel)
         {
             if (messageAt (-1) instanceof NormalMessageModel) {
                 NormalMessageModel prevMessage;
