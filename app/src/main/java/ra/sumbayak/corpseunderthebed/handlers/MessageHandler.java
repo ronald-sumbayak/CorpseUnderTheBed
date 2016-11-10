@@ -29,7 +29,7 @@ abstract class MessageHandler extends GameData implements Serializable {
         if (!isOnChoices ()) {
             incrementIndex ();
             if (isEndOfDay ()) {
-                if (mDay == 6) return;
+                if (mDay == 8) return;
                 startNewDay ();
             }
             else handleMessage (currentMessage ());
